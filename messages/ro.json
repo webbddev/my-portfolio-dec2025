@@ -1,0 +1,118 @@
+{
+  "header": {
+    "logo": "Natalia Bykhalova",
+    "nav": {
+      "about": "Despre",
+      "selectedWorks": "Lucrări selectate",
+      "testimonials": "Testimoniale",
+      "faqs": "Întrebări",
+      "contact": "Contact"
+    },
+    "contactButton": "Contactează-mă"
+  },
+  "hero": {
+    "title": "Creez site-uri web frumoase care transformă vizitatorii în clienți",
+    "viewWorkButton": "lucrările mele",
+    "downloadCvButton": "Descarcă CV",
+    "letsTalkButton": "Să vorbim",
+    "portraitAlt": "Portret Alevtina Gordienko"
+  },
+  "intro": {
+    "headline": "Ajut afacerile să crească prin crearea de site-uri web care arată grozav și funcționează și mai bine"
+  },
+  "projects": {
+    "heading": "Lucrări selectate",
+    "imageAlt": "Imagine proiect {name}"
+  },
+  "gallery": {
+    "title": "Galeria Proiectelor"
+  },
+  "common": {
+    "client": "Client",
+    "challenge-and-solution": "Provocare și soluție",
+    "backToProjects": "ÎNAPOI LA PROECTELE"
+  },
+  "projectDetail": {
+    "residential-harmony": {
+      "name": "Confort Elegant pentru Doi",
+      "description": "O combinație armonioasă de estetică și funcționalitate în interiorul pentru un cuplu. Tonurile pastelate discrete, dominante, creează o atmosferă relaxantă, amplificată de decorul cu elemente din materiale naturale. Balconul este transformat într-un colț de natură, iar zonificarea bine gândită include un impresionant dulap de vin ca parte a spațiului de locuit.",
+      "client": "Un cuplu inspirat de estetica scandinavă, care dorește să creeze o casă plină de căldură și naturalețe.",
+      "challenge-and-solution": "Principala provocare a proiectului a fost crearea unui spațiu confortabil și funcțional, care să corespundă dorințelor cuplului. Designerul a trebuit să integreze tonuri pastelate discrete în conceptul general al interiorului și să creeze o zonă de relaxare cu decor natural pe balcon. În plus, era necesar să se prevadă un loc pentru depozitarea vinului la domiciliu. Soluția a fost găsită în utilizarea texturilor din materiale naturale, care au completat nuanțele discrete ale interiorului. Decorul natural de pe balcon a devenit o extensie firească a ideii generale de confort, iar dulapul de vin a fost integrat în design astfel încât să devină nu doar un element funcțional, ci și decorativ."
+    },
+    "city-student-oasis": {
+      "name": "Oază Urbană pentru Studentul Activ",
+      "description": "Acesta nu este doar un apartament; este un hub elegant pentru un student energic, conceput într-un minimalism rafinat. Spațiul este extins vizual printr-o paletă de culori deschise și accente de lemn natural, creând o armonie perfectă pentru locuit și studiu. Detaliile moderne, cum ar fi un colț sofisticat pentru vin și un frigider, precum și un dulap cu sticlă fumurie, subliniază caracterul unic al interiorului.",
+      "client": "Un student care prețuiește stilul, confortul și un mod de viață modern.",
+      "challenge-and-solution": "Principala provocare a fost crearea unui spațiu confortabil și 'viu' în cadrul unui minimalism strict, cu o schemă de culori predominant albă. Am găsit o soluție în contraste: căldura lemnului natural și diversele texturi din decor au atenuat baza rece. În dormitor, tonurile pastelate discrete au creat o atmosferă calmă, iar punctul culminant a fost un dulap cu uși din sticlă fumurie, care nu este doar funcțional, ci și vizual ușor. O cerință specială a clientului a fost includerea unui dulap de vin și a unui frigider, pe care le-am integrat elegant în conceptul general, transformându-le în accente stilate ale interiorului."
+    },
+    "family-house": {
+      "name": "Spațiu de Viață în Tonuri Deschise",
+      "description": "O paletă luminoasă, texturi naturale și zonificare atent gândită creează un interior ideal atât pentru viața de zi cu zi, cât și pentru relaxare. Designul combină materiale naturale, iluminare stratificată și soluții inteligente de depozitare. Spațiul este plin de căldură, confort și detalii personalizate care reflectă caracterul locatarilor.",
+      "client": "O familie modernă care își dorește o locuință elegantă și primitoare, unde se îmbină lejeritatea vizuală, confortul spațiului comun și organizarea zonelor private.",
+      "challenge-and-solution": "Proiectul Family House a răspuns provocării de a crea un spațiu familial primitor, funcțional și personalizat, în care fiecare element contribuie la armonie și confort. Designul se bazează pe o paletă luminoasă și materiale naturale, care oferă senzația de curățenie, spațialitate și liniște. Iluminarea pe mai multe niveluri — de la spoturi încastrate în tavan la benzi LED ascunse și lămpi de accent — permite scenarii variate de iluminat și evidențiază funcționalitatea fiecărei zone. S-a acordat o atenție deosebită integrării soluțiilor de depozitare: de la un dressing spațios la dulapuri încorporate, toate contribuind la reducerea aglomerației vizuale. Elemente naturale — plante de interior și texturi organice — aduc prospețime și confort, iar detalii personalizate, precum un scaun suspendat sau rafturi pentru pisici, transformă interiorul într-un cămin unic și autentic."
+    }
+  },
+  "testimonials": {
+    "heading": "Câteva cuvinte frumoase de la clienții mei anteriori",
+    "prevButton": "Testimonial anterior",
+    "nextButton": "Testimonial următor",
+    "at": "la",
+    "testimonial1": {
+      "name": "Sarah Chen",
+      "company": "",
+      "role": "Șef de Design",
+      "quote": "Expertiza Nataliei atât în dezvoltarea tehnică, cât și în design a creat un site web frumos și performant care ne-a depășit așteptările."
+    },
+    "testimonial2": {
+      "name": "Marcus Rodriguez",
+      "company": "Craft Coffee Co.",
+      "role": "Fondator",
+      "quote": "Natalia a transformat brandul nostru de cafea boutique cu un site web care echilibrează perfect estetica și funcționalitatea. Rezultatele vorbesc de la sine."
+    },
+    "testimonial3": {
+      "name": "Emily Watson",
+      "company": "Studio Minimal",
+      "role": "Director Creativ",
+      "quote": "Procesul de colaborare a fost uimitor. Natalia a adus multe perspective proaspete și soluții inovatoare la proiectul nostru."
+    }
+  },
+  "faqs": {
+    "heading": "Întrebări frecvente",
+    "questions": [
+      {
+        "question": "Cât durează să creezi un site web?",
+        "answer": "Depinde de complexitatea site-ului web și de amploarea proiectului."
+      },
+      {
+        "question": "Cum arată procesul tău de dezvoltare?",
+        "answer": "Urmez o abordare practică, începând cu planificarea proiectului, construirea funcționalităților de bază și verificări regulate pentru a mă asigura că totul se aliniază cu nevoile tale."
+      },
+      {
+        "question": "Lucrezi cu clienți internaționali?",
+        "answer": "Da, lucrez cu clienți din întreaga lume și mă pot adapta la diferite fusuri orare pentru întâlniri și comunicare."
+      },
+      {
+        "question": "În ce industrii te specializezi?",
+        "answer": "Am experiență în diverse industrii, inclusiv tehnologie, retail, ospitalitate și servicii profesionale, aducând perspective proaspete fiecărui proiect."
+      }
+    ]
+  },
+  "footer": {
+    "availability": "Un loc disponibil pentru luna următoare",
+    "heading": "Destulă vorbă. Hai să creăm ceva grozav împreună.",
+    "email": "natalia.bykhalova@gmail.com",
+    "nav": {
+      "home": "Acasă",
+      "projects": "Proiecte",
+      "testimonials": "Testimoniale",
+      "faqs": "Întrebări",
+      "contact": "Contact"
+    },
+    "copyright": "Drepturi de autor © Alevtina Gordienko • Toate drepturile rezervate"
+  },
+  "notFound": {
+    "title": "Pagină negăsită",
+    "description": "Ne pare rău, pagina pe care o cauți nu există.",
+    "goHome": "Înapoi acasă"
+  }
+}

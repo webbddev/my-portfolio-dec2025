@@ -1,0 +1,118 @@
+{
+  "header": {
+    "logo": "Natalia Bykhalova",
+    "nav": {
+      "about": "About",
+      "selectedWorks": "Selected Works",
+      "testimonials": "Testimonials",
+      "faqs": "FAQs",
+      "contact": "Contact"
+    },
+    "contactButton": "Contact"
+  },
+  "hero": {
+    "title": "Building beautiful websites that convert visitors into customers",
+    "viewWorkButton": "My Works",
+    "downloadCvButton": "Download CV",
+    "letsTalkButton": "Let's talk",
+    "portraitAlt": "Natalia Bykhalova portrait"
+  },
+  "intro": {
+    "headline": "I help businesses grow by creating websites that look great and work even better"
+  },
+  "projects": {
+    "heading": "Selected Works",
+    "imageAlt": "{name} project image"
+  },
+  "gallery": {
+    "title": "Project Gallery"
+  },
+  "common": {
+    "client": "Client",
+    "challenge-and-solution": "Challenge and Solution",
+    "backToProjects": "BACK TO PROJECTS"
+  },
+  "projectDetail": {
+    "residential-harmony": {
+      "name": "Elegant Comfort for Two",
+      "description": "A harmonious blend of aesthetics and functionality in an interior designed for a couple. Dominant muted pastel tones create a relaxing atmosphere, enhanced by decor featuring natural elements. The balcony is transformed into a natural corner, and the thoughtfully planned zoning includes a striking wine cabinet as part of the living space.",
+      "client": "A couple inspired by Scandinavian aesthetics, seeking to create a home filled with warmth and naturalness.",
+      "challenge-and-solution": "The main challenge of the project was to create a cozy and functional space that met the couple's wishes. The designer needed to integrate muted pastel tones into the overall interior concept and create a relaxation area with natural decor on the balcony. Furthermore, it was necessary to provide a place for wine storage within the home. The solution was found in using textures of natural materials, which complemented the subdued shades of the interior. The natural decor on the balcony became a natural extension of the overall idea of comfort, and the wine cabinet was integrated into the design in such a way that it became not only a functional but also a decorative element."
+    },
+    "city-student-oasis": {
+      "name": "City Oasis for the Active Student",
+      "description": "This isn't just an apartment; it's a stylish hub for an energetic student, designed with elegant minimalism. The space is visually expanded by a light color palette and natural wood accents, creating a perfect harmony for living and studying. Trendy details, such as a sophisticated wine corner and a refrigerator, as well as a tinted glass cabinet, highlight the unique character of the interior.",
+      "client": "A student who values style, comfort, and a modern lifestyle.",
+      "challenge-and-solution": "The main challenge was to create a cozy and 'lively' space within strict minimalism and a predominantly white color scheme. We found a solution in contrasts: the warmth of natural wood and various textures in the decor softened the cool base. In the bedroom, muted pastel tones created a calm atmosphere, and the highlight was a cabinet with tinted glass doors, which is not only functional but also visually light. A special request from the client was the inclusion of a wine cabinet and a refrigerator, which we elegantly integrated into the overall concept, transforming them into stylish interior accents."
+    },
+    "family-house": {
+      "name": "A Light-Toned Living Space",
+      "description": "A bright palette, natural textures, and thoughtful zoning create an interior that is equally suited for living and relaxing. The design combines natural materials, layered lighting, and smart storage solutions. The space is filled with warmth, comfort, and personalized touches that reflect the character of its residents.",
+      "client": "A modern family seeking an elegant and cozy home that balances visual lightness, shared comfort, and organized private areas.",
+      "challenge-and-solution": "The Family House project addressed the challenge of creating a cozy, functional, and personalized space for a family, where every element contributes to harmony and comfort. The design is grounded in a light palette and natural materials, evoking a sense of cleanliness, spaciousness, and tranquility. Layered lighting — from recessed ceiling fixtures to hidden LED strips and accent lamps — allows for flexible lighting scenarios and highlights each functional zone. Special attention was given to integrated storage, from a spacious walk-in closet to built-in wardrobes, reducing visual clutter. Elements of nature — indoor plants and organic textures — bring freshness and warmth, while personalized features such as a hanging chair or cat shelves make the interior uniquely family-oriented."
+    }
+  },
+  "testimonials": {
+    "heading": "Some nice words from my past clients",
+    "prevButton": "Previous testimonial",
+    "nextButton": "Next testimonial",
+    "at": "at",
+    "testimonial1": {
+      "name": "Sarah Chen",
+      "company": "",
+      "role": "Head of Design",
+      "quote": "Natalia's expertise in both technical development and design created a beautiful, high-performing website that exceeded our expectations."
+    },
+    "testimonial2": {
+      "name": "Marcus Rodriguez",
+      "company": "Craft Coffee Co.",
+      "role": "Founder",
+      "quote": "Natalia transformed our boutique coffee brand with a website that perfectly balances aesthetics and functionality. The results speak for themselves."
+    },
+    "testimonial3": {
+      "name": "Emily Watson",
+      "company": "Studio Minimal",
+      "role": "Creative Director",
+      "quote": "The collaborative process was amazing. Natalia brought lots of fresh perspectives and innovative solutions to our project."
+    }
+  },
+  "faqs": {
+    "heading": "FAQs",
+    "questions": [
+      {
+        "question": "How long does it take to build a website?",
+        "answer": "It depends on the complexity of the website and the scope of the project."
+      },
+      {
+        "question": "What is your development process like?",
+        "answer": "I follow a hands-on approach starting with project planning, building out the core features, and regular check-ins to make sure everything matches your needs."
+      },
+      {
+        "question": "Do you work with international clients?",
+        "answer": "Yes, I work with clients globally and can accommodate different time zones for meetings and communication."
+      },
+      {
+        "question": "What industries do you specialize in?",
+        "answer": "I have experience across various industries including technology, retail, hospitality, and professional services, bringing fresh perspectives to each project."
+      }
+    ]
+  },
+  "footer": {
+    "availability": "One spot available for next month",
+    "heading": "Enough talk. Let's make something great together.",
+    "email": "natalia.bykhalova@gmail.com",
+    "nav": {
+      "home": "Home",
+      "projects": "Projects",
+      "testimonials": "Testimonials",
+      "faqs": "Faqs",
+      "contact": "Contact"
+    },
+    "copyright": "Copyright © Alevtina Gordienko • All rights reserved"
+  },
+  "notFound": {
+    "title": "Page Not Found",
+    "description": "Sorry, the page you are looking for does not exist.",
+    "goHome": "Go back home"
+  }
+}
