@@ -31,14 +31,14 @@ export default function LanguageSwitcher() {
   };
 
   return (
-    <div className="mr-3">
+    <div className="">
       <Select
         defaultValue={currentLocale}
         onValueChange={onSelectChange}
         disabled={isPending}
       >
         <SelectTrigger
-          className="h-11 border border-stone-400 bg-stone-200 hover:bg-slate-300 transition duration-700 ease-in-out rounded-full focus:ring-0 focus:ring-offset-0"
+          className="size-9 md:size-11 flex justify-center p-1 border dark:text-stone-200 border-stone-400 bg-stone-200 hover:bg-slate-300 dark:bg-stone-600/50 dark:border-stone-400 dark:hover:bg-stone-700 transition duration-700 ease-in-out rounded-full focus:ring-0 focus:ring-offset-0 [&>svg]:hidden"
           aria-label="Change language"
         >
           <SelectValue>{currentLocale.toUpperCase()}</SelectValue>

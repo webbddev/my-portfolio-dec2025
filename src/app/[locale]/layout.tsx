@@ -9,6 +9,7 @@ import { ReactLenis } from "lenis/react";
 import { setRequestLocale } from "next-intl/server";
 
 import type { Metadata } from "next";
+import { ThemeProvider } from "@/components/theme-provider";
 
 export const metadata: Metadata = {
   title: "Minimal Single Page Portfolio",
@@ -51,16 +52,24 @@ export default async function RootLayout({
   setRequestLocale(locale);
 
   return (
-    <html lang={locale}>
+    <html lang={locale} suppressHydrationWarning>
       <body
-        className={`${archivo.variable} font-sans antialiased bg-stone-200 text-stone-900`}
+        className={`${archivo.variable} font-sans antialiased `}
+        // className={`${archivo.variable} font-sans antialiased bg-stone-200 text-stone-900`}
       >
-        <ReactLenis root>
-          <NextIntlClientProvider messages={messages}>
-            <Header />
-            {children}
-          </NextIntlClientProvider>
-        </ReactLenis>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          // disableTransitionOnChange
+        >
+          <ReactLenis root>
+            <NextIntlClientProvider messages={messages}>
+              <Header />
+              {children}
+            </NextIntlClientProvider>
+          </ReactLenis>
+        </ThemeProvider>
       </body>
     </html>
   );

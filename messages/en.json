@@ -1,6 +1,6 @@
 {
   "header": {
-    "logo": "Natalia Bykhalova",
+    "logo": "Nicolas Tetradov",
     "nav": {
       "about": "About",
       "selectedWorks": "Selected Works",
@@ -15,7 +15,7 @@
     "viewWorkButton": "My Works",
     "downloadCvButton": "Download CV",
     "letsTalkButton": "Let's talk",
-    "portraitAlt": "Natalia Bykhalova portrait"
+    "portraitAlt": "Nicolas Tetradov portrait"
   },
   "intro": {
     "headline": "I help businesses grow by creating websites that look great and work even better"
@@ -100,7 +100,7 @@
   "footer": {
     "availability": "One spot available for next month",
     "heading": "Enough talk. Let's make something great together.",
-    "email": "natalia.bykhalova@gmail.com",
+    "email": "nikolay.tetradov@gmail.com",
     "nav": {
       "home": "Home",
       "projects": "Projects",
@@ -108,7 +108,7 @@
       "faqs": "Faqs",
       "contact": "Contact"
     },
-    "copyright": "Copyright © Alevtina Gordienko • All rights reserved"
+    "copyright": "Copyright © Nikolay Tetradov • All rights reserved"
   },
   "notFound": {
     "title": "Page Not Found",

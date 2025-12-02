@@ -12,34 +12,43 @@ const Projects = () => {
   return (
     <section className="section" id="projects">
       <div className="container">
-        <h2 className="text-4xl md:text-7xl lg:text-8xl">{t("projects.heading")}</h2>
+        <h2 className="text-4xl md:text-7xl lg:text-8xl">
+          {t("projects.heading")}
+        </h2>
         {/* Projects */}
         <div className="mt-10 md:mt-16 lg:mt-20">
-          {projectsData.map(({  thumbnail, slug }) => (
+          {projectsData.map(({ thumbnail, slug }) => (
             <Link
               locale={locale}
-              href={`/projects/${slug}`} 
+              href={`/projects/${slug}`}
               key={slug}
-              className="flex flex-col border-t last:border-b border-stone-400 border-dotted py-6 md:py-8 lg:py-10 relative group/project"
+              className="flex flex-col border-t last:border-b border-stone-400 dark:border-stone-600 border-dotted py-6 md:py-8 lg:py-10 relative group/project"
             >
-              <div className="absolute rounded-md bottom-0 left-0 w-full h-0 group-hover/project:h-full transition-all duration-500 bg-stone-300"></div>
+              {/* Project hover effect */}
+              <div className="absolute rounded-md bottom-0 left-0 w-full h-0 group-hover/project:h-full transition-all duration-500 bg-stone-300 dark:bg-stone-700" />
               <div className="relative">
                 <div className="md:hidden aspect-video">
                   <Image
                     src={thumbnail}
-                    alt={t("projects.imageAlt", { name: t(`projectDetail.${slug}.name`) })}
+                    alt={t("projects.imageAlt", {
+                      name: t(`projectDetail.${slug}.name`),
+                    })}
                     className="size-full object-cover"
                   />
                 </div>
                 <div className="mt-8 px-6 md:mt-0 flex justify-between items-center md:grid md:grid-cols-[1fr_300px_max-content] md:gap-8">
                   <div className="lg:group-hover/project:pl-8 transition-all duration-700">
-                    <h3 className="text-2xl md:text-3xl lg:text-4xl">{t(`projectDetail.${slug}.name`)}</h3>
+                    <h3 className="text-2xl md:text-3xl lg:text-4xl">
+                      {t(`projectDetail.${slug}.name`)}
+                    </h3>
                   </div>
                   <div className="relative">
                     <div className="absolute aspect-video w-full top-1/2 -translate-y-1/2 opacity-0 scale-90 group-hover/project:opacity-100 group-hover/project:scale-105 lg:group-hover/project:scale-110 transition-all duration-500 z-10">
                       <Image
                         src={thumbnail}
-                        alt={t("projects.imageAlt", { name: t(`projectDetail.${slug}.name`) })}
+                        alt={t("projects.imageAlt", {
+                          name: t(`projectDetail.${slug}.name`),
+                        })}
                         className="size-full object-cover"
                       />
                     </div>

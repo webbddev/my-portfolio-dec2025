@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import heroImage from "@/assets/images/hero-image.jpg";
-import aboutMeImage from "@/assets/images/nat3.png";
+import aboutMeImage from "@/assets/images/nicolas2.png";
 import Image from "next/image";
 import Button from "@/components/Button";
 import SplitType from "split-type";
@@ -24,7 +24,7 @@ const Hero = () => {
 
   useEffect(() => {
     new SplitType(titleScope.current, {
-      types: "lines,words",
+      types: "lines,chars,words",
       tagName: "span",
     });
 

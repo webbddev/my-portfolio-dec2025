@@ -7,6 +7,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { Link } from "../../i18n/navigation";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import { usePathname } from "next/navigation";
+import { ModeToggle } from "@/components/ModeToggle";
 
 const Header = () => {
   const t = useTranslations("header");
@@ -234,14 +235,16 @@ const Header = () => {
       <div className="fixed top-0 left-0 w-full z-10">
         <div className="container max-w-full!">
           <div className="flex justify-end items-center h-20">
-            {/* Left side - Language Switcher */}
-            <div className="flex items-center">
+            <div className="flex items-center gap-x-1">
+              {/* Theme Switcher button */}
+              <ModeToggle />
+
+              {/* Language Switcher button */}
               <LanguageSwitcher />
-            </div>
-            {/* Hamburger menu toggle button */}
-            <div className="flex items-center gap-4">
+
+              {/* Hamburger menu toggle button */}
               <div
-                className="size-11 border border-stone-400 rounded-full inline-flex items-center justify-center bg-stone-200"
+                className="size-9 md:size-11 border  border-stone-400 rounded-full inline-flex items-center justify-center bg-stone-200 hover:bg-slate-300 dark:bg-stone-600/50 dark:border-stone-400 dark:hover:bg-stone-700 dark:text-stone-200 transition-colors duration-700 ease-in-out"
                 onClick={() => setIsOpen(!isOpen)}
               >
                 <svg
@@ -275,7 +278,9 @@ const Header = () => {
                   />
                 </svg>
               </div>
-              {/* Contact button - visible only on medium screens and larger */}
+            </div>
+            {/* Contact button - visible only on medium screens and larger */}
+            <div className="ml-4">
               <Link href={isProjectDetailPage ? "/#contact" : "#contact"}>
                 <Button variant="primary" className="hidden md:inline-flex">
                   {t("contactButton")}

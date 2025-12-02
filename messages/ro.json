@@ -1,6 +1,6 @@
 {
   "header": {
-    "logo": "Natalia Bykhalova",
+    "logo": "Nikolay Tetradov",
     "nav": {
       "about": "Despre",
       "selectedWorks": "Lucrări selectate",
@@ -15,7 +15,7 @@
     "viewWorkButton": "lucrările mele",
     "downloadCvButton": "Descarcă CV",
     "letsTalkButton": "Să vorbim",
-    "portraitAlt": "Portret Alevtina Gordienko"
+    "portraitAlt": "Portret Nikolay Tetradov"
   },
   "intro": {
     "headline": "Ajut afacerile să crească prin crearea de site-uri web care arată grozav și funcționează și mai bine"
@@ -100,7 +100,7 @@
   "footer": {
     "availability": "Un loc disponibil pentru luna următoare",
     "heading": "Destulă vorbă. Hai să creăm ceva grozav împreună.",
-    "email": "natalia.bykhalova@gmail.com",
+    "email": "nikolay.tetradov@gmail.com",
     "nav": {
       "home": "Acasă",
       "projects": "Proiecte",
@@ -108,7 +108,7 @@
       "faqs": "Întrebări",
       "contact": "Contact"
     },
-    "copyright": "Drepturi de autor © Alevtina Gordienko • Toate drepturile rezervate"
+    "copyright": "Drepturi de autor © Nikolay Tetradov • Toate drepturile rezervate"
   },
   "notFound": {
     "title": "Pagină negăsită",
