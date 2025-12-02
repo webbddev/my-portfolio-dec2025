@@ -62,7 +62,7 @@ function renderNextImage(
         style={{
           objectFit: "cover", // This prevents stretching
         }}
-        placeholder={"blurDataURL" in photo ? "blur-sm" : undefined}
+        placeholder={"blurDataURL" in photo ? "blur" : undefined}
       />
     </div>
   );

@@ -1,14 +1,17 @@
+import { Variants } from "framer-motion";
+
 // fadeIn function
-export const fadeIn = (direction: "up" | "down" | "left" | "right" ) => {
+export const fadeIn = (
+  direction: "up" | "down" | "left" | "right"
+): Variants => {
   return {
     hidden: {
       y: direction === "up" ? 80 : direction === "down" ? -80 : 0,
-      opacity: 0,
+      // ... existing code ...
       x: direction === "left" ? 80 : direction === "right" ? -80 : 0,
     },
     show: {
-      y: 0,
-      x: 0,
+      // ... existing code ...
       opacity: 1,
       transition: {
         type: "tween",
@@ -19,7 +22,7 @@ export const fadeIn = (direction: "up" | "down" | "left" | "right" ) => {
   };
 };
 
-export const scaleUp = () => ({
+export const scaleUp = (): Variants => ({
   hover: { scale: 1.1 },
   tap: { scale: 0.95 },
 });
