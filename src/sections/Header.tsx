@@ -1,3 +1,303 @@
+// Below is original code without delay effect on appearance/disappearance of 3 header buttons
+// "use client";
+
+// import Button from "@/components/Button";
+// import { useEffect, useState } from "react";
+// import { motion, useAnimate } from "motion/react";
+// import { useLocale, useTranslations } from "next-intl";
+// import { Link } from "../../i18n/navigation";
+// import LanguageSwitcher from "@/components/LanguageSwitcher";
+// import { usePathname } from "next/navigation";
+// import { ModeToggle } from "@/components/ModeToggle";
+
+// const Header = () => {
+//   const t = useTranslations("header");
+//   const locale = useLocale();
+//   const pathname = usePathname();
+
+//   const [isOpen, setIsOpen] = useState(false);
+//   // Animation hooks for hamburger menu transformation
+//   const [topLineScope, topLineAnimate] = useAnimate();
+//   const [bottomLineScope, bottomLineAnimate] = useAnimate();
+//   const [navScope, navAnimate] = useAnimate();
+
+//   // Check if we're on a project detail page
+//   const isProjectDetailPage =
+//     pathname.includes("/projects/") && pathname.split("/").length > 3;
+
+//   // Create navItems using translations
+//   const navItems = [
+//     {
+//       label: t("nav.about"),
+//       href: isProjectDetailPage ? "/#intro" : "#intro",
+//     },
+//     {
+//       label: t("nav.selectedWorks"),
+//       href: isProjectDetailPage ? "/#projects" : "#projects",
+//     },
+//     {
+//       label: t("nav.testimonials"),
+//       href: isProjectDetailPage ? "/#testimonials" : "#testimonials",
+//     },
+//     {
+//       label: t("nav.faqs"),
+//       href: isProjectDetailPage ? "/#faqs" : "#faqs",
+//     },
+//     {
+//       label: t("nav.contact"),
+//       href: isProjectDetailPage ? "/#contact" : "#contact",
+//     },
+//   ];
+
+//   // Animate navigation menu on state change
+//   useEffect(() => {
+//     if (isOpen) {
+//       // When menu opens:
+//       // 1. Transform top line to form X (first move down, then rotate)
+//       topLineAnimate(
+//         [
+//           [
+//             topLineScope.current,
+//             {
+//               translateY: 4,
+//             },
+//           ],
+//           [
+//             topLineScope.current,
+//             {
+//               rotate: 45,
+//             },
+//           ],
+//         ],
+//         {
+//           duration: 0.5, // Duration in seconds
+//         }
+//       );
+
+//       // 2. Transform bottom line to form X (first move up, then rotate)
+//       bottomLineAnimate(
+//         [
+//           [
+//             bottomLineScope.current,
+//             {
+//               translateY: -4,
+//             },
+//           ],
+//           [
+//             bottomLineScope.current,
+//             {
+//               rotate: -45,
+//             },
+//           ],
+//         ],
+//         {
+//           duration: 0.5, // Duration in seconds
+//         }
+//       );
+
+//       // 3. navAnimate fn to animate navigation menu expansion to full height
+//       // with a slower duration for a smooth opening effect
+//       navAnimate(
+//         navScope.current, // Target element (nav container)
+//         { height: "100%" }, // Animation: expand to full height
+//         { duration: 0.7 } // Animation options: slower duration
+//       );
+//     } else {
+//       // MENU CLOSING ANIMATIONS
+
+//       // Reset top hamburger line:
+//       // 1. First rotate back to 0 degrees
+//       // 2. Then move back to original Y position
+//       // Order matters to create a smooth transition
+//       topLineAnimate(
+//         [
+//           [
+//             topLineScope.current,
+//             {
+//               rotate: 0,
+//             },
+//           ],
+//           [
+//             topLineScope.current,
+//             {
+//               translateY: 0,
+//             },
+//           ],
+//         ],
+//         {
+//           duration: 0.5, // Duration in seconds
+//         }
+//       );
+
+//       // Reset bottom hamburger line:
+//       // 1. First rotate back to 0 degrees
+//       // 2. Then move back to original Y position
+//       bottomLineAnimate(
+//         [
+//           [
+//             bottomLineScope.current,
+//             {
+//               rotate: 0,
+//             },
+//           ],
+//           [
+//             bottomLineScope.current,
+//             {
+//               translateY: 0,
+//             },
+//           ],
+//         ],
+//         {
+//           duration: 0.5, // Duration in seconds
+//         }
+//       );
+
+//       // Animate navigation menu to collapse
+//       // with a faster duration for a snappier closing effect
+//       navAnimate(
+//         navScope.current,
+//         {
+//           height: 0,
+//         },
+//         { duration: 0.3 }
+//       );
+//     }
+//   }, [
+//     isOpen,
+//     topLineAnimate,
+//     topLineScope,
+//     bottomLineAnimate,
+//     bottomLineScope,
+//     navScope,
+//     navAnimate,
+//   ]);
+
+//   return (
+//     <header>
+//       {/* Full-screen navigation overlay */}
+//       <div
+//         className="fixed top-0 left-0 w-full h-0 overflow-hidden bg-stone-900 z-10"
+//         ref={navScope}
+//       >
+//         <nav className="mt-20 flex flex-col ">
+//           {navItems.map(({ label, href }) => (
+//             <Link
+//               locale={locale}
+//               href={href}
+//               key={label}
+//               className="text-stone-200 border-t last:border-b border-stone-800 py-8 group/nav-item relative isolate"
+//               onClick={() => {
+//                 setIsOpen(false);
+//               }}
+//             >
+//               <div className="container max-w-full! flex items-center justify-between">
+//                 <span className="text-3xl group-hover/nav-item:pl-4 transition-all duration-500">
+//                   {label}
+//                 </span>
+//                 <svg
+//                   xmlns="http://www.w3.org/2000/svg"
+//                   fill="none"
+//                   viewBox="0 0 24 24"
+//                   strokeWidth="1.5"
+//                   stroke="currentColor"
+//                   className="size-6"
+//                 >
+//                   <path
+//                     strokeLinecap="round"
+//                     strokeLinejoin="round"
+//                     d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
+//                   />
+//                 </svg>
+//               </div>
+//               {/* Hover effect background with animated height transition */}
+//               <div className="absolute w-full h-0 bg-stone-800 group-hover/nav-item:h-full transition-all duration-500 bottom-0 -z-10" />
+//             </Link>
+//           ))}
+//         </nav>
+//       </div>
+
+//       {/* Fixed header with logo - uses mix-blend-difference for contrast against any background */}
+//       <div className="fixed top-0 left-0 w-full mix-blend-difference backdrop-blur-md z-10">
+//         <div className="container max-w-full!">
+//           <div className="flex justify-between items-center h-20">
+//             {/* Logo */}
+//             <div>
+//               <Link locale={locale} href="#hero">
+//                 <span className="text-xl font-bold uppercase text-white">
+//                   {t("logo")}
+//                 </span>
+//               </Link>
+//             </div>
+//           </div>
+//         </div>
+//       </div>
+
+//       {/* Navigation controls container */}
+//       <div className="fixed! top-0 left-0 w-full z-10">
+//         <div className="container max-w-full!">
+//           <div className="flex justify-end items-center h-20">
+//             <div className="flex items-center gap-x-1">
+//               {/* Theme Switcher button */}
+//               <ModeToggle />
+
+//               {/* Language Switcher button */}
+//               <LanguageSwitcher />
+
+//               {/* Hamburger menu toggle button */}
+//               <div
+//                 className="size-9 md:size-11 border  border-stone-400 rounded-full inline-flex items-center justify-center bg-stone-200 hover:bg-slate-300 dark:bg-stone-600/50 dark:border-stone-400 dark:hover:bg-stone-700 dark:text-stone-200 transition-colors duration-700 ease-in-out"
+//                 onClick={() => setIsOpen(!isOpen)}
+//               >
+//                 <svg
+//                   width="24"
+//                   height="24"
+//                   viewBox="0 0 24 24"
+//                   fill="none"
+//                   xmlns="http://www.w3.org/2000/svg"
+//                 >
+//                   <motion.rect
+//                     x="3"
+//                     y="7"
+//                     width="18"
+//                     height="2"
+//                     fill="currentColor"
+//                     ref={topLineScope}
+//                     style={{
+//                       transformOrigin: "12px 8px", // Set rotation origin to center of line
+//                     }}
+//                   />
+//                   <motion.rect
+//                     x="3"
+//                     y="15"
+//                     width="18"
+//                     height="2"
+//                     fill="currentColor"
+//                     ref={bottomLineScope}
+//                     style={{
+//                       transformOrigin: "12px 16px", // Set rotation origin to center of line
+//                     }}
+//                   />
+//                 </svg>
+//               </div>
+//             </div>
+//             {/* Contact button - visible only on medium screens and larger */}
+//             {/* <div className="ml-4">
+//               <Link href={isProjectDetailPage ? "/#contact" : "#contact"}>
+//                 <Button variant="primary" className="hidden md:inline-flex">
+//                   {t("contactButton")}
+//                 </Button>
+//               </Link>
+//             </div> */}
+//           </div>
+//         </div>
+//       </div>
+//     </header>
+//   );
+// };
+
+// export default Header;
+
+// Below is code with an effect of 500ms delay on appearance/disappearance of 3 header buttons
 "use client";
 
 import Button from "@/components/Button";
@@ -15,6 +315,7 @@ const Header = () => {
   const pathname = usePathname();
 
   const [isOpen, setIsOpen] = useState(false);
+  const [showControls, setShowControls] = useState(true);
   // Animation hooks for hamburger menu transformation
   const [topLineScope, topLineAnimate] = useAnimate();
   const [bottomLineScope, bottomLineAnimate] = useAnimate();
@@ -171,6 +472,26 @@ const Header = () => {
     navAnimate,
   ]);
 
+  useEffect(() => {
+    let lastScrollY = window.scrollY;
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (isOpen) {
+        setShowControls(true);
+        return;
+      }
+
+      setShowControls(currentScrollY <= lastScrollY || currentScrollY < 10);
+
+      lastScrollY = currentScrollY;
+    };
+    window.addEventListener("scroll", handleScroll, {
+      passive: true,
+    });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [isOpen]);
+
   return (
     <header>
       {/* Full-screen navigation overlay */}
@@ -232,61 +553,86 @@ const Header = () => {
       </div>
 
       {/* Navigation controls container */}
-      <div className="fixed top-0 left-0 w-full z-10">
+      <div className="fixed! top-0 left-0 w-full z-10">
         <div className="container max-w-full!">
           <div className="flex justify-end items-center h-20">
             <div className="flex items-center gap-x-1">
-              {/* Theme Switcher button */}
-              <ModeToggle />
-
-              {/* Language Switcher button */}
-              <LanguageSwitcher />
-
-              {/* Hamburger menu toggle button */}
               <div
-                className="size-9 md:size-11 border  border-stone-400 rounded-full inline-flex items-center justify-center bg-stone-200 hover:bg-slate-300 dark:bg-stone-600/50 dark:border-stone-400 dark:hover:bg-stone-700 dark:text-stone-200 transition-colors duration-700 ease-in-out"
-                onClick={() => setIsOpen(!isOpen)}
+                style={{
+                  transition: "all 500ms ease-in-out 0ms",
+                  opacity: showControls ? 1 : 0,
+                  transform: showControls ? "scale(1)" : "scale(0.5)",
+                  pointerEvents: showControls ? "auto" : "none",
+                }}
               >
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
+                <ModeToggle />
+              </div>
+
+              <div
+                style={{
+                  transition: "all 500ms ease-in-out 75ms",
+                  opacity: showControls ? 1 : 0,
+                  transform: showControls ? "scale(1)" : "scale(0.5)",
+                  pointerEvents: showControls ? "auto" : "none",
+                }}
+              >
+                <LanguageSwitcher />
+              </div>
+
+              <div
+                style={{
+                  transition: "all 500ms ease-in-out 150ms",
+                  opacity: showControls ? 1 : 0,
+                  transform: showControls ? "scale(1)" : "scale(0.5)",
+                  pointerEvents: showControls ? "auto" : "none",
+                }}
+              >
+                {/* Hamburger menu toggle button */}
+                <div
+                  className="size-9 md:size-11 border  border-stone-400 rounded-full inline-flex items-center justify-center bg-stone-200 hover:bg-slate-300 dark:bg-stone-600/50 dark:border-stone-400 dark:hover:bg-stone-700 dark:text-stone-200 transition-colors duration-700 ease-in-out"
+                  onClick={() => setIsOpen(!isOpen)}
                 >
-                  <motion.rect
-                    x="3"
-                    y="7"
-                    width="18"
-                    height="2"
-                    fill="currentColor"
-                    ref={topLineScope}
-                    style={{
-                      transformOrigin: "12px 8px", // Set rotation origin to center of line
-                    }}
-                  />
-                  <motion.rect
-                    x="3"
-                    y="15"
-                    width="18"
-                    height="2"
-                    fill="currentColor"
-                    ref={bottomLineScope}
-                    style={{
-                      transformOrigin: "12px 16px", // Set rotation origin to center of line
-                    }}
-                  />
-                </svg>
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <motion.rect
+                      x="3"
+                      y="7"
+                      width="18"
+                      height="2"
+                      fill="currentColor"
+                      ref={topLineScope}
+                      style={{
+                        transformOrigin: "12px 8px", // Set rotation origin to center of line
+                      }}
+                    />
+                    <motion.rect
+                      x="3"
+                      y="15"
+                      width="18"
+                      height="2"
+                      fill="currentColor"
+                      ref={bottomLineScope}
+                      style={{
+                        transformOrigin: "12px 16px", // Set rotation origin to center of line
+                      }}
+                    />
+                  </svg>
+                </div>
               </div>
             </div>
             {/* Contact button - visible only on medium screens and larger */}
-            <div className="ml-4">
+            {/* <div className="ml-4">
               <Link href={isProjectDetailPage ? "/#contact" : "#contact"}>
                 <Button variant="primary" className="hidden md:inline-flex">
                   {t("contactButton")}
                 </Button>
               </Link>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

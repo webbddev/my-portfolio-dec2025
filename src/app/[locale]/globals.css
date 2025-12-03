@@ -213,3 +213,8 @@
     transition: background-color 2s ease, color 0.5s ease;
   }
 }
+
+/* globals.css */
+html {
+  scrollbar-gutter: stable;
+}
