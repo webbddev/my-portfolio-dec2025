@@ -4,6 +4,7 @@
     "nav": {
       "about": "Despre",
       "selectedWorks": "Lucrări selectate",
+      "experience": "Experiență",
       "testimonials": "Testimoniale",
       "faqs": "Întrebări",
       "contact": "Contact"
@@ -94,6 +95,52 @@
       {
         "question": "În ce industrii te specializezi?",
         "answer": "Am experiență în diverse industrii, inclusiv tehnologie, retail, ospitalitate și servicii profesionale, aducând perspective proaspete fiecărui proiect."
+      }
+    ]
+  },
+  "experiences": {
+    "heading": "Experiența mea profesională",
+    "readMore": "Citește mai mult",
+    "readLess": "Citește mai puțin",
+    "entries": [
+      {
+        "title": "Dezvoltator Software",
+        "job": "Proiecte de Securitate și Apărare",
+        "date": "2021-2023",
+        "flag": "/flags/spain-country-flag-icon.svg",
+        "country": "Spania",
+        "contents": [
+          "Am îmbunătățit securitatea aplicațiilor și am dezvoltat noi funcționalități, respectând standardele stabilite de Organizația de Apărare Pasivă și Centrul Național de Spațiu Cibernetic.",
+          "Am proiectat și implementat interfețe de hartă intuitive folosind MapsUI, îmbunătățind experiența utilizatorului și permițând integrarea fluidă a hărților interactive.",
+          "Am dezvoltat aplicații pentru automatizare industrială, utilizând C++ și API-ul Fatek pentru comunicarea cu PLC-uri.",
+          "Am îmbunătățit responsivitatea și uzabilitatea aplicațiilor folosind framework-urile Windows Forms și WPF.",
+          "Am executat conversii XML în SVG folosind X-DOM, asigurând o vizualizare dinamică și eficientă a datelor."
+        ]
+      },
+      {
+        "title": "Dezvoltator Back-End",
+        "job": "Industria auto",
+        "date": "2023-2024",
+        "flag": "/flags/moldova-flag-icon.svg",
+        "country": "Moldova",
+        "contents": [
+          "Am proiectat sisteme pentru ingestia și analiza datelor la scară largă, asigurând procesarea și stocarea eficientă a datelor.",
+          "Am dezvoltat sisteme back-end care permit comunicarea vehicul-cloud pentru telemetrie, diagnosticare și control de la distanță:",
+          "✅ Am implementat API-uri securizate, respectând standardele de siguranță auto ISO 26262.",
+          "✅ Am asigurat confidențialitatea datelor pentru clienți și parteneri prin protocoale conforme cu standardele industriei.",
+          "✅ Am livrat funcționalități la distanță precum actualizări over-the-air, urmărire în timp real și capacități de pornire de la distanță."
+        ]
+      },
+      {
+        "title": "Dezvoltator Freelancer",
+        "job": "Activitate independentă",
+        "date": "2025-Prezent",
+        "flag": "/flags/united-kingdom-flag-icon.svg",
+        "country": "Regatul Unit",
+        "contents": [
+          "Am creat un portofoliu personal folosind Three.js, React, Vite și WebAPI pentru a-mi prezenta expertiza tehnică.",
+          "Îmi îmbunătățesc continuu abilitățile tehnice și îmi extind expertiza în dezvoltarea web modernă și tehnologiile back-end."
+        ]
       }
     ]
   },

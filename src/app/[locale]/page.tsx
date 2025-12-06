@@ -1,3 +1,4 @@
+import WorkExperience from "@/components/WorkExperience";
 import {
   FAQs,
   Footer,
@@ -16,6 +17,7 @@ export default function Home() {
       <Hero />
       <Intro />
       <Projects />
+      <WorkExperience />
       <Testimonials_NoImage />
       {/* <Testimonials /> */}
       <FAQs />

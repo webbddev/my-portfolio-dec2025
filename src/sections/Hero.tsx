@@ -39,7 +39,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section id="hero">
+    <section className="" id="hero">
       <div className="grid md:grid-cols-12 md:h-screen items-stretch sticky top-0">
         {/* Left Side Content on md: */}
         <div className="md:col-span-7 flex flex-col justify-center">

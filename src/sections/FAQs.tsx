@@ -3,6 +3,7 @@
 import { AnimatePresence, motion } from "motion/react";
 import { useTranslations } from "next-intl";
 import { FC, useState } from "react";
+import { twMerge } from "tailwind-merge";
 
 const FAQs: FC = () => {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
@@ -43,24 +44,12 @@ const FAQs: FC = () => {
               }
             >
               {/* Overlay */}
-              {/* <div
-                className={twMerge(
-                  "absolute bottom-0 left-0 w-full h-0   -z-10 group-hover/faq:h-full transition-all duration-500 bg-stone-300",
-                  faqIndex === selectedIndex && "h-full"
-                )}
-              ></div> */}
-              <div className="absolute rounded-md bottom-0 left-0 w-full h-0 group-hover/faq:h-full transition-all duration-500 bg-stone-300 -z-10" />
-              <div className="flex items-center justify-between gap-4 transition-all duration-700 lg:group-hover/faq:px-8">
-                {/* <div
-                className={twMerge(
-                  "flex items-center justify-between gap-4 transition-all duration-700 lg:group-hover/faq:px-8",
-                  faqIndex === selectedIndex && "lg:px-8"
-                )}
-              > */}
-                <div className="text-2xl md:text-3xl lg:text-4xl">
+              <div className="absolute rounded-md bottom-0 left-0 w-full h-0 group-hover/faq:h-full transition-all duration-500 bg-stone-300 dark:bg-stone-700 -z-10" />
+              <div className="flex items-center justify-between gap-4 transition-all duration-700 px-6 ">
+                <div className="text-2xl md:text-3xl lg:text-4xl transition-all duration-700 lg:group-hover/faq:pl-8">
                   {question}
                 </div>
-                <div className="inline-flex items-center justify-center size-11 border border-x-stone-400 rounded-full shrink-0 bg-stone-200">
+                <div className="inline-flex items-center justify-center size-11 border border-x-stone-400 rounded-full shrink-0 bg-stone-200 dark:bg-stone-600 text-stone-800 dark:text-stone-200 transition-all duration-700">
                   <motion.svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -88,7 +77,9 @@ const FAQs: FC = () => {
                     exit={{ height: 0 }}
                     transition={{ duration: 0.7, ease: "easeInOut" }}
                   >
-                    <p className="text-xl mt-4">{answer}</p>
+                    <p className="text-lg md:text-lg lg:text-xl px-6 mt-4 lg:group-hover/faq:pl-8 transition-all duration-700">
+                      {answer}
+                    </p>
                   </motion.div>
                 )}
               </AnimatePresence>

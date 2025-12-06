@@ -336,6 +336,10 @@ const Header = () => {
       href: isProjectDetailPage ? "/#projects" : "#projects",
     },
     {
+      label: t("nav.experience"),
+      href: isProjectDetailPage ? "/#experience" : "#experience",
+    },
+    {
       label: t("nav.testimonials"),
       href: isProjectDetailPage ? "/#testimonials" : "#testimonials",
     },
@@ -496,7 +500,7 @@ const Header = () => {
     <header>
       {/* Full-screen navigation overlay */}
       <div
-        className="fixed top-0 left-0 w-full h-0 overflow-hidden bg-stone-900 z-10"
+        className="fixed top-0 left-0 w-full h-0 overflow-hidden bg-stone-900 z-50"
         ref={navScope}
       >
         <nav className="mt-20 flex flex-col ">
