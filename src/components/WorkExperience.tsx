@@ -3,9 +3,7 @@
 import { Timeline } from "./Timeline";
 
 const WorkExperience = () => {
-  return (
-      <Timeline />
-  );
+  return <Timeline />;
 };
 
 export default WorkExperience;
