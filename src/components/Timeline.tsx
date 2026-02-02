@@ -59,7 +59,7 @@ export const Timeline = () => {
 
         <div
           ref={ref}
-          className="mx-auto relative mt-10 md:mt-16 lg:mt-20 pb-10 md:pb-16 lg:pb-20 max-w-5xl"
+          className="mx-auto lg:w-[85%] relative mt-10 md:mt-16 lg:mt-20 pb-10 md:pb-16 lg:pb-20 "
         >
           {data.map((item, index) => {
             const isExpanded = expandedItems.includes(index);

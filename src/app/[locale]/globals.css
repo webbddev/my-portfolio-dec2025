@@ -180,7 +180,7 @@
   }
 
   .word {
-    @apply translate-y-full;
+    @apply md:translate-y-full;
   }
 }
 

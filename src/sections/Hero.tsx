@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import heroImage from "@/assets/images/hero-image.jpg";
 import aboutMeImage from "@/assets/images/nicolas2.png";
+import frontFacingImage from "@/assets/images/nicolas-front.png";
 import Image from "next/image";
 import Button from "@/components/Button";
 import SplitType from "split-type";

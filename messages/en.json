@@ -16,7 +16,8 @@
     "viewWorkButton": "My Works",
     "downloadCvButton": "Download CV",
     "letsTalkButton": "Let's talk",
-    "portraitAlt": "Nicolas Tetradov portrait"
+    "portraitAlt": "Nicolas Tetradov portrait",
+    "portraitAltFront": "Nicolas Tetradov front-facing portrait"
   },
   "intro": {
     "headline": "I help businesses grow by creating websites that look great and work even better"
@@ -143,6 +144,15 @@
         ]
       }
     ]
+  },
+  "KeyStrengths": {
+    "title": "I am all in when it comes to",
+    "skill1": "Full-Stack Development",
+    "skill2": "Secure & Scalable Systems",
+    "skill3": "Interactive UI/UX",
+    "skill4": "Problem Solving",
+    "skill5": "Agile Methodologies",
+    "skill6": "Team Collaboration"
   },
   "footer": {
     "availability": "One spot available for next month",

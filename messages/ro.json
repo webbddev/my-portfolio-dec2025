@@ -16,7 +16,8 @@
     "viewWorkButton": "lucrările mele",
     "downloadCvButton": "Descarcă CV",
     "letsTalkButton": "Să vorbim",
-    "portraitAlt": "Portret Nikolay Tetradov"
+    "portraitAlt": "Portret Nikolay Tetradov",
+    "portraitAltFront": "Portret frontal Nikolay Tetradov"
   },
   "intro": {
     "headline": "Ajut afacerile să crească prin crearea de site-uri web care arată grozav și funcționează și mai bine"
@@ -143,6 +144,15 @@
         ]
       }
     ]
+  },
+  "KeyStrengths": {
+    "title": "Competențe cheie",
+    "skill1": "Dezvoltare Full-Stack",
+    "skill2": "Sisteme sigure și scalabile",
+    "skill3": "UI/UX interactiv",
+    "skill4": "Rezolvarea problemelor",
+    "skill5": "Metodologii agile",
+    "skill6": "Colaborare în echipă"
   },
   "footer": {
     "availability": "Un loc disponibil pentru luna următoare",
