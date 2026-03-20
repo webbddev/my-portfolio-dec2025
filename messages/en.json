@@ -30,28 +30,112 @@
     "title": "Project Gallery"
   },
   "common": {
-    "client": "Client",
-    "challenge-and-solution": "Challenge and Solution",
+    "techStack": "Tech Stack",
+    "industry": "Industry",
+    "role": "Role",
+    "keyFeaturesTitle": "Key Features",
+    "challengeAndSolutionTitle": "The Challenge and Solution",
+    "projectGallery": "Project Gallery",
     "backToProjects": "BACK TO PROJECTS"
   },
   "projectDetail": {
-    "residential-harmony": {
-      "name": "Elegant Comfort for Two",
-      "description": "A harmonious blend of aesthetics and functionality in an interior designed for a couple. Dominant muted pastel tones create a relaxing atmosphere, enhanced by decor featuring natural elements. The balcony is transformed into a natural corner, and the thoughtfully planned zoning includes a striking wine cabinet as part of the living space.",
-      "client": "A couple inspired by Scandinavian aesthetics, seeking to create a home filled with warmth and naturalness.",
-      "challenge-and-solution": "The main challenge of the project was to create a cozy and functional space that met the couple's wishes. The designer needed to integrate muted pastel tones into the overall interior concept and create a relaxation area with natural decor on the balcony. Furthermore, it was necessary to provide a place for wine storage within the home. The solution was found in using textures of natural materials, which complemented the subdued shades of the interior. The natural decor on the balcony became a natural extension of the overall idea of comfort, and the wine cabinet was integrated into the design in such a way that it became not only a functional but also a decorative element."
+    "personal-banker-app": {
+      "category": "Full Stack & AI Engineering",
+      "title": "Personal Banker",
+      "shortOverview": "A proactive Fintech ecosystem that automates investment lifecycle management and market intelligence through agentic AI and omnichannel notifications.",
+      "techStack": [
+        "Next.js 16",
+        "Prisma ORM",
+        "NeonDB",
+        "Tailwind CSS",
+        "Vercel AI SDK",
+        "Tavily API & MCP",
+        "Clerk Auth",
+        "Recharts",
+        "Telegram Bot API",
+        "Resend",
+        "Framer Motion",
+        "Zustand",
+        "React Hook Form"
+      ],
+      "industry": "Fintech / Artificial Intelligence",
+      "roleDescription": "Lead Architect & Full Stack Developer",
+      "links": {
+        "live": "https://personal-banker-niko.vercel.app/",
+        "github": "https://github.com/webbddev/personal-banker-app"
+      },
+      "keyFeatures": [
+        {
+          "featTitle": "Proactive Investment Lifecycle Management",
+          "featDescription": "Eliminates manual tracking with an automated multi-stage alerting system. Users receive scheduled maturity notifications (30, 7, and 1 day prior) and a comprehensive monthly digest of expiring assets via Email and Telegram."
+        },
+        {
+          "featTitle": "Agentic AI & RAG Orchestration",
+          "featDescription": "A sophisticated AI assistant using Vercel AI Gateway to interface with multiple LLMs (Gemini, Grok, DeepSeek). It uses RAG to answer portfolio-specific queries and Tavily for real-time market research beyond the user's data."
+        },
+        {
+          "featTitle": "Real-Time Market Intelligence Scraper",
+          "featDescription": "A background engine using Cheerio and Cron jobs to monitor the National Bank of Moldova (bnm.md). It tracks inflation and base rate shifts, providing a live benchmark against the user's current portfolio ROI."
+        },
+        {
+          "featTitle": "Interactive Wealth Projection Engine",
+          "featDescription": "A complex financial simulator using Recharts to visualize long-term wealth growth. It incorporates dynamic variables such as inflation indexing, tax rates, and one-time financial events to provide high-fidelity ROI projections."
+        },
+        {
+          "featTitle": "Premium Generative UI & 3D Visualization",
+          "featDescription": "Features a high-performance 3D 'Thinking Orb' built with React Three Fiber (Three.js) that visualizes the AI's processing states, complemented by fluid Framer Motion transitions for a sleek, modern fintech experience."
+        }
+      ],
+      "detailedOverview": "Personal Banker is a high-performance Fintech platform, designed to replace legacy tracking methods with a unified, AI-driven command center. A core technical highlight is the AI Orchestration layer: using the Vercel AI SDK and RAG (Retrieval-Augmented Generation), the system indexes the user's investment database, allowing for complex natural language queries. The front-end experience is elevated by an interactive 3D 'Thinking Orb' and dynamic Recharts dashboards that allow users to assess their entire financial position in the blink of an eye. The Analytics Suite instantly calculates critical KPIs—including total portfolio value in multiple currencies, monthly net income, and asset distribution by type—while the backend utilizes Cheerio-based web scrapers and Cron jobs to keep the system synchronized with the National Bank of Moldova's live market data.",
+      "challengeAndSolutionDescription": "The primary challenge was the 'fragmented portfolio' syndrome, where critical investment data and maturity dates were scattered across various bank accounts, leading to missed reinvestment windows and inaccurate ROI assessments. I solved this by engineering a proactive intelligence layer that centralizes lifecycle management. By implementing a multi-stage alerting system (30/7/1-day notifications), the platform eliminates manual monitoring. The solution transforms a passive spreadsheet into an active financial advisor that not only calculates total wealth in real-time across multiple currencies but also contextually benchmarks personal performance against national inflation and interest rates, ensuring proactive wealth preservation."
     },
-    "city-student-oasis": {
-      "name": "City Oasis for the Active Student",
-      "description": "This isn't just an apartment; it's a stylish hub for an energetic student, designed with elegant minimalism. The space is visually expanded by a light color palette and natural wood accents, creating a perfect harmony for living and studying. Trendy details, such as a sophisticated wine corner and a refrigerator, as well as a tinted glass cabinet, highlight the unique character of the interior.",
-      "client": "A student who values style, comfort, and a modern lifestyle.",
-      "challenge-and-solution": "The main challenge was to create a cozy and 'lively' space within strict minimalism and a predominantly white color scheme. We found a solution in contrasts: the warmth of natural wood and various textures in the decor softened the cool base. In the bedroom, muted pastel tones created a calm atmosphere, and the highlight was a cabinet with tinted glass doors, which is not only functional but also visually light. A special request from the client was the inclusion of a wine cabinet and a refrigerator, which we elegantly integrated into the overall concept, transforming them into stylish interior accents."
+    "event-automation-engine": {
+      "category": "AI Automation",
+      "title": "Cultural Intelligence Scraper",
+      "shortOverview": "An automated digest system for journalists to aggregate local cultural events without manual searching.",
+      "techStack": ["n8n", "Puppeteer", "Docker", "Cloudflare"],
+      "industry": "Media & Automation",
+      "roleDescription": "Automation Engineer",
+      "links": {
+        "live": null,
+        "github": "https://github.com/nicolai/n8n-scraper"
+      },
+      "keyFeatures": [
+        {
+          "featTitle": "Headless browser automation",
+          "featDescription": "Automation via Docker containers."
+        },
+        {
+          "featTitle": "Custom Logic Filters",
+          "featDescription": "Filter and categorise events by date and venue."
+        }
+      ],
+      "detailedOverview": "Multi-Source Scrapping & Ingestion: The system uses n8n HTTP Request nodes to target specific local cultural hubs, such as iticket.md, programmatically extracting raw event data. This replaces the need for a journalist to manually browse multiple event listings daily.",
+      "challengeAndSolutionDescription": "Scraping dynamic, JavaScript-heavy sites often led to bot detection. By containerising Puppeteer within a Docker environment and utilizing n8n's logic nodes, I created a resilient 'stealth' scraping workflow."
     },
-    "family-house": {
-      "name": "A Light-Toned Living Space",
-      "description": "A bright palette, natural textures, and thoughtful zoning create an interior that is equally suited for living and relaxing. The design combines natural materials, layered lighting, and smart storage solutions. The space is filled with warmth, comfort, and personalized touches that reflect the character of its residents.",
-      "client": "A modern family seeking an elegant and cozy home that balances visual lightness, shared comfort, and organized private areas.",
-      "challenge-and-solution": "The Family House project addressed the challenge of creating a cozy, functional, and personalized space for a family, where every element contributes to harmony and comfort. The design is grounded in a light palette and natural materials, evoking a sense of cleanliness, spaciousness, and tranquility. Layered lighting — from recessed ceiling fixtures to hidden LED strips and accent lamps — allows for flexible lighting scenarios and highlights each functional zone. Special attention was given to integrated storage, from a spacious walk-in closet to built-in wardrobes, reducing visual clutter. Elements of nature — indoor plants and organic textures — bring freshness and warmth, while personalized features such as a hanging chair or cat shelves make the interior uniquely family-oriented."
+    "mcp-server-exploration": {
+      "category": "Technical Deep-Dive",
+      "title": "Agentic AI Infrastructure",
+      "shortOverview": "A deep-dive into the Model Context Protocol to understand how LLMs interact with local file systems and databases.",
+      "techStack": ["TypeScript", "MCP SDK", "Node.js"],
+      "industry": "AI & Research",
+      "roleDescription": "Systems Researcher",
+      "links": {
+        "live": null,
+        "github": "https://github.com/nicolai/mcp-testing"
+      },
+      "keyFeatures": [
+        {
+          "featTitle": "MCP Protocol Analysis",
+          "featDescription": "Deep analysis of Claude's MCP implementation."
+        },
+        {
+          "featTitle": "Local DB Integration",
+          "featDescription": "Successful integration of local SQLite databases with AI agents."
+        }
+      ],
+      "detailedOverview": "A deep-dive into the Model Context Protocol to understand how LLMs interact with local file systems and databases.",
+      "challengeAndSolutionDescription": "The project focused on the 'under the hood' mechanics of agentic workflows. By building a custom MCP server from scratch, I gained a granular understanding of tool-calling protocols and context-window management."
     }
   },
   "testimonials": {

@@ -30,28 +30,112 @@
     "title": "Galeria Proiectelor"
   },
   "common": {
-    "client": "Client",
-    "challenge-and-solution": "Provocare și soluție",
-    "backToProjects": "ÎNAPOI LA PROECTELE"
+    "techStack": "Stivă tehnologică",
+    "industry": "Domeniu",
+    "role": "Rol",
+    "keyFeaturesTitle": "Funcționalități de bază",
+    "challengeAndSolutionTitle": "Provocarea și soluția",
+    "projectGallery": "Galeria proiectului",
+    "backToProjects": "ÎNAPOI LA PROIECTE"
   },
   "projectDetail": {
-    "residential-harmony": {
-      "name": "Confort Elegant pentru Doi",
-      "description": "O combinație armonioasă de estetică și funcționalitate în interiorul pentru un cuplu. Tonurile pastelate discrete, dominante, creează o atmosferă relaxantă, amplificată de decorul cu elemente din materiale naturale. Balconul este transformat într-un colț de natură, iar zonificarea bine gândită include un impresionant dulap de vin ca parte a spațiului de locuit.",
-      "client": "Un cuplu inspirat de estetica scandinavă, care dorește să creeze o casă plină de căldură și naturalețe.",
-      "challenge-and-solution": "Principala provocare a proiectului a fost crearea unui spațiu confortabil și funcțional, care să corespundă dorințelor cuplului. Designerul a trebuit să integreze tonuri pastelate discrete în conceptul general al interiorului și să creeze o zonă de relaxare cu decor natural pe balcon. În plus, era necesar să se prevadă un loc pentru depozitarea vinului la domiciliu. Soluția a fost găsită în utilizarea texturilor din materiale naturale, care au completat nuanțele discrete ale interiorului. Decorul natural de pe balcon a devenit o extensie firească a ideii generale de confort, iar dulapul de vin a fost integrat în design astfel încât să devină nu doar un element funcțional, ci și decorativ."
+    "personal-banker-app": {
+      "category": "Inginerie Full Stack & AI",
+      "title": "Personal Banker",
+      "shortOverview": "Un ecosistem Fintech proactiv care automatizează gestionarea ciclului de viață al investițiilor și inteligența pieței prin AI agentic și notificări omnicanal.",
+      "techStack": [
+        "Next.js 16",
+        "Prisma ORM",
+        "NeonDB",
+        "Tailwind CSS",
+        "Vercel AI SDK",
+        "Tavily API & MCP",
+        "Clerk Auth",
+        "Recharts",
+        "Telegram Bot API",
+        "Resend",
+        "Framer Motion",
+        "Zustand",
+        "React Hook Form"
+      ],
+      "industry": "Fintech / Inteligență Artificială",
+      "roleDescription": "Arhitect Principal & Dezvoltator Full Stack",
+      "links": {
+        "live": "https://personal-banker-niko.vercel.app/",
+        "github": "https://github.com/webbddev/personal-banker-app"
+      },
+      "keyFeatures": [
+        {
+          "featTitle": "Gestionarea proactivă a ciclului de viață al investițiilor",
+          "featDescription": "Elimină urmărirea manuală cu un sistem automat de alertă în mai multe etape. Utilizatorii primesc notificări programate de scadență (cu 30, 7 și 1 zi înainte) și un rezumat lunar complet al activelor prin Email și Telegram."
+        },
+        {
+          "featTitle": "AI Agentic & Orchestrare RAG",
+          "featDescription": "Un asistent AI sofisticat care utilizează Vercel AI Gateway pentru a interfața cu mai multe LLM-uri (Gemini, Grok, DeepSeek). Foloseşte RAG pentru a răspunde la întrebări specifice portofoliului și Tavily pentru cercetarea pieței în timp real."
+        },
+        {
+          "featTitle": "Scraper de inteligență a pieței în timp real",
+          "featDescription": "Un motor de fundal care utilizează Cheerio și joburi Cron pentru a monitoriza Banca Națională a Moldovei (bnm.md). Urmărește schimbările inflației și ale ratei de bază, oferind un benchmark live față de rentabilitatea portofoliului utilizatorului."
+        },
+        {
+          "featTitle": "Interactive Wealth Projection Engine",
+          "featDescription": "Un simulator financiar complex care utilizează Recharts pentru a vizualiza creșterea bogăției pe termen lung. Încorporează variabile dinamice, cum ar fi indexarea inflației, cotele de impozitare și evenimente financiare unice."
+        },
+        {
+          "featTitle": "Interfață Generativă Premium și Vizualizare 3D",
+          "featDescription": "Dispune de un 'Thinking Orb' 3D de înaltă performanță construit cu React Three Fiber (Three.js) care vizualizează stările de procesare ale AI-ului, completat de tranziții fluide Framer Motion."
+        }
+      ],
+      "detailedOverview": "Personal Banker este o platformă Fintech de înaltă performanță, concepută pentru a înlocui metodele de monitorizare învechite cu un centru de comandă unificat, bazat pe AI. Un punct forte din punct de vedere tehnic este stratul de Orchestrare AI: utilizând Vercel AI SDK și RAG (Retrieval-Augmented Generation), sistemul indexează baza de date de investiții a utilizatorului, permițând interogări complexe în limbaj natural. Experiența front-end este amplificată de un «Thinking Orb» 3D interactiv și de dashboard-uri dinamice Recharts, care permit utilizatorilor să își evalueze întreaga poziție financiară dintr-o privire. Analytics Suite calculează instantaneu indicatorii KPI critici — inclusiv valoarea totală a portofoliului în mai multe valute, venitul net lunar și distribuția activelor pe tipuri — în timp ce backend-ul utilizează web scraperi bazați pe Cheerio și sarcini Cron pentru a menține sistemul sincronizat cu datele de piață în timp real ale Băncii Naționale a Moldovei.",
+      "challengeAndSolutionDescription": "Provocarea principală a fost sindromul 'portofoliului fragmentat', unde datele critice de investiții și datele de scadență erau împrăștiate în diverse conturi bancare, ducând la ratarea ferestrelor de reinvestire. Am rezolvat acest lucru prin proiectarea unui strat de inteligență proactiv care centralizează gestionarea ciclului de viață. Prin implementarea unui sistem de alertă în mai multe etape (30/7/1 zile), platforma elimină monitorizarea manuală. Soluția transformă o foaie de calcul pasivă într-un consilier financiar activ care nu numai că calculează averea totală în timp real în mai multe monede, dar oferă și un benchmark contextual față de inflația națională și ratele dobânzilor."
     },
-    "city-student-oasis": {
-      "name": "Oază Urbană pentru Studentul Activ",
-      "description": "Acesta nu este doar un apartament; este un hub elegant pentru un student energic, conceput într-un minimalism rafinat. Spațiul este extins vizual printr-o paletă de culori deschise și accente de lemn natural, creând o armonie perfectă pentru locuit și studiu. Detaliile moderne, cum ar fi un colț sofisticat pentru vin și un frigider, precum și un dulap cu sticlă fumurie, subliniază caracterul unic al interiorului.",
-      "client": "Un student care prețuiește stilul, confortul și un mod de viață modern.",
-      "challenge-and-solution": "Principala provocare a fost crearea unui spațiu confortabil și 'viu' în cadrul unui minimalism strict, cu o schemă de culori predominant albă. Am găsit o soluție în contraste: căldura lemnului natural și diversele texturi din decor au atenuat baza rece. În dormitor, tonurile pastelate discrete au creat o atmosferă calmă, iar punctul culminant a fost un dulap cu uși din sticlă fumurie, care nu este doar funcțional, ci și vizual ușor. O cerință specială a clientului a fost includerea unui dulap de vin și a unui frigider, pe care le-am integrat elegant în conceptul general, transformându-le în accente stilate ale interiorului."
+    "event-automation-engine": {
+      "category": "Automatizare AI",
+      "title": "Cultural Intelligence Scraper",
+      "shortOverview": "Un sistem automatizat de agregare a evenimentelor culturale locale fără căutare manuală.",
+      "techStack": ["n8n", "Puppeteer", "Docker", "Cloudflare"],
+      "industry": "Media și Automatizare",
+      "roleDescription": "Inginer de Automatizare",
+      "links": {
+        "live": null,
+        "github": "https://github.com/nicolai/n8n-scraper"
+      },
+      "keyFeatures": [
+        {
+          "featTitle": "Automatizare Headless",
+          "featDescription": "Automatizare prin containere Docker."
+        },
+        {
+          "featTitle": "Filtre Logice Personalizate",
+          "featDescription": "Filtrarea și categorizarea evenimentelor după dată și locație."
+        }
+      ],
+      "detailedOverview": "Un sistem automat de digerare pentru jurnaliști care agregă evenimentele locale fără intervenție manuală.",
+      "challengeAndSolutionDescription": "Extragerea datelor de pe site-uri dinamice adesea ducea la detectarea boților. Introducând Puppeteer într-un mediu Docker și utilizând logica n8n, am creat un flux de lucru de evitare a detectării."
     },
-    "family-house": {
-      "name": "Spațiu de Viață în Tonuri Deschise",
-      "description": "O paletă luminoasă, texturi naturale și zonificare atent gândită creează un interior ideal atât pentru viața de zi cu zi, cât și pentru relaxare. Designul combină materiale naturale, iluminare stratificată și soluții inteligente de depozitare. Spațiul este plin de căldură, confort și detalii personalizate care reflectă caracterul locatarilor.",
-      "client": "O familie modernă care își dorește o locuință elegantă și primitoare, unde se îmbină lejeritatea vizuală, confortul spațiului comun și organizarea zonelor private.",
-      "challenge-and-solution": "Proiectul Family House a răspuns provocării de a crea un spațiu familial primitor, funcțional și personalizat, în care fiecare element contribuie la armonie și confort. Designul se bazează pe o paletă luminoasă și materiale naturale, care oferă senzația de curățenie, spațialitate și liniște. Iluminarea pe mai multe niveluri — de la spoturi încastrate în tavan la benzi LED ascunse și lămpi de accent — permite scenarii variate de iluminat și evidențiază funcționalitatea fiecărei zone. S-a acordat o atenție deosebită integrării soluțiilor de depozitare: de la un dressing spațios la dulapuri încorporate, toate contribuind la reducerea aglomerației vizuale. Elemente naturale — plante de interior și texturi organice — aduc prospețime și confort, iar detalii personalizate, precum un scaun suspendat sau rafturi pentru pisici, transformă interiorul într-un cămin unic și autentic."
+    "mcp-server-exploration": {
+      "category": "Cercetare Tehnică",
+      "title": "Infrastructură AI",
+      "shortOverview": "O analiză în profunzime a protocolului Model Context pentru a înțelege cum modelele interacționează cu sistemele locale.",
+      "techStack": ["TypeScript", "MCP SDK", "Node.js"],
+      "industry": "AI și Cercetare",
+      "roleDescription": "Cercetător Sisteme",
+      "links": {
+        "live": null,
+        "github": "https://github.com/nicolai/mcp-testing"
+      },
+      "keyFeatures": [
+        {
+          "featTitle": "Analiza Protocolului MCP",
+          "featDescription": "Analiză detaliată a implementării MCP de la Claude."
+        },
+        {
+          "featTitle": "Integrare DB Locală",
+          "featDescription": "Integrarea cu succes a bazelor de date SQLite cu agenții AI."
+        }
+      ],
+      "detailedOverview": "O analiză aprofundată a Model Context Protocol pentru a înțelege cum LLM-urile interacționează cu fișierele și bazele de date locale.",
+      "challengeAndSolutionDescription": "Proiectul s-a concentrat pe mecanismele interne ale fluxurilor de lucru inteligente. Dezvoltând un server MCP personalizat, am obținut o bună înțelegere a protocoalelor."
     }
   },
   "testimonials": {

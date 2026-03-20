@@ -5,10 +5,11 @@ import { projectsData } from "@/data/projects-data";
 import Image from "next/image";
 
 import { useLocale, useTranslations } from "next-intl";
-import { Link } from "../../i18n/navigation";
+import { Link, useRouter } from "../../i18n/navigation";
 
-const PortfolioGrid_v1 = () => {
+const PortfolioProjects = () => {
   const locale = useLocale();
+  const router = useRouter();
 
   const t = useTranslations();
 
@@ -19,7 +20,7 @@ const PortfolioGrid_v1 = () => {
   ];
 
   return (
-    <section className="section border-t border-black" id="projects">
+    <section className="section " id="projects">
       <div className="container">
         {/* Header Content */}
         <h2 className="text-4xl md:text-7xl lg:text-8xl mb-16">
@@ -33,14 +34,26 @@ const PortfolioGrid_v1 = () => {
               key={project.slug}
               locale={locale}
               href={`/projects/${project.slug}`}
-              className={`group/project relative overflow-hidden rounded-sm bg-zinc-100   hover:border-black transition-all duration-500 ${
+              className={`group/project relative overflow-hidden rounded-sm bg-zinc-100 hover:border-black transition-all duration-500 ${
                 classNames[index % classNames.length]
               }`}
+              onClick={(e) => {
+                e.preventDefault();
+                window.dispatchEvent(new Event("start-page-transition"));
+                
+                setTimeout(() => {
+                  router.push(`/projects/${project.slug}`);
+                  
+                  setTimeout(() => {
+                    window.dispatchEvent(new Event("end-page-transition"));
+                  }, 100);
+                }, 400); // Overlay assumes 400ms fade-in
+              }}
             >
               <Image
                 src={project.thumbnail}
                 alt={t("projects.imageAlt", {
-                  name: t(`projectDetail.${project.slug}.name`),
+                  name: t(`projectDetail.${project.slug}.title`),
                 })}
                 className="h-full w-full object-cover transition-transform duration-700 grayscale group-hover/project:grayscale-0 group-hover/project:scale-105"
               />
@@ -50,7 +63,7 @@ const PortfolioGrid_v1 = () => {
                   <div className="flex justify-between items-end border-b border-white/30 pb-4">
                     <div>
                       <h3 className="text-white text-2xl md:text-3xl font-bold uppercase tracking-tighter leading-none">
-                        {t(`projectDetail.${project.slug}.name`)}
+                        {t(`projectDetail.${project.slug}.title`)}
                       </h3>
                     </div>
 
@@ -105,4 +118,4 @@ const PortfolioGrid_v1 = () => {
   );
 };
 
-export default PortfolioGrid_v1;
+export default PortfolioProjects;

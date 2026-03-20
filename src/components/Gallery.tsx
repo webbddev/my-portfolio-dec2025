@@ -123,19 +123,8 @@ const ProjectGallery = ({ gallery }: GalleryProps) => {
   }));
 
   return (
-    <section className="pt-0 pb-4 lg:py-12">
-      <div className="container mx-auto pl-0">
-        <motion.h2
-          variants={fadeIn("up")}
-          initial="hidden"
-          whileInView={"show"}
-          viewport={{ once: true, amount: 0.3 }}
-          className="text-3xl md:text-4xl lg:text-5xl mb-8 lg:mb-12 font-bold"
-        >
-          {t("title")}
-        </motion.h2>
-      </div>
-
+    <section className="pt-0 pb-2 lg:pt-4 lg:pb-12">
+      
       <motion.div
         variants={fadeIn("up")}
         initial="hidden"

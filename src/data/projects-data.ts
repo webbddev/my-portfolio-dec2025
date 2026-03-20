@@ -20,6 +20,16 @@ import rh_image19 from "../../public/projects/residential-harmony/rh-bedroom-4.w
 import rh_image20 from "../../public/projects/residential-harmony/rh-bedroom-5.webp";
 import rh_image21 from "../../public/projects/residential-harmony/rh-bedroom-6.webp";
 
+// Project images for Personal Banker
+import pb_image1 from "../../public/projects/personal-banker-app/pb-1.png";
+import pb_image2 from "../../public/projects/personal-banker-app/pb-2.png";
+import pb_image3 from "../../public/projects/personal-banker-app/pb-3.png";
+import pb_image4 from "../../public/projects/personal-banker-app/pb-4.png";
+import pb_image5 from "../../public/projects/personal-banker-app/pb-5.png";
+import pb_image6 from "../../public/projects/personal-banker-app/pb-6.png";
+import pb_image7 from "../../public/projects/personal-banker-app/pb-7.png";
+import pb_image8 from "../../public/projects/personal-banker-app/pb-8.png";
+
 // Project images for Urban Student Oasis
 import uso_image1 from "../../public/projects/urban-student-oasis/uso-living-1.webp";
 import uso_image2 from "../../public/projects/urban-student-oasis/uso-living-2.webp";
@@ -114,158 +124,74 @@ export type ProjectData = {
 export const projectsData: ProjectData[] = [
   {
     id: 1,
-    name: "Residential Harmony",
-    slug: "residential-harmony",
-    thumbnail: rh_image1,
+    name: "Personal Banker Dashboard",
+    slug: "personal-banker-app",
+    thumbnail: pb_image1,
     gallery: {
       images: [
         {
-          src: rh_image1,
-          original: rh_image1,
-          width: 1080,
-          height: 720,
-          alt: "Living room view 1",
+          src: pb_image1,
+          original: pb_image1,
+          width: 1920,
+          height: 1080,
+          alt: "Personal Banker Dashboard - Overview",
         },
         {
-          src: rh_image2,
-          original: rh_image2,
-          width: 1080,
-          height: 720,
-          alt: "Living room view 2",
+          src: pb_image2,
+          original: pb_image2,
+          width: 1920,
+          height: 1080,
+          alt: "Personal Banker Dashboard - Transactions",
         },
         {
-          src: rh_image3,
-          original: rh_image3,
-          width: 1080,
-          height: 720,
-          alt: "Living room view 3",
+          src: pb_image3,
+          original: pb_image3,
+          width: 1920,
+          height: 1080,
+          alt: "Personal Banker Dashboard - Analytics",
         },
         {
-          src: rh_image4,
-          original: rh_image4,
-          width: 1080,
-          height: 720,
-          alt: "Kitchen view 1",
+          src: pb_image4,
+          original: pb_image4,
+          width: 1920,
+          height: 1080,
+          alt: "Personal Banker Dashboard - Project Details",
         },
         {
-          src: rh_image5,
-          original: rh_image5,
-          width: 1080,
-          height: 720,
-          alt: "Kitchen view 2",
+          src: pb_image5,
+          original: pb_image5,
+          width: 1920,
+          height: 1080,
+          alt: "Personal Banker Dashboard - Settings",
         },
         {
-          src: rh_image6,
-          original: rh_image6,
-          width: 1080,
-          height: 720,
-          alt: "Kitchen view 3",
+          src: pb_image6,
+          original: pb_image6,
+          width: 1920,
+          height: 1080,
+          alt: "Personal Banker Dashboard - Mobile View",
         },
         {
-          src: rh_image7,
-          original: rh_image7,
-          width: 1080,
-          height: 720,
-          alt: "Kitchen view 4",
+          src: pb_image7,
+          original: pb_image7,
+          width: 1920,
+          height: 1080,
+          alt: "Personal Banker Dashboard - Dark Mode",
         },
         {
-          src: rh_image8,
-          original: rh_image8,
-          width: 1080,
-          height: 720,
-          alt: "Kitchen view 5",
-        },
-        {
-          src: rh_image9,
-          original: rh_image9,
-          width: 1080,
-          height: 720,
-          alt: "Kitchen view 6",
-        },
-        {
-          src: rh_image11,
-          original: rh_image11,
-          width: 1080,
-          height: 720,
-          alt: "Balcony view 1",
-        },
-        {
-          src: rh_image12,
-          original: rh_image12,
-          width: 1080,
-          height: 720,
-          alt: "Balcony view 2",
-        },
-        {
-          src: rh_image13,
-          original: rh_image13,
-          width: 1080,
-          height: 720,
-          alt: "Balcony view 3",
-        },
-        {
-          src: rh_image14,
-          original: rh_image14,
-          width: 1080,
-          height: 720,
-          alt: "Balcony view 4",
-        },
-        {
-          src: rh_image15,
-          original: rh_image15,
-          width: 1080,
-          height: 720,
-          alt: "Balcony view 5",
-        },
-        {
-          src: rh_image16,
-          original: rh_image16,
-          width: 1080,
-          height: 720,
-          alt: "Bedroom view 1",
-        },
-        {
-          src: rh_image17,
-          original: rh_image17,
-          width: 1080,
-          height: 720,
-          alt: "Bedroom view 2",
-        },
-        {
-          src: rh_image18,
-          original: rh_image18,
-          width: 1080,
-          height: 720,
-          alt: "Bedroom view 3",
-        },
-        {
-          src: rh_image19,
-          original: rh_image19,
-          width: 1080,
-          height: 720,
-          alt: "Bedroom view 4",
-        },
-        {
-          src: rh_image20,
-          original: rh_image20,
-          width: 1080,
-          height: 720,
-          alt: "Bedroom view 5",
-        },
-        {
-          src: rh_image21,
-          original: rh_image21,
-          width: 1080,
-          height: 720,
-          alt: "Bedroom view 6",
+          src: pb_image8,
+          original: pb_image8,
+          width: 1920,
+          height: 1080,
+          alt: "Personal Banker Dashboard - AI Orchestration",
         },
       ],
     },
   },
   {
     id: 2,
-    name: "City Student Oasis",
-    slug: "city-student-oasis",
+    name: "Cultural Intelligence Scraper",
+    slug: "event-automation-engine",
     thumbnail: uso_image6,
     url: "https://wavelengthstudios.example.com",
     gallery: {
@@ -511,8 +437,8 @@ export const projectsData: ProjectData[] = [
   },
   {
     id: 3,
-    name: "Family House",
-    slug: "family-house",
+    name: "Agentic AI Infrastructure (R&D)",
+    slug: "mcp-server-exploration",
     thumbnail: fh_image1,
     gallery: {
       images: [

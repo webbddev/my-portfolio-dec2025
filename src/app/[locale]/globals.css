@@ -2,68 +2,6 @@
 
 @custom-variant dark (&:is(.dark *));
 
-@utility container {
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 2rem;
-  padding-right: 2rem;
-
-  @media (min-width: 640px) {
-    padding-left: 3rem;
-    padding-right: 3rem;
-  }
-
-  @media (min-width: 1024px) {
-    max-width: 1024px;
-    padding-left: 4rem;
-    padding-right: 4rem;
-  }
-
-  @media (min-width: 1280px) {
-    max-width: 1280px;
-  }
-
-  @media (min-width: 1536px) {
-    max-width: 1536px;
-  }
-
-  @media (min-width: 1920px) {
-    max-width: 1920px;
-  }
-}
-
-/* Специально для Hero-секции — не разъезжается на 27"/32"/Ultrawide */
-/* @utility container-hero {
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 2rem;
-  padding-right: 2rem;
-
-  @media (min-width: 640px) {
-    padding-left: 3rem;
-    padding-right: 3rem;
-  }
-
-  @media (min-width: 1024px) {
-    padding-left: 4rem;
-    padding-right: 4rem;
-  }
-
-  @media (min-width: 1280px) {
-    max-width: 1400px;
-  }
-
-  @media (min-width: 1920px) {
-    max-width: 1480px;
-  }
-
-  @media (min-width: 2560px) {
-    max-width: 1600px;
-  }
-} */
-
 @theme {
   --breakpoint-*: initial;
   --breakpoint-sm: 375px;
@@ -148,39 +86,34 @@
   --radius-sm: calc(var(--radius) - 4px);
 }
 
-/*
-  The default border color has changed to `currentcolor` in Tailwind CSS v4,
-  so we've added these compatibility styles to make sure everything still
-  looks the same as it did with Tailwind CSS v3.
+@utility container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
 
-  If we ever want to remove these styles, we need to add an explicit border
-  color utility to any element that depends on these defaults.
-*/
-@layer base {
-  *,
-  ::after,
-  ::before,
-  ::backdrop,
-  ::file-selector-button {
-    border-color: var(--color-gray-200, currentcolor);
-  }
-}
-
-@layer utilities {
-  /* html {
-    scroll-behavior: smooth;
-  } */
-
-  .section {
-    @apply py-24 md:py-32 lg:py-40;
+  @media (min-width: 640px) {
+    padding-left: 3rem;
+    padding-right: 3rem;
   }
 
-  .line {
-    @apply overflow-hidden;
+  @media (min-width: 1024px) {
+    max-width: 1024px;
+    padding-left: 4rem;
+    padding-right: 4rem;
   }
 
-  .word {
-    @apply md:translate-y-full;
+  @media (min-width: 1280px) {
+    max-width: 1280px;
+  }
+
+  @media (min-width: 1536px) {
+    max-width: 1536px;
+  }
+
+  @media (min-width: 1920px) {
+    max-width: 1920px;
   }
 }
 
@@ -253,19 +186,36 @@
     --sidebar-border: oklch(1 0 0 / 10%);
     --sidebar-ring: oklch(0.439 0 0);
   }
-}
 
-@layer base {
-  * {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
     transition: background-color 2s ease, color 0.5s ease;
   }
+
+  html {
+    scrollbar-gutter: stable;
+  }
 }
 
-/* globals.css */
-html {
-  scrollbar-gutter: stable;
+@layer utilities {
+  .section {
+    @apply py-24 md:py-32 lg:py-40;
+  }
+
+  .line {
+    @apply overflow-hidden;
+  }
+
+  .word {
+    @apply md:translate-y-full;
+  }
 }

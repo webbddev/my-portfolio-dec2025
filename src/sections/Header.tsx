@@ -304,7 +304,7 @@ import Button from "@/components/Button";
 import { useEffect, useState } from "react";
 import { motion, useAnimate } from "motion/react";
 import { useLocale, useTranslations } from "next-intl";
-import { Link } from "../../i18n/navigation";
+import { Link, useRouter } from "../../i18n/navigation";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import { usePathname } from "next/navigation";
 import { ModeToggle } from "@/components/ModeToggle";
@@ -316,10 +316,12 @@ const Header = () => {
 
   const [isOpen, setIsOpen] = useState(false);
   const [showControls, setShowControls] = useState(true);
+  const [isExiting, setIsExiting] = useState(false);
   // Animation hooks for hamburger menu transformation
   const [topLineScope, topLineAnimate] = useAnimate();
   const [bottomLineScope, bottomLineAnimate] = useAnimate();
   const [navScope, navAnimate] = useAnimate();
+  const router = useRouter();
 
   // Check if we're on a project detail page
   const isProjectDetailPage =
@@ -476,6 +478,20 @@ const Header = () => {
     navAnimate,
   ]);
 
+  // Listen for global transition events from other components
+  useEffect(() => {
+    const handleStartTransition = () => setIsExiting(true);
+    const handleEndTransition = () => setIsExiting(false);
+
+    window.addEventListener("start-page-transition", handleStartTransition);
+    window.addEventListener("end-page-transition", handleEndTransition);
+
+    return () => {
+      window.removeEventListener("start-page-transition", handleStartTransition);
+      window.removeEventListener("end-page-transition", handleEndTransition);
+    };
+  }, []);
+
   useEffect(() => {
     let lastScrollY = window.scrollY;
     const handleScroll = () => {
@@ -498,6 +514,11 @@ const Header = () => {
 
   return (
     <header>
+      {/* Page Transition Overlay */}
+      <div 
+        className={`fixed inset-0 z-100 bg-background pointer-events-none transition-opacity duration-500 ease-in-out ${isExiting ? "opacity-100" : "opacity-0"}`} 
+      />
+
       {/* Full-screen navigation overlay */}
       <div
         className="fixed top-0 left-0 w-full h-0 overflow-hidden bg-stone-900 z-50"
@@ -541,12 +562,35 @@ const Header = () => {
       </div>
 
       {/* Fixed header with logo - uses mix-blend-difference for contrast against any background */}
-      <div className="fixed top-0 left-0 w-full mix-blend-difference backdrop-blur-md z-10">
+      <div className="fixed top-0 left-0 w-full mix-blend-difference backdrop-blur-md z-10 pointer-events-none">
         <div className="container max-w-full!">
           <div className="flex justify-between items-center h-20">
             {/* Logo */}
-            <div>
-              <Link locale={locale} href="#hero">
+            <div className="pointer-events-auto">
+              <Link 
+                locale={locale} 
+                href={isProjectDetailPage ? "/" : "#hero"}
+                onClick={(e) => {
+                  if (!isProjectDetailPage) {
+                    e.preventDefault();
+                    const element = document.querySelector("#hero");
+                    if (element) {
+                      element.scrollIntoView({ behavior: "smooth" });
+                    }
+                  } else {
+                    e.preventDefault();
+                    setIsExiting(true);
+                    setTimeout(() => {
+                      router.push("/");
+                      
+                      // After navigation completes, fade the overlay back out
+                      setTimeout(() => {
+                        setIsExiting(false);
+                      }, 100);
+                    }, 400); // Wait for the fade out to almost complete before pushing
+                  }
+                }}
+              >
                 <span className="text-xl font-bold uppercase text-white">
                   {t("logo")}
                 </span>
@@ -557,10 +601,10 @@ const Header = () => {
       </div>
 
       {/* Navigation controls container */}
-      <div className="fixed! top-0 left-0 w-full z-10">
+      <div className="fixed! top-0 left-0 w-full z-10 pointer-events-none">
         <div className="container max-w-full!">
           <div className="flex justify-end items-center h-20">
-            <div className="flex items-center gap-x-1">
+            <div className="flex items-center gap-x-1 pointer-events-auto">
               <div
                 style={{
                   transition: "all 500ms ease-in-out 0ms",
