@@ -12,7 +12,8 @@
     "contactButton": "Contact"
   },
   "hero": {
-    "title": "Building beautiful websites that convert visitors into customers",
+    "title": "BUILDING SCALABLE, TYPE-SAFE WEB APPS WITH NEXT.JS",
+    "subtitle": "Specialist in AI-driven platforms, RAG architectures, and complex workflow automation.",
     "viewWorkButton": "My Works",
     "downloadCvButton": "Download CV",
     "letsTalkButton": "Let's talk",
@@ -20,7 +21,7 @@
     "portraitAltFront": "Nicolas Tetradov front-facing portrait"
   },
   "intro": {
-    "headline": "I help businesses grow by creating websites that look great and work even better"
+    "headline": "Full-stack developer specializing in digital transformation and AI integration. I bridge the gap between sophisticated backend logic and refined user experiences. Using the T3 stack (Next.js, Prisma, NeonDB) combined with AI Vercel SDK and RAG architectures, I build autonomous systems that don’t just display data — they understand it. From custom AI chatbots to voice agents with Retell AI and ElevenLabs, I transform complex business requirements into elegant, automated web platforms that drive efficiency."
   },
   "projects": {
     "heading": "Selected Works",
@@ -86,13 +87,59 @@
           "featDescription": "Features a high-performance 3D 'Thinking Orb' built with React Three Fiber (Three.js) that visualizes the AI's processing states, complemented by fluid Framer Motion transitions for a sleek, modern fintech experience."
         }
       ],
-      "detailedOverview": "Personal Banker is a high-performance Fintech platform, designed to replace legacy tracking methods with a unified, AI-driven command center. A core technical highlight is the AI Orchestration layer: using the Vercel AI SDK and RAG (Retrieval-Augmented Generation), the system indexes the user's investment database, allowing for complex natural language queries. The front-end experience is elevated by an interactive 3D 'Thinking Orb' and dynamic Recharts dashboards that allow users to assess their entire financial position in the blink of an eye. The Analytics Suite instantly calculates critical KPIs—including total portfolio value in multiple currencies, monthly net income, and asset distribution by type—while the backend utilizes Cheerio-based web scrapers and Cron jobs to keep the system synchronized with the National Bank of Moldova's live market data.",
+      "detailedOverview": "Personal Banker is a high-performance Fintech platform, designed to replace legacy tracking methods with a unified, AI-driven command center. A core technical highlight is the AI Orchestration layer: using the Vercel AI SDK and RAG (Retrieval-Augmented Generation), the system indexes the user's investment database, allowing for complex natural language queries. The front-end experience is elevated by an interactive 3D 'Thinking Orb' and dynamic Recharts dashboards that allow users to assess their entire financial position in the blink of an eye. The Analytics Suite instantly calculates critical KPIs — including total portfolio value in multiple currencies, monthly net income, and asset distribution by type — while the backend utilizes Cheerio-based web scrapers and Cron jobs to keep the system synchronized with the National Bank of Moldova's live market data.",
       "challengeAndSolutionDescription": "The primary challenge was the 'fragmented portfolio' syndrome, where critical investment data and maturity dates were scattered across various bank accounts, leading to missed reinvestment windows and inaccurate ROI assessments. I solved this by engineering a proactive intelligence layer that centralizes lifecycle management. By implementing a multi-stage alerting system (30/7/1-day notifications), the platform eliminates manual monitoring. The solution transforms a passive spreadsheet into an active financial advisor that not only calculates total wealth in real-time across multiple currencies but also contextually benchmarks personal performance against national inflation and interest rates, ensuring proactive wealth preservation."
+    },
+    "ai-journalist-1tv": {
+      "category": "AI Automation & Web Intelligence",
+      "title": "AI Journalist:\n1TV Moldova",
+      "shortOverview": "An autonomous content engine that scrapes, synthesizes, and beautifies a weekly 7-day cultural digest, delivering multi-modal (Text & Audio) insights directly to the inbox.",
+      "techStack": [
+        "n8n Workflow Automation",
+        "Puppeteer (Headless Browser)",
+        "AI Agent node",
+        "ElevenLabs API",
+        "Telegram Bot API",
+        "Gmail API",
+        "Native n8n HTML Parser",
+        "CSS Selectors",
+        "Livewire Interaction Logic"
+      ],
+      "industry": "Media / Cultural Intelligence / Automation",
+      "roleDescription": "Automation Engineer & Prompt Architect",
+      "links": {
+        "live": "#",
+        "github": "https://github.com/webbddev/ai-journalist-n8n"
+      },
+      "keyFeatures": [
+        {
+          "featTitle": "Interactive Multi-Source Scraper",
+          "featDescription": "A robust extraction engine using Puppeteer to navigate dynamic SPAs. It simulates human behavior by handling infinite scrolls and interacting with Livewire 'Load More' buttons across 4 major cultural platforms (Afisha, iTicket, etc.)."
+        },
+        {
+          "featTitle": "Multi-Modal 'Triple-Agent' Synthesis",
+          "featDescription": "An advanced LLM chain where Agent 1 drafts the narrative script in a specific '1TV Moldova' brand voice, Agent 2 generates high-fidelity voiceovers via ElevenLabs, and Agent 3 acts as a specialized HTML/CSS developer for layout."
+        },
+        {
+          "featTitle": "Computer Vision Contextualization",
+          "featDescription": "Integrates an image-processing pipeline that fetches binary data from concert flyers. This allows the AI to 'see' and extract artistic moods, artist names, and atmospheric sub-text not found in the website's raw metadata."
+        },
+        {
+          "featTitle": "Responsive 'Beautifier' Engine",
+          "featDescription": "A dedicated AI-driven design layer that transforms raw text into a professional, mobile-optimized HTML newsletter. It enforces strict inline-CSS styling and image constraints for perfect rendering in Gmail and Outlook."
+        },
+        {
+          "featTitle": "Omnichannel Delivery & Alerts",
+          "featDescription": "Automates the final 'last mile' of delivery via the Gmail API, followed by a personalized Telegram notification containing the ElevenLabs audio summary and a status sign-off: 'Детка, работа для тебя проделана!'"
+        }
+      ],
+      "detailedOverview": "The AI Journalist is a high-efficiency production pipeline designed to replace hours of manual research with a 10-minute automated run. The system orchestrates a complex 'Two-Pass' scraping method: it first captures the broad event landscape before deep-diving into individual URLs to pull cast lists, plot summaries, and venue details. By leveraging Google Gemini's reasoning capabilities alongside a 'Gold Standard' reference sample, the workflow ensures every digest sounds like a professional cultural critic. The project showcases the power of Agentic workflows where one AI writes the story, another speaks it, and a third designs the envelope it arrives in.",
+      "challengeAndSolutionDescription": "The primary challenge was the high 'noise-to-signal' ratio and the fragmented nature of local event data, which usually takes a human over 2 hours to curate. I solved this by engineering a unified aggregator that normalizes disparate date formats (e.g., '25 Martie' to ISO) and filters out irrelevant categories like cinema or sports. By implementing 'Human-Mimetic' interaction logic to bypass bot protections and adding a visual analysis layer for flyers, the solution transforms raw, messy web data into a polished, multi-modal cultural product delivered straight to the user's inbox with zero manual intervention."
     },
     "event-automation-engine": {
       "category": "AI Automation",
       "title": "Cultural Intelligence Scraper",
-      "shortOverview": "An automated digest system for journalists to aggregate local cultural events without manual searching.",
+      "shortOverview": "An automated event aggregation system for local cultural events without manual search.",
       "techStack": ["n8n", "Puppeteer", "Docker", "Cloudflare"],
       "industry": "Media & Automation",
       "roleDescription": "Automation Engineer",
@@ -102,16 +149,16 @@
       },
       "keyFeatures": [
         {
-          "featTitle": "Headless browser automation",
+          "featTitle": "Headless Automation",
           "featDescription": "Automation via Docker containers."
         },
         {
           "featTitle": "Custom Logic Filters",
-          "featDescription": "Filter and categorise events by date and venue."
+          "featDescription": "Filtering and categorizing events by date and location."
         }
       ],
-      "detailedOverview": "Multi-Source Scrapping & Ingestion: The system uses n8n HTTP Request nodes to target specific local cultural hubs, such as iticket.md, programmatically extracting raw event data. This replaces the need for a journalist to manually browse multiple event listings daily.",
-      "challengeAndSolutionDescription": "Scraping dynamic, JavaScript-heavy sites often led to bot detection. By containerising Puppeteer within a Docker environment and utilizing n8n's logic nodes, I created a resilient 'stealth' scraping workflow."
+      "detailedOverview": "An automated digest system for journalists that aggregates local events without manual intervention.",
+      "challengeAndSolutionDescription": "Scraping dynamic sites often led to bot detection. By containerizing Puppeteer and using n8n logic, I created a detection-evading workflow."
     },
     "mcp-server-exploration": {
       "category": "Technical Deep-Dive",
@@ -136,6 +183,30 @@
       ],
       "detailedOverview": "A deep-dive into the Model Context Protocol to understand how LLMs interact with local file systems and databases.",
       "challengeAndSolutionDescription": "The project focused on the 'under the hood' mechanics of agentic workflows. By building a custom MCP server from scratch, I gained a granular understanding of tool-calling protocols and context-window management."
+    },
+    "residential-harmony": {
+      "category": "Interior Design",
+      "title": "Residential Harmony",
+      "shortOverview": "A minimalist residential project focusing on natural light and geometric flow.",
+      "techStack": ["AutoCAD", "SketchUp", "V-Ray", "Adobe Photoshop"],
+      "industry": "Architecture & Interior Design",
+      "roleDescription": "Lead Interior Designer",
+      "links": {
+        "live": "#",
+        "github": "#"
+      },
+      "keyFeatures": [
+        {
+          "featTitle": "Spatial Optimization",
+          "featDescription": "Maximizing usable area through modular furniture and clever storage solutions."
+        },
+        {
+          "featTitle": "Lighting Design",
+          "featDescription": "Strategic placement of windows and artificial lighting to enhance the mood."
+        }
+      ],
+      "detailedOverview": "Residential Harmony is a showcase of minimalist design principles applied to a family home. The goal was to create a sanctuary that feels open yet intimate.",
+      "challengeAndSolutionDescription": "The main challenge was the small footprint. I solved this by using a neutral color palette and floor-to-ceiling glass to create an illusion of space."
     }
   },
   "testimonials": {

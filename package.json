@@ -28,6 +28,7 @@
     "tailwind-merge": "^2.6.0",
     "tailwindcss": "^4.1.17",
     "tailwindcss-animate": "^1.0.7",
+    "webgl-fluid": "^0.3.9",
     "yet-another-react-lightbox": "^3.23.2"
   },
   "devDependencies": {

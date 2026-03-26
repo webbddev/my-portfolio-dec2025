@@ -154,34 +154,6 @@ const ProjectGallery = ({ gallery }: GalleryProps) => {
           close={() => setLightboxOpen(false)}
           index={currentIndex}
           plugins={[Slideshow, Thumbnails, Zoom]}
-          render={{
-            slide: ({ slide }) => (
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  width: "100%",
-                  height: "100%",
-                  padding: "5px",
-                }}
-              >
-                <img
-                  src={slide.src}
-                  alt={slide.alt}
-                  style={{
-                    maxHeight: "min(2546px, 100%)",
-                    maxWidth: "min(840px, 100%)",
-                    transform: "translateZ(0px)",
-                    width: "100%",
-                    height: "auto",
-                    objectFit: "contain",
-                    borderRadius: "4px",
-                  }}
-                />
-              </div>
-            ),
-          }}
         />
       </motion.div>
     </section>

@@ -12,7 +12,8 @@
     "contactButton": "Contactează-mă"
   },
   "hero": {
-    "title": "Creez site-uri web frumoase care transformă vizitatorii în clienți",
+    "title": "DEZVOLTARE DE APLICAȚII WEB SCALABILE ȘI TYPE-SAFE CU NEXT.JS",
+    "subtitle": "Specialist în platforme bazate pe AI, arhitecturi RAG și automatizarea fluxurilor de lucru complexe.",
     "viewWorkButton": "lucrările mele",
     "downloadCvButton": "Descarcă CV",
     "letsTalkButton": "Să vorbim",
@@ -20,7 +21,7 @@
     "portraitAltFront": "Portret frontal Nikolay Tetradov"
   },
   "intro": {
-    "headline": "Ajut afacerile să crească prin crearea de site-uri web care arată grozav și funcționează și mai bine"
+    "headline": "Dezvoltator Full-stack specializat în transformare digitală și integrare AI. Îmbin logica backend complexă cu experiențe de utilizator rafinate. Folosind stack-ul T3 (Next.js, Prisma, NeonDB) în combinație cu AI Vercel SDK și arhitecturi RAG, construiesc sisteme autonome care nu doar afișează date — ci le și înțeleg. De la chatbot-uri AI personalizate la agenți vocali cu Retell AI și ElevenLabs — transform cerințele complexe de business în platforme web elegante și automatizate care cresc eficiența."
   },
   "projects": {
     "heading": "Lucrări selectate",
@@ -89,6 +90,52 @@
       "detailedOverview": "Personal Banker este o platformă Fintech de înaltă performanță, concepută pentru a înlocui metodele de monitorizare învechite cu un centru de comandă unificat, bazat pe AI. Un punct forte din punct de vedere tehnic este stratul de Orchestrare AI: utilizând Vercel AI SDK și RAG (Retrieval-Augmented Generation), sistemul indexează baza de date de investiții a utilizatorului, permițând interogări complexe în limbaj natural. Experiența front-end este amplificată de un «Thinking Orb» 3D interactiv și de dashboard-uri dinamice Recharts, care permit utilizatorilor să își evalueze întreaga poziție financiară dintr-o privire. Analytics Suite calculează instantaneu indicatorii KPI critici — inclusiv valoarea totală a portofoliului în mai multe valute, venitul net lunar și distribuția activelor pe tipuri — în timp ce backend-ul utilizează web scraperi bazați pe Cheerio și sarcini Cron pentru a menține sistemul sincronizat cu datele de piață în timp real ale Băncii Naționale a Moldovei.",
       "challengeAndSolutionDescription": "Provocarea principală a fost sindromul 'portofoliului fragmentat', unde datele critice de investiții și datele de scadență erau împrăștiate în diverse conturi bancare, ducând la ratarea ferestrelor de reinvestire. Am rezolvat acest lucru prin proiectarea unui strat de inteligență proactiv care centralizează gestionarea ciclului de viață. Prin implementarea unui sistem de alertă în mai multe etape (30/7/1 zile), platforma elimină monitorizarea manuală. Soluția transformă o foaie de calcul pasivă într-un consilier financiar activ care nu numai că calculează averea totală în timp real în mai multe monede, dar oferă și un benchmark contextual față de inflația națională și ratele dobânzilor."
     },
+    "ai-journalist-1tv": {
+      "category": "Automatizare AI & Inteligență Web",
+      "title": "Jurnalist AI:\n1TV Moldova",
+      "shortOverview": "Un motor de conținut autonom care colectează, sintetizează și înfrumusețează un rezumat cultural săptămânal de 7 zile, oferind perspective multi-modale (text și audio) direct în căsuța poștală.",
+      "techStack": [
+        "n8n Workflow Automation",
+        "Puppeteer (Headless Browser)",
+        "Nod Agent AI",
+        "ElevenLabs API",
+        "Telegram Bot API",
+        "Gmail API",
+        "Parser HTML nativ n8n",
+        "Selectori CSS",
+        "Logică de interacțiune Livewire"
+      ],
+      "industry": "Media / Inteligență Culturală / Automatizare",
+      "roleDescription": "Inginer Automatizare & Arhitect de Prompuri",
+      "links": {
+        "live": "#",
+        "github": "https://github.com/webbddev/ai-journalist-n8n"
+      },
+      "keyFeatures": [
+        {
+          "featTitle": "Scraper interactiv multi-sursă",
+          "featDescription": "Un motor de extracție robust care utilizează Puppeteer pentru a naviga în SPA-uri dinamice. Simulează comportamentul uman gestionând derularea infinită și interacționând cu butoanele 'Load More' de pe 4 platforme culturale majore (Afisha, iTicket etc.)."
+        },
+        {
+          "featTitle": "Sinteză multi-modală 'Triple-Agent'",
+          "featDescription": "Un lanț LLM avansat în care Agentul 1 redactează scenariul narativ în vocea de brand specifică '1TV Moldova', Agentul 2 generează voci de înaltă fidelitate prin ElevenLabs, iar Agentul 3 acționează ca dezvoltator specializat HTML/CSS pentru layout."
+        },
+        {
+          "featTitle": "Contextualizare prin Computer Vision",
+          "featDescription": "Integrează un pipeline de procesare a imaginilor care preia date binare din afișele concertelor. Acest lucru permite AI-ului să 'vadă' și să extragă stările artistice, numele artiștilor și subtextul atmosferic care nu se regăsesc în metadatele brute ale site-ului."
+        },
+        {
+          "featTitle": "Motor de 'înfrumusețare' responsiv",
+          "featDescription": "Un strat de design dedicat bazat pe AI care transformă textul brut într-un buletin informativ HTML profesional, optimizat pentru mobil. Acesta aplică stiluri stricte de CSS inline și constrângeri de imagine pentru o randare perfectă în Gmail și Outlook."
+        },
+        {
+          "featTitle": "Livrare pe mai multe canale și alerte",
+          "featDescription": "Automatizează etapa finală de livrare prin API-ul Gmail, urmată de o notificare personalizată pe Telegram care conține rezumatul audio ElevenLabs și un mesaj de final: 'Детка, работа для тебя проделана!'"
+        }
+      ],
+      "detailedOverview": "Jurnalistul AI este un pipeline de producție de înaltă eficiență, conceput pentru a înlocui orele de cercetare manuală cu o rulare automatizată de 10 minute. Sistemul orchestrează o metodă complexă de colectare 'în doi pași': mai întâi capturează peisajul general al evenimentelor, înainte de a analiza în profunzime URL-urile individuale pentru a extrage liste de distribuție, rezumate ale subiectelor și detalii despre locații. Utilizând capacitățile de raționament ale Google Gemini alături de o probă de referință 'Gold Standard', fluxul de lucru se asigură că fiecare rezumat sună ca un critic cultural profesionist. Proiectul demonstrează puterea fluxurilor de lucru agentice, unde un AI scrie povestea, altul o rostește și un al treilea proiectează plicul în care aceasta ajunge.",
+      "challengeAndSolutionDescription": "Provocarea principală a fost raportul mare 'zgomot-semnal' și natura fragmentată a datelor locale despre evenimente, care de obicei necesită un om peste 2 ore pentru a le selecta. Am rezolvat acest lucru prin proiectarea unui agregator unificat care normalizează formate disparate de date (de exemplu, '25 Martie' în ISO) și filtrează categoriile irelevante precum cinema sau sport. Prin implementarea unei logici de interacțiune care imită comportamentul uman pentru a ocoli protecțiile anti-bot și adăugarea unui strat de analiză vizuală pentru afișe, soluția transformă datele web brute și dezordonate într-un produs cultural multi-modal rafinat, livrat direct în căsuța poștală a utilizatorului, fără nicio intervenție manuală."
+    },
     "event-automation-engine": {
       "category": "Automatizare AI",
       "title": "Cultural Intelligence Scraper",
@@ -136,6 +183,30 @@
       ],
       "detailedOverview": "O analiză aprofundată a Model Context Protocol pentru a înțelege cum LLM-urile interacționează cu fișierele și bazele de date locale.",
       "challengeAndSolutionDescription": "Proiectul s-a concentrat pe mecanismele interne ale fluxurilor de lucru inteligente. Dezvoltând un server MCP personalizat, am obținut o bună înțelegere a protocoalelor."
+    },
+    "residential-harmony": {
+      "category": "Design de Interior",
+      "title": "Residential Harmony",
+      "shortOverview": "Un proiect rezidențial minimalist care se concentrează pe lumina naturală și fluxul geometric.",
+      "techStack": ["AutoCAD", "SketchUp", "V-Ray", "Adobe Photoshop"],
+      "industry": "Arhitectură și Design de Interior",
+      "roleDescription": "Designer de Interior Principal",
+      "links": {
+        "live": "#",
+        "github": "#"
+      },
+      "keyFeatures": [
+        {
+          "featTitle": "Optimizarea Spațiului",
+          "featDescription": "Maximizarea suprafeței utile prin mobilier modular și soluții inteligente de depozitare."
+        },
+        {
+          "featTitle": "Design de Iluminat",
+          "featDescription": "Amplasarea strategică a ferestrelor și a iluminatului artificial pentru a îmbunătăți atmosfera."
+        }
+      ],
+      "detailedOverview": "Residential Harmony este o prezentare a principiilor de design minimalist aplicate unei case de familie. Obiectivul a fost crearea unui sanctuar care să pară deschis, dar intim.",
+      "challengeAndSolutionDescription": "Principala provocare a fost spațiul restrâns. Am rezolvat acest lucru folosind o paletă de culori neutre și sticlă de la podea la tavan pentru a crea iluzia de spațiu."
     }
   },
   "testimonials": {

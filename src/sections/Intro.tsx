@@ -1,11 +1,11 @@
 "use client";
 
 import { stagger, useAnimate, useInView } from "motion/react";
-import {  useEffect } from "react";
+import { useEffect } from "react";
 import { useTranslations } from "next-intl";
 import SplitType from "split-type";
 
-const Intro =() => {
+const Intro = () => {
   const t = useTranslations("intro");
   const [scope, animate] = useAnimate();
   const inView = useInView(scope, { once: false });
@@ -28,7 +28,7 @@ const Intro =() => {
         {
           duration: 0.5,
           delay: stagger(0.2),
-        }
+        },
       );
     }
   }, [inView, animate, scope]);

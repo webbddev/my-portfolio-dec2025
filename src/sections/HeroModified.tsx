@@ -11,6 +11,7 @@ import { useAnimate, motion, useScroll, useTransform } from "motion/react";
 import { stagger } from "motion";
 import { useTranslations } from "next-intl";
 import { useTheme } from "next-themes";
+import FluidBackground from "@/components/FluidBackground";
 
 
 const HeroModified = () => {
@@ -18,6 +19,7 @@ const HeroModified = () => {
   const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   const [titleScope, titleAnimate] = useAnimate();
+  const [subtitleScope, subtitleAnimate] = useAnimate();
   const scrollingDiv = useRef<HTMLDivElement>(null);
   const [isMobile, setIsMobile] = useState(false); // New state for mobile detection
 
@@ -83,6 +85,7 @@ const HeroModified = () => {
   }, []);
 
   useEffect(() => {
+    // Title animation
     new SplitType(titleScope.current, {
       types: "lines,chars,words",
       tagName: "span",
@@ -93,13 +96,28 @@ const HeroModified = () => {
       {
         translate: "0",
       },
-      { duration: 0.5, delay: stagger(0.2) },
+      { duration: 0.5, delay: stagger(0.2) }
+    );
+
+    // Subtitle animation
+    new SplitType(subtitleScope.current, {
+      types: "lines,chars,words",
+      tagName: "span",
+    });
+
+    subtitleAnimate(
+      subtitleScope.current.querySelectorAll(".word"),
+      {
+        translate: "0",
+      },
+      { duration: 0.5, delay: (i: number) => 2.0 + i * 0.1 }
     );
   }, []);
 
   return (
     <section className="relative" id="hero">
       <div className="grid md:grid-cols-12 md:h-screen items-stretch sticky top-0 overflow-hidden">
+        <FluidBackground />
         {/* Left Side Content */}
         <div className="md:col-span-7 flex flex-col justify-center z-10 pointer-events-none mb-">
           <div className="container max-w-full 2xl:max-w-[1030px] pointer-events-auto">
@@ -118,13 +136,29 @@ const HeroModified = () => {
             >
               {t("title")}
             </motion.h1>
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              className="text-xl md:text-2xl mt-8 max-w-3xl pointer-events-auto leading-relaxed"
+              ref={subtitleScope}
+              style={
+                !isMobile
+                  ? { color: textColor }
+                  : mounted && resolvedTheme === "dark"
+                    ? { color: "#a1a1aa" } // zinc-400
+                    : { color: "#71717a" } // zinc-500
+              }
+            >
+              {t("subtitle")}
+            </motion.p>
+
 
             {/* CTA Buttons */}
             <div className="flex flex-col md:flex-row md:items-center mt-10 items-start gap-6">
               <motion.div
                 initial={{ opacity: 0, y: "100%" }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 1.75 }}
+                transition={{ duration: 0.5, delay: 3.6 }}
               >
                 <motion.div style={!isMobile ? { color: textColor } : (mounted && resolvedTheme === "dark" ? { color: "#ffffff" } : { color: "#000000" })}>
                   <Button
@@ -173,7 +207,7 @@ const HeroModified = () => {
               <motion.div
                 initial={{ opacity: 0, x: "100%" }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: 1.75 }}
+                transition={{ duration: 0.5, delay: 3.6 }}
               >
                 <motion.div style={!isMobile ? { color: textColor } : (mounted && resolvedTheme === "dark" ? { color: "#ffffff" } : { color: "#000000" })}>
                   <Button
@@ -226,7 +260,7 @@ const HeroModified = () => {
               <motion.div
                 initial={{ opacity: 0, x: "100%" }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: 2.2 }}
+                transition={{ duration: 0.5, delay: 4.1 }}
               >
                 <motion.div style={!isMobile ? { color: textColor } : (mounted && resolvedTheme === "dark" ? { color: "#ffffff" } : { color: "#000000" })}>
                   <Button variant="text" href="#contact">

@@ -54,6 +54,14 @@ const Hero = () => {
             >
               {t("title")}
             </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 1.2 }}
+              className="text-lg md:text-xl text-zinc-400 mt-6 max-w-2xl"
+            >
+              {t("subtitle")}
+            </motion.p>
             {/* Hero CTA buttons */}
             <div className="flex flex-col md:flex-row md:items-center mt-10 items-start gap-6">
               <motion.div

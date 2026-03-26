@@ -1,7 +1,8 @@
 "use client";
 
 import { useTransition } from "react";
-import { useRouter, usePathname } from "next/navigation";
+import { useLocale } from "next-intl";
+import { useRouter, usePathname } from "../../i18n/navigation";
 import {
   Select,
   SelectContent,
@@ -12,11 +13,9 @@ import {
 
 export default function LanguageSwitcher() {
   const [isPending, startTransition] = useTransition();
+  const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
-
-  // Extract language from URL like "/en/page" -> "en"
-  const currentLocale = pathname.split("/")[1] || "en";
 
   const locales = [
     { code: "en", name: "English" },
@@ -26,14 +25,15 @@ export default function LanguageSwitcher() {
 
   const onSelectChange = (nextLocale: string) => {
     startTransition(() => {
-      router.replace(`/${nextLocale}`);
+      // @ts-ignore - nextLocale is a string, but router.replace expects a specific locale type
+      router.replace(pathname, { locale: nextLocale });
     });
   };
 
   return (
     <div className="">
       <Select
-        defaultValue={currentLocale}
+        defaultValue={locale}
         onValueChange={onSelectChange}
         disabled={isPending}
       >
@@ -41,7 +41,7 @@ export default function LanguageSwitcher() {
           className="size-9 md:size-11 flex justify-center p-1 border dark:text-stone-200 border-stone-400 bg-stone-200 hover:bg-slate-300 dark:bg-stone-600/50 dark:border-stone-400 dark:hover:bg-stone-700 transition duration-700 ease-in-out rounded-full focus:ring-0 focus:ring-offset-0 [&>svg]:hidden"
           aria-label="Change language"
         >
-          <SelectValue>{currentLocale.toUpperCase()}</SelectValue>
+          <SelectValue>{locale.toUpperCase()}</SelectValue>
         </SelectTrigger>
         <SelectContent>
           {locales.map((locale) => (
