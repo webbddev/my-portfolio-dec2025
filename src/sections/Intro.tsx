@@ -35,8 +35,8 @@ const Intro = () => {
 
   return (
     <section className="section mt-12 md:pt-16 lg:mt-20" id="intro" ref={scope}>
-      <div className="container">
-        <h2 className="text-4xl md:text-7xl lg:text-8xl lg:w-[80%]">
+      <div className="container mx-auto">
+        <h2 className="text-[26px] md:text-[40px] lg:text-[50px] md:w-[90%] lg:w-[80%] mx-auto ">
           {t("headline")}
         </h2>
       </div>

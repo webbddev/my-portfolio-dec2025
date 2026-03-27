@@ -26,11 +26,11 @@ const Button = (props: ButtonProps) => {
   } = props;
 
   const buttonClasses = twMerge(
-    "h-10 md:h-[52px] lg:h-[40px] px-6 rounded-xl border border-red-orange-500 uppercase inline-flex items-center gap-2 transition duration-500 relative group/button [color:inherit]",
-    variant === "primary" && "bg-red-orange-500 text-white",
-    variant === "secondary" && "hover:bg-red-orange-500 hover:text-white",
+    "h-8 md:h-[40px] lg:h-[40px] px-6 rounded-xl border border-green-800 uppercase inline-flex items-center gap-1 transition duration-500 relative group/button [color:inherit]",
+    variant === "primary" && "bg-green-800 text-white",
+    variant === "secondary" && "hover:bg-green-800 hover:text-white",
     variant === "text" &&
-      "h-auto px-0 border-transparent after:transition-all after:duration-500 after:content-[''] after:h-px after:w-0 after:absolute after:top-full after:bg-red-orange-500 hover:after:w-full",
+      "h-auto px-0 border-transparent after:transition-all after:duration-500 after:content-[''] after:h-px after:w-0 after:absolute after:top-full after:bg-green-800 hover:after:w-full",
     className
   );
 

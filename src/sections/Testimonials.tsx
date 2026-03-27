@@ -1,13 +1,11 @@
 "use client";
 
-import { useRef, useState } from "react";
-import image1 from "@/assets/images/testimonial-1.jpg";
-import image2 from "@/assets/images/testimonial-2.jpg";
-import image3 from "@/assets/images/testimonial-3.jpg";
+import { FC, useRef, useState } from "react";
 import { useScroll, motion, useTransform, AnimatePresence } from "motion/react";
 import { useTranslations } from "next-intl";
-import Testimonial from "@/components/Testimonial";
+import SingleTestimonial_NoImage from "../components/SingleTestimonial_NoImage";
 
+// Testimonials section with no images
 const Testimonials = () => {
   const t = useTranslations("testimonials");
   const titleRef = useRef(null);
@@ -19,7 +17,9 @@ const Testimonials = () => {
   const transformTop = useTransform(scrollYProgress, [0, 1], ["0%", "15%"]);
   const transformBottom = useTransform(scrollYProgress, [0, 1], ["0%", "-15%"]);
 
-  // Create testimonials array from translation data
+  const [testimonialIndex, setTestimonialIndex] = useState(0);
+
+  // Get testimonials from translations
   const testimonials = [
     {
       name: t("testimonial1.name"),
@@ -41,57 +41,56 @@ const Testimonials = () => {
     },
   ];
 
-  const [testimonialIndex, setTestimonialIndex] = useState(0);
-
   const handleClickPrev = () => {
     setTestimonialIndex((curr) =>
-      curr === 0 ? testimonials.length - 1 : curr - 1
+      curr === 0 ? testimonials.length - 1 : curr - 1,
     );
   };
 
   const handleClickNext = () => {
     setTestimonialIndex((curr) =>
-      curr === testimonials.length - 1 ? 0 : curr + 1
+      curr === testimonials.length - 1 ? 0 : curr + 1,
     );
   };
 
   return (
     <section className="section" id="testimonials">
       <h2
-        className="text-4xl md:text-7xl lg:text-8xl flex flex-col items-center overflow-hidden relative"
+        className="text-4xl md:text-7xl lg:text-8xl flex flex-col overflow-hidden"
         ref={titleRef}
       >
         <motion.span
           className="whitespace-nowrap"
-          style={{ x: transformBottom }}
+          style={{ translateX: transformBottom }}
         >
           {t("heading")}
         </motion.span>
         <motion.span
           className="whitespace-nowrap self-end text-red-orange-500"
-          style={{ x: transformTop }}
+          style={{ translateX: transformTop }}
         >
           {t("heading")}
         </motion.span>
       </h2>
       <div className="container">
-        <div className="mt-20 ">
+        <div className="mt-20">
           <AnimatePresence mode="wait" initial={false}>
             {testimonials.map(
               ({ name, company, role, quote }, index) =>
                 index === testimonialIndex && (
-                  <Testimonial
+                  <SingleTestimonial_NoImage
                     key={name}
                     name={name}
                     company={company}
                     role={role}
                     quote={quote}
                   />
-                )
+                ),
             )}
           </AnimatePresence>
         </div>
-        <div className="flex gap-4 mt-6 lg:mt-10">
+        {/* Left and right buttons */}
+        <div className="flex gap-4 mt-6 lg:mt-10 justify-center">
           <button
             className="border-2 border-stone-400 size-11 inline-flex items-center justify-center rounded-full hover:bg-red-orange-500 hover:text-white hover:border-red-orange-500 transition-all duration-300"
             onClick={handleClickPrev}
