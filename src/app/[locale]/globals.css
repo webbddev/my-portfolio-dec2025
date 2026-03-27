@@ -208,6 +208,7 @@
 
 @layer utilities {
   .section {
+    position: relative;
     @apply py-24 md:py-32 lg:py-40;
   }
 

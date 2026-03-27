@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { useTheme } from "next-themes";
@@ -8,7 +8,13 @@ import { useTheme } from "next-themes";
 import { AuroraText } from "@/components/ui/aurora-text";
 
 const KeyStrengths = () => {
-  const { theme } = useTheme();
+  const { theme, resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+  
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   const t = useTranslations("KeyStrengths");
   const targetRef = useRef<HTMLDivElement | null>(null);
   const { scrollYProgress } = useScroll({
@@ -53,10 +59,11 @@ const KeyStrengths = () => {
     "#FF9500", // Orange gold
   ];
 
-  const mixedTones = theme === "dark" ? darkModeTones : lightModeTones;
+  const currentTheme = theme === "dark" || resolvedTheme === "dark" ? "dark" : "light";
+  const mixedTones = mounted && currentTheme === "dark" ? darkModeTones : lightModeTones;
 
   return (
-    <section ref={targetRef} className="section overflow-hidden" id="strengths">
+    <section ref={targetRef} className="section relative overflow-hidden" id="strengths">
       <div className="container">
         <h2 className="text-4xl md:text-7xl lg:text-8xl capitalize">
           {t("title")}

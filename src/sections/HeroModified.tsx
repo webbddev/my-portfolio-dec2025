@@ -7,7 +7,7 @@ import frontFacingImage from "@/assets/images/nicolas-front-1.png"; // Front-fac
 import Image from "next/image";
 import Button from "@/components/Button";
 import SplitType from "split-type";
-import { useAnimate, motion, useScroll, useTransform } from "motion/react";
+import { useAnimate, motion, useScroll, useTransform, useMotionValue } from "motion/react";
 import { stagger } from "motion";
 import { useTranslations } from "next-intl";
 import { useTheme } from "next-themes";
@@ -47,18 +47,41 @@ const HeroModified = () => {
   // Optional: Slight rotation to simulate head turning
   const imageRotate = useTransform(scrollYProgress, [0, 1], [0, -5]);
 
-  // Determine text colors based on theme
-  // Light mode: Dark to Light (as the dark image covers it)
-  // Dark mode: Light to Dark (as the light part of image covers it)
-  const colors = mounted 
-    ? (resolvedTheme === "dark" ? ["#ffffff", "#ede8e8ed"] : ["#000000", "#ffffff"])
-    : ["#000000", "#ffffff"]; // Default to dark text for light-mode visibility
+  const currentTheme = mounted && resolvedTheme === "dark" ? "dark" : "light";
+  const isDarkTheme = currentTheme === "dark";
 
-  const textColor = useTransform(
-    scrollYProgress,
-    [0.3, 0.8],
-    colors
-  );
+  const textColor = useMotionValue(isDarkTheme ? "#ffffff" : "#ffffff");
+
+  useEffect(() => {
+    const updateTextColor = (pos: number) => {
+      let blend = (pos - 0.3) / (0.8 - 0.3);
+      if (blend < 0) blend = 0;
+      if (blend > 1) blend = 1;
+      
+      // Start colors: Black for Light Mode, White for Dark Mode
+      const startR = isDarkTheme ? 255 : 0;
+      const startG = isDarkTheme ? 255 : 0;
+      const startB = isDarkTheme ? 255 : 0;
+
+      // End colors: White for Light Mode, Off-white (#ede8e8) for Dark Mode
+      const endR = isDarkTheme ? 237 : 255;
+      const endG = isDarkTheme ? 232 : 255;
+      const endB = isDarkTheme ? 232 : 255;
+
+      const r = Math.round(startR + (endR - startR) * blend);
+      const g = Math.round(startG + (endG - startG) * blend);
+      const b = Math.round(startB + (endB - startB) * blend);
+      
+      textColor.set(`rgb(${r}, ${g}, ${b})`);
+    };
+
+    const unsubscribe = scrollYProgress.on("change", updateTextColor);
+    
+    // Initialize color on mount or theme change
+    updateTextColor(scrollYProgress.get());
+
+    return () => unsubscribe();
+  }, [isDarkTheme, scrollYProgress, textColor]);
 
   // Optional: Adjust font weight for better visibility/aesthetics
   const fontWeight = useTransform(
@@ -128,18 +151,18 @@ const HeroModified = () => {
             <motion.h1
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              className="text-5xl md:text-6xl lg:text-7xl mt-40 md:mt-0 uppercase tracking-tight font-semibold text-zinc-900! dark:text-zinc-100! md:text-inherit md:dark:text-inherit"
+              className="text-5xl md:text-6xl lg:text-7xl mt-40 md:mt-0 uppercase tracking-tight font-semibold"
               ref={titleScope}
-              style={{ color: isMobile ? "inherit" : textColor, fontWeight: isMobile ? 600 : fontWeight }} 
+              style={{ color: isMobile ? mobileTitleColor : (textColor as any), fontWeight: isMobile ? 600 : fontWeight }} 
             >
               {t("title")}
             </motion.h1>
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              className="text-xl md:text-2xl mt-8 max-w-3xl pointer-events-auto leading-relaxed text-zinc-700! dark:text-zinc-300! md:text-inherit md:dark:text-inherit"
+              className="text-xl md:text-2xl mt-8 max-w-3xl pointer-events-auto leading-relaxed"
               ref={subtitleScope}
-              style={{ color: isMobile ? "inherit" : textColor }}
+              style={{ color: isMobile ? mobileBodyColor : (textColor as any) }}
             >
               {t("subtitle")}
             </motion.p>
@@ -153,8 +176,8 @@ const HeroModified = () => {
                 transition={{ duration: 0.5, delay: 3.6 }}
               >
                 <motion.div 
-                  style={{ color: isMobile ? "inherit" : textColor }}
-                  className="text-zinc-900! dark:text-zinc-100! md:text-inherit md:dark:text-inherit"
+                  style={{ color: isMobile ? mobileTitleColor : (textColor as any) }}
+                  className=""
                 >
                   <Button
                     variant="secondary"
@@ -205,8 +228,8 @@ const HeroModified = () => {
                 transition={{ duration: 0.5, delay: 3.6 }}
               >
                 <motion.div 
-                  style={{ color: isMobile ? "inherit" : textColor }}
-                  className="text-zinc-900! dark:text-zinc-100! md:text-inherit md:dark:text-inherit"
+                  style={{ color: isMobile ? mobileTitleColor : (textColor as any) }}
+                  className=""
                 >
                   <Button
                     variant="primary"
@@ -261,8 +284,8 @@ const HeroModified = () => {
                 transition={{ duration: 0.5, delay: 4.1 }}
               >
                 <motion.div 
-                  style={{ color: isMobile ? "inherit" : textColor }}
-                  className="text-zinc-900! dark:text-zinc-100! md:text-inherit md:dark:text-inherit"
+                  style={{ color: isMobile ? mobileTitleColor : (textColor as any) }}
+                  className=""
                 >
                   <Button variant="text" href="#contact">
                     {t("letsTalkButton")}

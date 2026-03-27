@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useTheme } from "next-themes";
 import {
   motion,
@@ -12,6 +12,11 @@ import {
 export default function FluidBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const { resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
@@ -81,8 +86,8 @@ export default function FluidBackground() {
       <motion.div
         className="absolute inset-0 w-full h-full bg-cover bg-center transition-opacity duration-1000"
         style={{
-          backgroundImage: `url('${imageUrl}')`,
-          opacity: resolvedTheme === "dark" ? 0.35 : 0.17,
+          backgroundImage: `url(${imageUrl})`,
+          opacity: mounted && resolvedTheme === "dark" ? 0.35 : 0.17,
           filter: "saturate(1.2) contrast(1.1)",
           maskImage: useMotionTemplate`radial-gradient(circle at ${maskX}px ${maskY}px, black 0%, transparent 500px)`,
           WebkitMaskImage: useMotionTemplate`radial-gradient(circle at ${maskX}px ${maskY}px, black 0%, transparent 500px)`,
