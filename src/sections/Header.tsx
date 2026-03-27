@@ -562,7 +562,7 @@ const Header = () => {
       </div>
 
       {/* Fixed header with logo - uses mix-blend-difference for contrast against any background */}
-      <div className="fixed top-0 left-0 w-full mix-blend-difference backdrop-blur-md z-10 pointer-events-none">
+      <div className="fixed top-0 left-0 w-full mix-blend-difference backdrop-blur-md z-20 pointer-events-none">
         <div className="container max-w-full!">
           <div className="flex justify-between items-center h-20">
             {/* Logo */}
@@ -601,7 +601,7 @@ const Header = () => {
       </div>
 
       {/* Navigation controls container */}
-      <div className="fixed! top-0 left-0 w-full z-10 pointer-events-none">
+      <div className="fixed! top-0 left-0 w-full z-20 pointer-events-none">
         <div className="container max-w-full!">
           <div className="flex justify-end items-center h-20">
             <div className="flex items-center gap-x-1 pointer-events-auto">

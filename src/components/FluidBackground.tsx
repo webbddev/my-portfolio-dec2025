@@ -90,9 +90,8 @@ export default function FluidBackground() {
       />
       <motion.canvas
         ref={canvasRef}
-        className="absolute inset-0 w-full h-full"
+        className="absolute inset-0 w-full h-full pointer-events-none md:pointer-events-auto"
         style={{
-          pointerEvents: "auto",
           opacity: 0.7,
         }}
       />

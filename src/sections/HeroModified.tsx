@@ -67,6 +67,10 @@ const HeroModified = () => {
     [200, 500]
   );
 
+  // Define mobile colors using CSS variables to be robust against hydration and theme-switching delays
+  const mobileTitleColor = "var(--foreground)";
+  const mobileBodyColor = "var(--muted-foreground)";
+
   useEffect(() => {
     setMounted(true);
     // Function to check if it's a mobile screen
@@ -94,7 +98,7 @@ const HeroModified = () => {
     titleAnimate(
       titleScope.current.querySelectorAll(".word"),
       {
-        y: 0,
+        translate: "0",
       },
       { duration: 0.5, delay: stagger(0.2) }
     );
@@ -108,7 +112,7 @@ const HeroModified = () => {
     subtitleAnimate(
       subtitleScope.current.querySelectorAll(".word"),
       {
-        y: 0,
+        translate: "0",
       },
       { duration: 0.5, delay: (i: number) => 2.0 + i * 0.1 }
     );
@@ -124,18 +128,18 @@ const HeroModified = () => {
             <motion.h1
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              className="text-5xl md:text-6xl lg:text-7xl mt-40 md:mt-0 uppercase tracking-tight font-semibold text-zinc-900 dark:text-zinc-100 md:text-inherit md:dark:text-inherit"
+              className="text-5xl md:text-6xl lg:text-7xl mt-40 md:mt-0 uppercase tracking-tight font-semibold text-zinc-900! dark:text-zinc-100! md:text-inherit md:dark:text-inherit"
               ref={titleScope}
-              style={!isMobile ? { color: textColor, fontWeight: fontWeight } : undefined} 
+              style={{ color: isMobile ? "inherit" : textColor, fontWeight: isMobile ? 600 : fontWeight }} 
             >
               {t("title")}
             </motion.h1>
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              className="text-xl md:text-2xl mt-8 max-w-3xl pointer-events-auto leading-relaxed text-zinc-700 dark:text-zinc-300 md:text-inherit md:dark:text-inherit"
+              className="text-xl md:text-2xl mt-8 max-w-3xl pointer-events-auto leading-relaxed text-zinc-700! dark:text-zinc-300! md:text-inherit md:dark:text-inherit"
               ref={subtitleScope}
-              style={!isMobile ? { color: textColor } : undefined}
+              style={{ color: isMobile ? "inherit" : textColor }}
             >
               {t("subtitle")}
             </motion.p>
@@ -149,8 +153,8 @@ const HeroModified = () => {
                 transition={{ duration: 0.5, delay: 3.6 }}
               >
                 <motion.div 
-                  style={!isMobile ? { color: textColor } : undefined} 
-                  className="text-zinc-900 dark:text-zinc-100 md:text-inherit md:dark:text-inherit"
+                  style={{ color: isMobile ? "inherit" : textColor }}
+                  className="text-zinc-900! dark:text-zinc-100! md:text-inherit md:dark:text-inherit"
                 >
                   <Button
                     variant="secondary"
@@ -201,8 +205,8 @@ const HeroModified = () => {
                 transition={{ duration: 0.5, delay: 3.6 }}
               >
                 <motion.div 
-                  style={!isMobile ? { color: textColor } : undefined} 
-                  className="text-zinc-900 dark:text-zinc-100 md:text-inherit md:dark:text-inherit"
+                  style={{ color: isMobile ? "inherit" : textColor }}
+                  className="text-zinc-900! dark:text-zinc-100! md:text-inherit md:dark:text-inherit"
                 >
                   <Button
                     variant="primary"
@@ -257,8 +261,8 @@ const HeroModified = () => {
                 transition={{ duration: 0.5, delay: 4.1 }}
               >
                 <motion.div 
-                  style={!isMobile ? { color: textColor } : undefined} 
-                  className="text-zinc-900 dark:text-zinc-100 md:text-inherit md:dark:text-inherit"
+                  style={{ color: isMobile ? "inherit" : textColor }}
+                  className="text-zinc-900! dark:text-zinc-100! md:text-inherit md:dark:text-inherit"
                 >
                   <Button variant="text" href="#contact">
                     {t("letsTalkButton")}
