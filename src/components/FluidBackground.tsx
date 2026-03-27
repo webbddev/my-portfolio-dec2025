@@ -64,14 +64,6 @@ export default function FluidBackground() {
     const handleMouseMove = (e: MouseEvent) => {
       mouseX.set(e.clientX);
       mouseY.set(e.clientY);
-
-      const canvasEvent = new MouseEvent("mousemove", {
-        clientX: e.clientX,
-        clientY: e.clientY,
-        bubbles: true,
-        cancelable: true,
-      });
-      canvas.dispatchEvent(canvasEvent);
     };
 
     window.addEventListener("mousemove", handleMouseMove);

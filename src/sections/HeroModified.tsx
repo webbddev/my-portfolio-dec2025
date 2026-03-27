@@ -94,7 +94,7 @@ const HeroModified = () => {
     titleAnimate(
       titleScope.current.querySelectorAll(".word"),
       {
-        translate: "0",
+        y: 0,
       },
       { duration: 0.5, delay: stagger(0.2) }
     );
@@ -108,7 +108,7 @@ const HeroModified = () => {
     subtitleAnimate(
       subtitleScope.current.querySelectorAll(".word"),
       {
-        translate: "0",
+        y: 0,
       },
       { duration: 0.5, delay: (i: number) => 2.0 + i * 0.1 }
     );
@@ -116,51 +116,42 @@ const HeroModified = () => {
 
   return (
     <section className="relative" id="hero">
-      <div className="grid md:grid-cols-12 md:h-screen items-stretch sticky top-0 overflow-hidden">
+      <div className="grid md:grid-cols-12 md:h-screen items-stretch relative md:sticky top-0 md:overflow-hidden">
         <FluidBackground />
         {/* Left Side Content */}
-        <div className="md:col-span-7 flex flex-col justify-center z-10 pointer-events-none mb-">
+        <div className="md:col-span-7 flex flex-col justify-center z-10 pointer-events-none mb-10 md:mb-0 relative">
           <div className="container max-w-full 2xl:max-w-[1030px] pointer-events-auto">
             <motion.h1
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              className="text-5xl md:text-6xl lg:text-7xl mt-40 md:mt-0 uppercase tracking-tight font-semibold"
+              className="text-5xl md:text-6xl lg:text-7xl mt-40 md:mt-0 uppercase tracking-tight font-semibold text-zinc-900 dark:text-zinc-100 md:text-inherit md:dark:text-inherit"
               ref={titleScope}
-              style={
-                !isMobile 
-                  ? { color: textColor, fontWeight: fontWeight }
-                  : mounted && resolvedTheme === "dark"
-                    ? { color: "#ffffff" }
-                    : { color: "#000000" }
-              } 
+              style={!isMobile ? { color: textColor, fontWeight: fontWeight } : undefined} 
             >
               {t("title")}
             </motion.h1>
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              className="text-xl md:text-2xl mt-8 max-w-3xl pointer-events-auto leading-relaxed"
+              className="text-xl md:text-2xl mt-8 max-w-3xl pointer-events-auto leading-relaxed text-zinc-700 dark:text-zinc-300 md:text-inherit md:dark:text-inherit"
               ref={subtitleScope}
-              style={
-                !isMobile
-                  ? { color: textColor }
-                  : mounted && resolvedTheme === "dark"
-                    ? { color: "#a1a1aa" } // zinc-400
-                    : { color: "#71717a" } // zinc-500
-              }
+              style={!isMobile ? { color: textColor } : undefined}
             >
               {t("subtitle")}
             </motion.p>
 
 
             {/* CTA Buttons */}
-            <div className="flex flex-col md:flex-row md:items-center mt-10 items-start gap-6">
+            <div className="flex flex-col md:flex-row md:items-center mt-10 items-start gap-6 pointer-events-auto">
               <motion.div
                 initial={{ opacity: 0, y: "100%" }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 3.6 }}
               >
-                <motion.div style={!isMobile ? { color: textColor } : (mounted && resolvedTheme === "dark" ? { color: "#ffffff" } : { color: "#000000" })}>
+                <motion.div 
+                  style={!isMobile ? { color: textColor } : undefined} 
+                  className="text-zinc-900 dark:text-zinc-100 md:text-inherit md:dark:text-inherit"
+                >
                   <Button
                     variant="secondary"
                     href="#projects"
@@ -209,7 +200,10 @@ const HeroModified = () => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 3.6 }}
               >
-                <motion.div style={!isMobile ? { color: textColor } : (mounted && resolvedTheme === "dark" ? { color: "#ffffff" } : { color: "#000000" })}>
+                <motion.div 
+                  style={!isMobile ? { color: textColor } : undefined} 
+                  className="text-zinc-900 dark:text-zinc-100 md:text-inherit md:dark:text-inherit"
+                >
                   <Button
                     variant="primary"
                     href="/Byhalova Natalia - CV.pdf"
@@ -262,7 +256,10 @@ const HeroModified = () => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 4.1 }}
               >
-                <motion.div style={!isMobile ? { color: textColor } : (mounted && resolvedTheme === "dark" ? { color: "#ffffff" } : { color: "#000000" })}>
+                <motion.div 
+                  style={!isMobile ? { color: textColor } : undefined} 
+                  className="text-zinc-900 dark:text-zinc-100 md:text-inherit md:dark:text-inherit"
+                >
                   <Button variant="text" href="#contact">
                     {t("letsTalkButton")}
                   </Button>
@@ -285,10 +282,10 @@ const HeroModified = () => {
             }}
           >
             {/* Container for both images */}
-            <div className="relative w-full h-full overflow-hidden">
-              {/* Profile Image (Looking Left) - Fades out as you scroll */}
+            <div className="relative w-full h-full overflow-hidden rounded-xl md:rounded-none">
+              {/* Profile Image (Looking Left) - Fades out as you scroll on desktop */}
               <motion.div
-                className="absolute inset-0"
+                className="absolute inset-0 hidden md:block"
                 style={{
                   opacity: profileOpacity,
                   scale: imageScale,
@@ -303,10 +300,10 @@ const HeroModified = () => {
                 />
               </motion.div>
 
-              {/* Front-Facing Image - Fades in as you scroll */}
+              {/* Front-Facing Image - Fades in as you scroll on desktop */}
               {/* FIXED: Centered positioning with object-center */}
               <motion.div
-                className="absolute inset-0 flex items-center justify-center"
+                className="absolute inset-0 md:flex items-center justify-center hidden"
                 style={{
                   opacity: frontOpacity,
                   scale: imageScale,
@@ -319,14 +316,24 @@ const HeroModified = () => {
                   priority
                 />
               </motion.div>
+
+              {/* Front-Facing Image - Static on mobile */}
+              <div className="absolute inset-0 flex items-center justify-center md:hidden">
+                <Image
+                  src={frontFacingImage}
+                  className="h-full w-full object-cover object-center"
+                  alt={t("portraitAltFront")}
+                  priority
+                />
+              </div>
             </div>
           </motion.div>
         </div>
       </div>
 
       {/* Spacer for scroll animation */}
-      {/* FIXED: Adjusted spacer height for better mobile experience */}
-      <div className="h-[150vh] md:h-[200vh]" ref={scrollingDiv}></div>
+      {/* FIXED: Adjusted spacer height for better mobile experience by hiding it */}
+      <div className="hidden md:block h-[200vh] relative" ref={scrollingDiv}></div>
     </section>
   );
 };

@@ -216,6 +216,6 @@
   }
 
   .word {
-    @apply md:translate-y-full;
+    @apply translate-y-full;
   }
 }
