@@ -23,6 +23,64 @@
   "intro": {
     "headline": "Dezvoltator Full-stack specializat în transformare digitală și integrare AI. Îmbin logica backend complexă cu experiențe de utilizator rafinate. Folosind stack-ul T3 (Next.js, Prisma, NeonDB) în combinație cu AI Vercel SDK și arhitecturi RAG, construiesc sisteme autonome care nu doar afișează date — ci le și înțeleg. De la chatbot-uri AI personalizate la agenți vocali cu Retell AI și ElevenLabs — transform cerințele complexe de business în platforme web elegante și automatizate care cresc eficiența."
   },
+  "portfolioGrid": {
+    "heading": "Lucrări selectate",
+    "categories": {
+      "all": "Toate",
+      "aiChatbot": "Chatbot AI",
+      "voiceAi": "AI Vocal",
+      "automations": "Automatizări",
+      "landing": "Landing"
+    },
+    "viewProject": "Vezi Proiectul",
+    "content": {
+      "all": {
+        "title": "LUCRĂRI\nSELECTATE\n2026",
+        "subtitle": "ARHIVĂ DIGITALĂ",
+        "features": [
+          "Portofoliu multidisciplinar cuprinzător.",
+          "Experiențe digitale premiate.",
+          "Colaborări globale cu clienții."
+        ]
+      },
+      "aiChatbot": {
+        "title": "INTELIGENȚĂ\nCONVERSAȚIONALĂ",
+        "subtitle": "CHATBOT AI",
+        "features": [
+          "Procesare a limbajului natural conștientă de context.",
+          "Integrare cu LLM-uri de top.",
+          "Capacități agentice proactive."
+        ]
+      },
+      "voiceAi": {
+        "title": "SISTEME DE\nVOCE SINTETICĂ",
+        "subtitle": "AI VOCAL",
+        "features": [
+          "Sinteză vocală de înaltă fidelitate.",
+          "Procesare audio în timp real.",
+          "Clonare vocală personalizată."
+        ]
+      },
+      "automations": {
+        "title": "AUTOMATIZAREA\nFLUXURILOR",
+        "subtitle": "AUTOMATIZĂRI",
+        "features": [
+          "Automatizare end-to-end a proceselor.",
+          "Integrări multi-platformă.",
+          "Extragerea și sinteza datelor."
+        ]
+      },
+      "landing": {
+        "title": "EXPERIENȚE\nDIGITALE",
+        "subtitle": "LANDING",
+        "features": [
+          "Pagini de destinație cu conversie ridicată.",
+          "Medii interactive 3D.",
+          "Performanță web optimizată."
+        ]
+      }
+    }
+  },
   "projects": {
     "heading": "Lucrări selectate",
     "imageAlt": "Imagine proiect {name}"

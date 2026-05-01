@@ -9,3 +9,5 @@ export { default as FAQs } from "./FAQs";
 export { default as Footer } from "./Footer";
 export { default as WorkExperience } from "./WorkExperience";
 export { default as KeyStrengths } from "./KeyStrengths";
+export { default as PortfolioGrid } from "./PortfolioGrid";
+

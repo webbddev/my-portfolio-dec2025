@@ -23,6 +23,64 @@
   "intro": {
     "headline": "Full-stack developer specializing in digital transformation and AI integration. I bridge the gap between sophisticated backend logic and refined user experiences. Using the T3 stack (Next.js, Prisma, NeonDB) combined with AI Vercel SDK and RAG architectures, I build autonomous systems that don’t just display data — they understand it. From custom AI chatbots to voice agents with Retell AI and ElevenLabs, I transform complex business requirements into elegant, automated web platforms that drive efficiency."
   },
+  "portfolioGrid": {
+    "heading": "Selected Works",
+    "categories": {
+      "all": "All",
+      "aiChatbot": "AI Chatbot",
+      "voiceAi": "Voice AI",
+      "automations": "Automations",
+      "landing": "Landing"
+    },
+    "viewProject": "View Project",
+    "content": {
+      "all": {
+        "title": "WORK\nSELECTED\n2026",
+        "subtitle": "DIGITAL ARCHIVE",
+        "features": [
+          "Comprehensive multidisciplinary portfolio.",
+          "Award-winning digital experiences.",
+          "Global client collaborations."
+        ]
+      },
+      "aiChatbot": {
+        "title": "CONVERSATIONAL\nINTELLIGENCE",
+        "subtitle": "AI CHATBOT",
+        "features": [
+          "Context-aware natural language processing.",
+          "Integration with leading LLMs.",
+          "Proactive agentic capabilities."
+        ]
+      },
+      "voiceAi": {
+        "title": "SYNTHETIC\nVOICE\nSYSTEMS",
+        "subtitle": "VOICE AI",
+        "features": [
+          "High-fidelity voice synthesis.",
+          "Real-time audio processing.",
+          "Custom voice cloning."
+        ]
+      },
+      "automations": {
+        "title": "WORKFLOW\nAUTOMATION",
+        "subtitle": "AUTOMATIONS",
+        "features": [
+          "End-to-end process automation.",
+          "Multi-platform integrations.",
+          "Data extraction & synthesis."
+        ]
+      },
+      "landing": {
+        "title": "DIGITAL\nEXPERIENCES",
+        "subtitle": "LANDING",
+        "features": [
+          "High-conversion landing pages.",
+          "Interactive 3D environments.",
+          "Optimized web performance."
+        ]
+      }
+    }
+  },
   "projects": {
     "heading": "Selected Works",
     "imageAlt": "{name} project image"

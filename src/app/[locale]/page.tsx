@@ -1,9 +1,11 @@
+import PortfolioGrid_v2 from "@/codeFromOtherProject/PortfolioGrid_v2";
 import {
   FAQs,
   Footer,
   Hero,
   Intro,
   KeyStrengths,
+  PortfolioGrid,
   PortfolioProjects,
   Projects,
   Testimonials,
@@ -15,8 +17,9 @@ export default function Home() {
     <>
       <Hero />
       <Intro />
-      <PortfolioProjects />
+      {/* <PortfolioProjects /> */}
       {/* <PortfolioGrid_v2 /> */}
+      <PortfolioGrid />
       {/* <Projects /> */}
       <WorkExperience />
       <Testimonials />
