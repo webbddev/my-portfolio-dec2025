@@ -384,5 +384,15 @@
     "title": "Page Not Found",
     "description": "Sorry, the page you are looking for does not exist.",
     "goHome": "Go back home"
+  },
+  "voiceAgent": {
+    "title": "Nicolas's AI Assistant",
+    "status": "Online & ready to talk",
+    "startCall": "Start a call",
+    "startChat": "Start a chat",
+    "ariaOpen": "Open voice agent",
+    "ariaClose": "Close voice agent",
+    "labelUser": "My Honoured Guest",
+    "labelAssistant": "Nicolas"
   }
 }

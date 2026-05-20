@@ -1,0 +1,8 @@
+How to Upload a New CV and Erase Natalia's Old Records
+Now, the entire process is fully automated:
+
+Replace the File: Delete the old CV (Byhalova Natalia - CV.pdf) in the /public directory, and paste your new CV PDF in its place. The new file can have any name, provided it contains the letters cv or resume (e.g. John_Doe_CV.pdf).
+
+Trigger Re-indexing: Hit the endpoint in your browser or run this command in your terminal:
+
+curl -i http://localhost:3000/api/embed-cv

@@ -15,10 +15,14 @@
                 "shadcn@latest",
                 "mcp"
             ]
+        },
+        "drizzle-docs": {
+            "command": "npx",
+            "args": [
+                "-y",
+                "mcp-remote",
+                "https://drizzle.mastra.cloud/api/mcp/drizzle-docs-mcp/mcp"
+            ]
         }
-        //other mcp servers
     }
 }
-
-// setup mcp server in  ~/.gemini\antigravity\mcp_config.json
-

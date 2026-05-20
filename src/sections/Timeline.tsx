@@ -53,7 +53,7 @@ export const Timeline = () => {
   const opacityTransform = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
 
   return (
-    <section className="section" id="experience" ref={containerRef}>
+    <section className="section relative" id="experience" ref={containerRef}>
       <div className="container overflow-x-hidden">
         <h2 className="text-4xl md:text-7xl lg:text-8xl">{t("heading")}</h2>
 

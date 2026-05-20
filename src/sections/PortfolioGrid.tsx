@@ -155,6 +155,7 @@ export default function PortfolioGrid() {
                   src={item.thumbnail}
                   alt={tProjects(`${item.slug}.title`)}
                   fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   className="absolute inset-0 w-full h-full object-cover transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-110 group-hover:blur-[2px]"
                 />
 

@@ -10,6 +10,7 @@ import { setRequestLocale } from "next-intl/server";
 
 import type { Metadata } from "next";
 import { ThemeProvider } from "@/components/theme-provider";
+import { AIAgentsWrapper } from "@/components/AIAgentsWrapper";
 
 export const metadata: Metadata = {
   title: "Minimal Single Page Portfolio",
@@ -55,18 +56,20 @@ export default async function RootLayout({
     <html lang={locale} suppressHydrationWarning>
       <body
         className={`${archivo.variable} font-sans antialiased `}
-        // className={`${archivo.variable} font-sans antialiased bg-stone-200 text-stone-900`}
+        suppressHydrationWarning
+      // className={`${archivo.variable} font-sans antialiased bg-stone-200 text-stone-900`}
       >
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
-          // disableTransitionOnChange
+        // disableTransitionOnChange
         >
           <ReactLenis root>
             <NextIntlClientProvider messages={messages}>
               <Header />
               {children}
+              <AIAgentsWrapper />
             </NextIntlClientProvider>
           </ReactLenis>
         </ThemeProvider>

@@ -384,5 +384,15 @@
     "title": "Pagină negăsită",
     "description": "Ne pare rău, pagina pe care o cauți nu există.",
     "goHome": "Înapoi acasă"
+  },
+  "voiceAgent": {
+    "title": "Asistentul AI al lui Nicolas",
+    "status": "Online și gata de discuție",
+    "startCall": "Începe apelul",
+    "startChat": "Începe chat-ul",
+    "ariaOpen": "Deschide asistentul vocal",
+    "ariaClose": "Închide asistentul vocal",
+    "labelUser": "Oaspetele meu de onoare",
+    "labelAssistant": "Nicolas"
   }
 }

@@ -56,7 +56,7 @@ const Testimonials = () => {
   return (
     <section className="section" id="testimonials">
       <h2
-        className="text-4xl md:text-7xl lg:text-8xl flex flex-col overflow-hidden"
+        className="relative text-4xl md:text-7xl lg:text-8xl flex flex-col overflow-hidden"
         ref={titleRef}
       >
         <motion.span
