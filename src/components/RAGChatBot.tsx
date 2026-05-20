@@ -68,25 +68,36 @@ const models = [
   {
     chef: "OpenAI",
     chefSlug: "openai",
-    id: "gpt-4o",
-    name: "GPT-4o",
+    id: "openai/gpt-4.1-mini",
+    name: "GPT-4.1 Mini",
     providers: ["openai"],
   },
   {
-    chef: "Anthropic",
-    chefSlug: "anthropic",
-    id: "claude-opus-4-20250514",
-    name: "Claude 4 Opus",
-    providers: ["anthropic"],
+    chef: "DeepSeek",
+    chefSlug: "deepseek",
+    id: "deepseek/deepseek-v4",
+    name: "DeepSeek V4 Pro",
+    providers: ["deepseek"],
   },
   {
     chef: "Google",
     chefSlug: "google",
-    id: "gemini-2.0-flash-exp",
-    name: "Gemini 2.0 Flash",
+    id: "google/gemini-3-flash",
+    name: "Gemini 3.0 Flash",
     providers: ["google"],
   },
+  {
+    chef: "xAI",
+    chefSlug: "xai",
+    id: "xai/grok-4.3",
+    name: "Grok 4.3",
+    providers: ["xai"],
+  },
 ];
+
+const chefs = Array.from(new Set(models.map((m) => m.chef)));
+
+
 
 // Мемоизированный элемент списка моделей
 const ModelItem = memo(
@@ -99,8 +110,9 @@ const ModelItem = memo(
     selectedModel: string;
     onSelect: (id: string) => void;
   }) => {
+    const handleSelect = useCallback(() => onSelect(m.id), [onSelect, m.id]);
     return (
-      <ModelSelectorItem onSelect={() => onSelect(m.id)} value={m.id}>
+      <ModelSelectorItem key={m.id} onSelect={handleSelect} value={m.id}>
         <ModelSelectorLogo provider={m.chefSlug} />
         <ModelSelectorName>{m.name}</ModelSelectorName>
         <ModelSelectorLogoGroup>
@@ -108,7 +120,11 @@ const ModelItem = memo(
             <ModelSelectorLogo key={provider} provider={provider} />
           ))}
         </ModelSelectorLogoGroup>
-        {selectedModel === m.id && <CheckIcon className="ml-auto size-4" />}
+        {selectedModel === m.id ? (
+          <CheckIcon className="ml-auto size-4" />
+        ) : (
+          <div className="ml-auto size-4" />
+        )}
       </ModelSelectorItem>
     );
   },
@@ -320,11 +336,11 @@ const RAGChatBot = ({ isExpanded, onToggleExpand, onClose }: RAGChatBotProps) =>
                     </ModelSelectorName>
                   </PromptInputButton>
                 </ModelSelectorTrigger>
-                <ModelSelectorContent>
+                <ModelSelectorContent className="z-[100]">
                   <ModelSelectorInput placeholder="Search models..." />
                   <ModelSelectorList>
                     <ModelSelectorEmpty>No models found.</ModelSelectorEmpty>
-                    {["OpenAI", "Anthropic", "Google"].map((chef) => (
+                    {chefs.map((chef) => (
                       <ModelSelectorGroup heading={chef} key={chef}>
                         {models
                           .filter((m) => m.chef === chef)
