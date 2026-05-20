@@ -1,4 +1,3 @@
-import PortfolioGrid_v2 from "@/codeFromOtherProject/PortfolioGrid_v2";
 import {
   FAQs,
   Footer,

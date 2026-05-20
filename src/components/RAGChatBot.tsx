@@ -99,7 +99,7 @@ const chefs = Array.from(new Set(models.map((m) => m.chef)));
 
 
 
-// Мемоизированный элемент списка моделей
+// Memoized model selector item component
 const ModelItem = memo(
   ({
     m,
