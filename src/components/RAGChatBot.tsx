@@ -11,6 +11,7 @@ import {
   SearchIcon,
   MailIcon,
   AlertCircle,
+  CalendarCheck,
 } from "lucide-react";
 import { useTranslations, useLocale } from "next-intl";
 import { Button } from "@/components/ui/button";
@@ -62,6 +63,7 @@ import {
   MessageResponse,
 } from "@/components/ai-elements/message";
 import type { ChatMessage } from "@/app/api/chat/route";
+// import type { ChatMessage } from "@/app/api/chat/tools";
 
 const models = [
   {
@@ -305,6 +307,12 @@ const RAGChatBot = ({
                               Matches found.
                             </div>
                           )}
+                          {part.state === "output-error" && (
+                            <div className="flex items-center gap-1.5 text-[11px] xl:text-sm 2xl:text-base text-red-400 border-t pt-1 xl:pt-2 mt-1 xl:mt-2 border-zinc-500/10">
+                              <AlertCircle className="size-3.5 xl:size-4 shrink-0" />
+                              {part.errorText}
+                            </div>
+                          )}
                         </div>
                       );
 
@@ -332,6 +340,86 @@ const RAGChatBot = ({
                           {part.state === "output-available" && (
                             <div className="text-[11px] xl:text-sm 2xl:text-base text-emerald-600 dark:text-emerald-400 font-medium">
                               {part.output}
+                            </div>
+                          )}
+                          {part.state === "output-error" && (
+                            <div className="flex items-center gap-1.5 text-[11px] xl:text-sm 2xl:text-base text-red-400 font-medium">
+                              <AlertCircle className="size-3.5 xl:size-4 shrink-0" />
+                              {part.errorText}
+                            </div>
+                          )}
+                        </div>
+                      );
+
+                    case "tool-bookIntroCall":
+                      return (
+                        <div
+                          key={`${message.id}-booking-${index}`}
+                          className="my-2 xl:my-4 p-3 xl:p-5 rounded-lg border bg-emerald-500/5 border-emerald-500/20"
+                        >
+                          <div className="flex items-center gap-2 text-xs xl:text-base 2xl:text-lg font-bold uppercase tracking-tight text-emerald-600 dark:text-emerald-400 mb-1 xl:mb-2">
+                            {part.state === "output-available" &&
+                            typeof part.output === "string" &&
+                            part.output.startsWith("BOOKING_SUCCESS") ? (
+                              <CheckIcon className="size-3.5 xl:size-5 2xl:size-6" />
+                            ) : part.state === "output-error" ||
+                              (part.state === "output-available" &&
+                                typeof part.output === "string" &&
+                                part.output.startsWith("BOOKING_ERROR")) ? (
+                              <AlertCircle className="size-3.5 xl:size-5 2xl:size-6 text-red-400" />
+                            ) : (
+                              <CalendarCheck className="size-3.5 xl:size-5 2xl:size-6 animate-pulse" />
+                            )}
+                            {part.state === "output-available" &&
+                            typeof part.output === "string" &&
+                            part.output.startsWith("BOOKING_SUCCESS")
+                              ? "Call Booked ✅"
+                              : part.state === "output-error" ||
+                                  (part.state === "output-available" &&
+                                    typeof part.output === "string" &&
+                                    part.output.startsWith("BOOKING_ERROR"))
+                                ? "Booking Failed"
+                                : "Booking Intro Call..."}
+                          </div>
+                          {part.input?.name && part.input?.dateTime && (
+                            <div className="text-[11px] xl:text-sm 2xl:text-base font-medium space-y-0.5">
+                              <div>👤 {part.input.name}</div>
+                              {part.input?.email && (
+                                <div>📩 {part.input.email}</div>
+                              )}
+                              {part.input?.title && (
+                                <div>💼 {part.input.title}</div>
+                              )}
+                              <div>
+                                📅{" "}
+                                {new Date(
+                                  part.input.dateTime,
+                                ).toLocaleString()}
+                              </div>
+                              {part.input?.timeZone && (
+                                <div>🌍 {part.input.timeZone}</div>
+                              )}
+                            </div>
+                          )}
+                          {part.state === "output-available" &&
+                            typeof part.output === "string" &&
+                            part.output.startsWith("BOOKING_SUCCESS") && (
+                              <div className="text-[11px] xl:text-sm 2xl:text-base text-emerald-600 dark:text-emerald-400 font-medium border-t pt-1 xl:pt-2 mt-1 xl:mt-2 border-emerald-500/10">
+                                Google Meet calendar invite sent!
+                              </div>
+                            )}
+                          {part.state === "output-available" &&
+                            typeof part.output === "string" &&
+                            part.output.startsWith("BOOKING_ERROR") && (
+                              <div className="flex items-center gap-1.5 text-[11px] xl:text-sm 2xl:text-base text-red-400 font-medium border-t pt-1 xl:pt-2 mt-1 xl:mt-2 border-red-500/10">
+                                <AlertCircle className="size-3.5 xl:size-4 shrink-0" />
+                                {part.output.replace("BOOKING_ERROR: ", "")}
+                              </div>
+                            )}
+                          {part.state === "output-error" && (
+                            <div className="flex items-center gap-1.5 text-[11px] xl:text-sm 2xl:text-base text-red-400 font-medium border-t pt-1 xl:pt-2 mt-1 xl:mt-2 border-red-500/10">
+                              <AlertCircle className="size-3.5 xl:size-4 shrink-0" />
+                              {part.errorText}
                             </div>
                           )}
                         </div>
