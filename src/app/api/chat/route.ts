@@ -40,6 +40,7 @@ const getChatTools = (reqLocale: string) => ({
       }
     },
   }),
+
   // tool to send the CV to the user via email
   sendCvEmail: tool({
     description:
@@ -119,7 +120,7 @@ const getChatTools = (reqLocale: string) => ({
       dateTime: z
         .string()
         .describe(
-          "The desired date and time in ISO 8601 format, e.g. 2026-05-22T10:00:00. Must be in the attendee's timezone.",
+          "The desired date and time in ISO 8601 format WITH the UTC offset included (e.g., 2026-05-22T10:00:00+03:00). You MUST calculate the correct UTC offset based on the attendee's timezone.",
         ),
       timeZone: z
         .string()
@@ -142,48 +143,15 @@ const getChatTools = (reqLocale: string) => ({
         return "BOOKING_ERROR: Calendar integration is not configured. Please contact Nikolay directly.";
       }
 
-      // Convert local date time to UTC format required by Cal.com API v2
+      // Option 1: AI provides the offset, JS handles the conversion
       let startUtc: string;
       try {
-        if (dateTime.includes("Z") || /([+-]\d{2}:\d{2})$/.test(dateTime)) {
-          startUtc = new Date(dateTime).toISOString();
-        } else {
-          const match = dateTime.match(/^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})/);
-          if (!match) {
-            throw new Error("Invalid dateTime format. Must be YYYY-MM-DDTHH:MM:SS");
-          }
-          const [_, year, month, day, hour, minute] = match.map(Number);
-          const utcDate = new Date(Date.UTC(year, month - 1, day, hour, minute));
-          
-          const formatter = new Intl.DateTimeFormat("en-US", {
-            timeZone,
-            year: "numeric",
-            month: "numeric",
-            day: "numeric",
-            hour: "numeric",
-            minute: "numeric",
-            second: "numeric",
-            hour12: false,
-          });
-
-          const parts = formatter.formatToParts(utcDate);
-          const getPart = (type: string) => Number(parts.find(p => p.type === type)?.value);
-
-          const formattedL = Date.UTC(
-            getPart("year"),
-            getPart("month") - 1,
-            getPart("day"),
-            getPart("hour"),
-            getPart("minute")
-          );
-
-          const offset = formattedL - utcDate.getTime();
-          const targetUtcTime = utcDate.getTime() - offset;
-          startUtc = new Date(targetUtcTime).toISOString();
-        }
+        const parsedDate = new Date(dateTime);
+        if (isNaN(parsedDate.getTime())) throw new Error("Invalid date");
+        startUtc = parsedDate.toISOString();
       } catch (err) {
-        console.error("Error converting dateTime to UTC:", err);
-        return "BOOKING_ERROR: Invalid date/time format or timezone provided.";
+        console.error("Error parsing date:", err);
+        return "BOOKING_ERROR: The AI provided an invalid date/time format.";
       }
 
       try {
@@ -273,7 +241,7 @@ export async function POST(req: Request) {
         - Current year: ${currentYear}
         - Current time (UTC+2 Chisinau): ${currentTime}
         - When constructing dateTime for bookIntroCall, ALWAYS use year ${currentYear} unless the user explicitly specifies a different year.
-        - Format dateTime strictly as YYYY-MM-DDTHH:MM:00 in ISO 8601.
+        - Format dateTime strictly as YYYY-MM-DDTHH:MM:00 in ISO 8601. Include the correct timezone offset, e.g. +03:00.
         - NEVER use past dates. If the user says "tomorrow", calculate from ${todayISO}.
 
         When users ask questions, search the knowledge base for relevant information. Always search before answering if the question might relate to uploaded documents.
