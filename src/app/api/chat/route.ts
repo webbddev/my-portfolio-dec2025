@@ -6,43 +6,111 @@ import {
   InferUITools,
   UIDataTypes,
   stepCountIs,
-} from 'ai';
-import { z } from 'zod';
-import { searchDocuments } from '@/lib/search';
+} from "ai";
+import { z } from "zod";
+import { searchDocuments } from "@/lib/search";
+import { Resend } from "resend";
+import { getTranslations } from "next-intl/server";
 
-// Allow streaming responses up to 30 seconds
-export const maxDuration = 30;
+const resend = new Resend(process.env.RESEND_API_KEY);
 
-const tools = {
+const getChatTools = (reqLocale: string) => ({
+  // tool to search the knowledge base
   searchKnowledgeBase: tool({
-    description: 'Search the knowledge base for relevant information',
+    description: "Search the knowledge base for relevant information",
     inputSchema: z.object({
-      query: z.string().describe('The search query to find relevant documents'),
+      query: z.string().describe("The search query to find relevant documents"),
     }),
     execute: async ({ query }) => {
       try {
-        // Search the vector database
         const results = await searchDocuments(query, 3, 0.5);
 
         if (results.length === 0) {
-          return 'No relevant information found in the knowledge base.';
+          return "No relevant information found in the knowledge base.";
         }
 
-        // Format results for the AI
         const formattedResults = results
           .map((r, i) => `[${i + 1}] ${r.content}`)
-          .join('\n\n');
+          .join("\n\n");
 
         return formattedResults;
       } catch (error) {
-        console.error('Search error:', error);
-        return 'Error searching the knowledge base.';
+        console.error("Search error:", error);
+        return "Error searching the knowledge base.";
       }
     },
   }),
-};
+  // tool to send the CV to the user via email
+  sendCvEmail: tool({
+    description:
+      "Sends the CV to the user via email using Resend. Only call this AFTER the user has explicitly agreed to receive the CV AND provided a valid email address.",
+    inputSchema: z.object({
+      email: z
+        .string()
+        .email()
+        .describe("The email address provided by the user to send the CV to"),
+      locale: z
+        .string()
+        .optional()
+        .describe(
+          "The language locale to use for the email content (e.g., en, ru, ro, bg, lt) based on the user's language",
+        ),
+    }),
+    execute: async ({ email, locale: toolLocale }) => {
+      const activeLocale = toolLocale || reqLocale || "en";
 
-export type ChatTools = InferUITools<typeof tools>;
+      try {
+        const t = await getTranslations({
+          locale: activeLocale,
+          namespace: "email",
+        });
+
+        console.log(`Attempting to send CV in [${activeLocale}] to: ${email}`);
+
+        const { data, error } = await resend.emails.send({
+          from: "Nikolay Tetradov Portfolio <cv.nikolay@tetradov.uk>",
+          to: [email],
+          subject: t("subject"),
+          html: `
+            <div style="font-family: sans-serif; line-height: 1.5;">
+              <p>${t("greeting")}</p>
+              <p>${t("bodyText")}</p>
+              <div style="margin: 20px 0;">
+                <a href="https://www.tetradov.uk/Nikolay-Tetradov-CV.pdf"
+                   style="background-color: #000; color: #fff; padding: 10px 20px; text-decoration: none; border-radius: 5px;">
+                   ${t("buttonText")}
+                 </a>
+              </div>
+              <p>${t("closingText")}</p>
+            </div>
+          `,
+          attachments: [
+            {
+              filename: "Nikolay-Tetradov-CV.pdf",
+              path: "https://www.tetradov.uk/Nikolay-Tetradov-CV.pdf",
+            },
+          ],
+        });
+
+        if (error) {
+          console.error("Resend sending error:", error);
+          return t("errorMessage", { code: error.name, error: error.message });
+        }
+
+        console.log(
+          `CV email successfully sent in [${activeLocale}] to ${email}. ID: ${data?.id}`,
+        );
+        return t("successMessage", { email });
+      } catch (error) {
+        console.error("Resend exception:", error);
+        return `Error: ${error instanceof Error ? error.message : String(error)}`;
+      }
+    },
+  }),
+});
+
+const staticToolsForType = getChatTools("en");
+export type ChatTools = InferUITools<typeof staticToolsForType>;
 export type ChatMessage = UIMessage<never, UIDataTypes, ChatTools>;
 
 export async function POST(req: Request) {
@@ -50,37 +118,44 @@ export async function POST(req: Request) {
     const {
       messages,
       model,
-      // webSearch,
+      locale = "en",
     }: {
       messages: ChatMessage[];
       model: string;
-      // webSearch: boolean;
+      locale?: string;
     } = await req.json();
 
+    const activeTools = getChatTools(locale);
+
     const result = streamText({
-      // model: webSearch ? 'perplexity/sonar' : model,
-      model: model,
+      model,
       messages: await convertToModelMessages(messages),
-      tools,
-      system:
-        "You represent Natalia's personal portfolio and you can answer any portfolio-related questions. When users ask questions, search the knowledge base for relevant information. Always search before answering if the question might relate to uploaded documents. Base your answers on the search results when available. Give concise answers that correctly answer what the user is asking for. Do not flood them with all the information from the search results. Always end your answer with a call for action suggesting a job offer to the portfolio owner. If asked about marital status or availability for a date, reply that Natalia's heart is already taken by someone called Nik.",
-      stopWhen: stepCountIs(2),
+      tools: activeTools,
+      system: `You represent Nikolay Tetradov's personal portfolio and you can answer any portfolio-related questions. 
+The user's current UI locale/language is: ${locale}. Please prioritize responding in this language.
+
+When users ask questions, search the knowledge base for relevant information. Always search before answering if the question might relate to uploaded documents. 
+Base your answers on the search results when available. Give concise answers that correctly answer what the user is asking for. Do not flood them with all the information from the search results. 
+
+LEAD GENERATION FLOW:
+1. During the conversation, proactively offer to send Nikolay Tetradov's CV via email if the user seems like a recruiter or shows strong interest.
+2. If the user agrees, politely ask for their email address.
+3. Once the user provides their email address, immediately use the 'sendCvEmail' tool to send the document.
+4. After the tool executes, confirm to the user that the email has been sent.
+
+Always end your final answers (when not asking for an email) with a call for action suggesting a job offer to the portfolio owner. If asked about marital status or availability for a date, reply that Nikolay's heart is already taken by someone called Vkusnenkaya.`,
+      stopWhen: stepCountIs(5),
     });
 
-    // send sources and reasoning back to the client
     return result.toUIMessageStreamResponse({
       sendSources: true,
       sendReasoning: true,
     });
   } catch (error) {
-    // Log the error for server-side debugging
-    console.error('AI Stream Error:', error);
-
-    // Return a standard HTTP error response to the client
-    // We use NextResponse.json() from 'next/server' for this.
+    console.error("AI Stream Error:", error);
     return new Response(
-      'An unexpected error occurred while processing the AI request.',
-      { status: 500 }
+      "An unexpected error occurred while processing the AI request.",
+      { status: 500 },
     );
   }
 }

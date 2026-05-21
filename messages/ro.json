@@ -1,4 +1,13 @@
 {
+  "email": {
+    "subject": "CV-ul lui Nicolas Tetradov",
+    "greeting": "Bună ziua!",
+    "bodyText": "Vă mulțumesc pentru interesul manifestat față de portofoliul meu. Puteți descărca CV-ul meu din atașamentul acestui e-mail sau prin link-ul direct de mai jos:",
+    "buttonText": "Deschideți CV-ul în browser",
+    "closingText": "Aș fi bucuros să discutăm despre o potențială colaborare!",
+    "successMessage": "CV-ul a fost trimis cu succes la adresa {email}.",
+    "errorMessage": "Eroare la trimiterea prin Resend (cod {code}): {error}"
+  },
   "header": {
     "logo": "Nikolay Tetradov",
     "nav": {

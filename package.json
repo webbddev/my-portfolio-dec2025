@@ -61,6 +61,7 @@
     "react-dom": "19.2.4",
     "react-jsx-parser": "^2.4.1",
     "react-photo-album": "^3.1.0",
+    "resend": "^6.12.3",
     "shiki": "^4.0.2",
     "split-type": "^0.3.4",
     "streamdown": "^2.5.0",
@@ -80,6 +81,7 @@
     "@types/react-dom": "19.2.3",
     "eslint": "^9.0.0",
     "eslint-config-next": "16.2.0",
+    "prettier": "^3.8.3",
     "typescript": "^5"
   },
   "overrides": {

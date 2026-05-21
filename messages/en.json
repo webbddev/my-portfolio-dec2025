@@ -1,4 +1,13 @@
 {
+  "email": {
+    "subject": "Nicolas Tetradov - CV",
+    "greeting": "Hello!",
+    "bodyText": "Thank you for your interest in my portfolio. You can download my CV from the attachment in this email or via the direct link below:",
+    "buttonText": "Open CV in browser",
+    "closingText": "I would be glad to discuss potential collaboration!",
+    "successMessage": "CV successfully sent to {email}.",
+    "errorMessage": "Failed to send email: {error}"
+  },
   "header": {
     "logo": "Nicolas Tetradov",
     "nav": {

@@ -7,9 +7,12 @@ import {
   BrainCog,
   Maximize2,
   Minimize2,
-  X
+  X,
+  SearchIcon,
+  MailIcon,
+  AlertCircle,
 } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -36,11 +39,6 @@ import {
 } from "@/components/ai-elements/model-selector";
 import {
   PromptInput,
-  PromptInputActionAddAttachments,
-  PromptInputActionAddScreenshot,
-  PromptInputActionMenu,
-  PromptInputActionMenuContent,
-  PromptInputActionMenuTrigger,
   PromptInputBody,
   PromptInputButton,
   PromptInputFooter,
@@ -63,6 +61,7 @@ import {
   MessageLabelText,
   MessageResponse,
 } from "@/components/ai-elements/message";
+import type { ChatMessage } from "@/app/api/chat/route";
 
 const models = [
   {
@@ -97,9 +96,6 @@ const models = [
 
 const chefs = Array.from(new Set(models.map((m) => m.chef)));
 
-
-
-// Memoized model selector item component
 const ModelItem = memo(
   ({
     m,
@@ -134,7 +130,6 @@ ModelItem.displayName = "ModelItem";
 const PromptInputAttachmentsDisplay = () => {
   const attachments = usePromptInputAttachments();
   if (attachments.files.length === 0) return null;
-
   return (
     <Attachments variant="inline">
       {attachments.files.map((attachment) => (
@@ -151,23 +146,26 @@ const PromptInputAttachmentsDisplay = () => {
   );
 };
 
-interface RAGChatBotProps {
+const RAGChatBot = ({
+  isExpanded,
+  onToggleExpand,
+  onClose,
+}: {
   isExpanded?: boolean;
   onToggleExpand?: () => void;
   onClose?: () => void;
-}
-
-const RAGChatBot = ({ isExpanded, onToggleExpand, onClose }: RAGChatBotProps) => {
+}) => {
   const [text, setText] = useState<string>("");
   const [model, setModel] = useState<string>(models[0].id);
   const [modelSelectorOpen, setModelSelectorOpen] = useState(false);
-  const [useWebSearch, setUseWebSearch] = useState<boolean>(false);
+  // Web search state commented out
+  // const [useWebSearch, setUseWebSearch] = useState<boolean>(false);
 
-  const { messages, status, sendMessage, setMessages } = useChat();
+  const { messages, status, sendMessage, setMessages } = useChat<ChatMessage>();
   const t = useTranslations("voiceAgent");
+  const locale = useLocale();
 
   const selectedModelData = models.find((m) => m.id === model);
-
   const handleModelSelect = useCallback((id: string) => {
     setModel(id);
     setModelSelectorOpen(false);
@@ -175,93 +173,85 @@ const RAGChatBot = ({ isExpanded, onToggleExpand, onClose }: RAGChatBotProps) =>
 
   const handleSubmit = (message: PromptInputMessage) => {
     if (!message.text) return;
-
+    // webSearch body parameter removed/set to false
     sendMessage(
-      {
-        text: message.text,
-      },
-      {
-        body: {
-          model: model,
-          webSearch: useWebSearch,
-        },
-      },
+      { text: message.text },
+      { body: { model, webSearch: false, locale } },
     );
     setText("");
   };
 
   return (
-    <div className="relative size-full rounded-2xl border bg-card/80 backdrop-blur-2xl shadow-2xl flex flex-col overflow-hidden">
-      {/* Unified Header */}
+    <div className="relative size-full rounded-2xl border bg-card/80 backdrop-blur-2xl shadow-2xl flex flex-col overflow-hidden text-foreground">
+      {/* HEADER SECTION */}
       <div className="flex items-center justify-between p-4 border-b bg-card/50 backdrop-blur-md">
         <div className="flex items-center gap-3">
-          <div className="p-2 rounded-xl bg-primary/10 text-primary border border-primary/20 shadow-inner">
-            <BrainCog size={20} className="animate-pulse" />
+          <div className="p-2 xl:p-3 2xl:p-4 rounded-xl bg-primary/10 text-primary border border-primary/20 shadow-inner">
+            <BrainCog
+              className={cn(
+                "size-5 xl:size-8",
+                status === "streaming" && "animate-pulse",
+              )}
+            />
           </div>
           <div>
-            <h2 className="text-sm font-bold tracking-tight text-foreground/90 uppercase">
+            <h2 className="text-sm xl:text-xl font-bold tracking-tight uppercase">
               {t("title")}
             </h2>
-            <div className="flex items-center gap-1.5 mt-0.5">
+            <div className="flex items-center gap-1.5 mt-0.5 xl:mt-1">
               <span
                 className={cn(
-                  "size-1.5 rounded-full",
+                  "size-1.5 xl:size-2.5 2xl:size-3 rounded-full",
                   status === "streaming"
                     ? "bg-emerald-500 animate-pulse"
-                    : "bg-green-500",
+                    : "bg-green-500 animate-pulse",
                 )}
               />
-              <span className="text-[10px] text-muted-foreground font-medium uppercase tracking-widest">
+              <span className="text-[10px] xl:text-sm text-muted-foreground font-medium uppercase tracking-widest">
                 {status === "streaming" ? "Processing..." : "Ready"}
               </span>
             </div>
           </div>
         </div>
-
         <div className="flex items-center gap-1">
           <Button
             variant="ghost"
             size="icon"
-            className="rounded-full hover:bg-primary/10 hover:text-primary transition-all"
+            className="rounded-full xl:size-12 2xl:size-16"
             onClick={onToggleExpand}
-            title={isExpanded ? "Minimize" : "Maximize"}
           >
-            {isExpanded ? <Minimize2 size={18} /> : <Maximize2 size={18} />}
+            {isExpanded ? (
+              <Minimize2 className="size-4 xl:size-6 2xl:size-8" />
+            ) : (
+              <Maximize2 className="size-4 xl:size-6 2xl:size-8" />
+            )}
           </Button>
           <Button
             variant="ghost"
             size="icon"
-            className="rounded-full hover:bg-destructive/10 hover:text-destructive transition-all"
+            className="rounded-full xl:size-12 2xl:size-16"
             onClick={() => setMessages([])}
-            title="Clear Chat"
           >
-            <Trash2Icon size={18} />
+            <Trash2Icon className="size-4 xl:size-6 2xl:size-8" />
           </Button>
           <Button
             variant="ghost"
             size="icon"
-            className="rounded-full hover:bg-foreground/10 hover:text-foreground transition-all"
+            className="rounded-full xl:size-12 2xl:size-16"
             onClick={onClose}
-            title="Close"
           >
-            <X size={18} />
+            <X className="size-4 xl:size-6 2xl:size-8" />
           </Button>
         </div>
       </div>
 
-      <Conversation
-        className="flex-1 overflow-y-auto min-h-0 p-4 scrollbar-thin"
-        data-lenis-prevent
-      >
+      {/* CONVERSATION SECTION */}
+      <Conversation className="flex-1 overflow-y-auto p-4" data-lenis-prevent>
         <ConversationContent className="gap-6">
           {messages.map((message) => (
-            <Message
-              from={message.role}
-              key={message.id}
-              className="animate-in fade-in slide-in-from-bottom-2 duration-300"
-            >
+            <Message from={message.role} key={message.id}>
               <MessageLabel>
-                <MessageLabelText className="opacity-70">
+                <MessageLabelText className="opacity-70 xl:text-sm 2xl:text-base">
                   {message.role === "user"
                     ? t("labelUser")
                     : t("labelAssistant")}
@@ -275,15 +265,81 @@ const RAGChatBot = ({ isExpanded, onToggleExpand, onClose }: RAGChatBotProps) =>
                     : "border-muted bg-muted/20",
                 )}
               >
-                {message.parts.map((part, i) => {
-                  if (part.type === "text") {
-                    return (
-                      <MessageResponse key={`${message.id}-${i}`}>
-                        {part.text}
-                      </MessageResponse>
-                    );
+                {message.parts.map((part, index) => {
+                  switch (part.type) {
+                    case "text":
+                      return (
+                        <MessageResponse
+                          key={`${message.id}-${index}`}
+                          className="text-sm md:text-xl 2xl:text-2xl [&_p]:text-sm [&_p]:md:text-xl [&_p]:2xl:text-2xl"
+                        >
+                          {part.text}
+                        </MessageResponse>
+                      );
+
+                    case "tool-searchKnowledgeBase":
+                      return (
+                        <div
+                          key={`${message.id}-search-${index}`}
+                          className="my-2 xl:my-4 p-3 xl:p-5 rounded-lg border bg-zinc-500/5 border-zinc-500/20"
+                        >
+                          <div className="flex items-center gap-2 text-xs xl:text-base 2xl:text-lg font-bold uppercase tracking-tight text-muted-foreground mb-1 xl:mb-2">
+                            <SearchIcon
+                              className={cn(
+                                "size-3.5 xl:size-5 2xl:size-6",
+                                part.state !== "output-available" &&
+                                  "animate-pulse",
+                              )}
+                            />
+                            {part.state === "output-available"
+                              ? "Search Complete"
+                              : "Searching Knowledge Base..."}
+                          </div>
+                          {part.state === "input-available" && (
+                            <div className="text-[11px] xl:text-sm 2xl:text-base text-zinc-400 italic">
+                              Query: {part.input.query}
+                            </div>
+                          )}
+                          {part.state === "output-available" && (
+                            <div className="text-[11px] xl:text-sm 2xl:text-base text-zinc-500 line-clamp-1 border-t pt-1 xl:pt-2 mt-1 xl:mt-2 border-zinc-500/10">
+                              Matches found.
+                            </div>
+                          )}
+                        </div>
+                      );
+
+                    case "tool-sendCvEmail":
+                      return (
+                        <div
+                          key={`${message.id}-email-${index}`}
+                          className="my-2 xl:my-4 p-3 xl:p-5 rounded-lg border bg-primary/5 border-primary/20"
+                        >
+                          <div className="flex items-center gap-2 text-xs xl:text-base 2xl:text-lg font-bold uppercase tracking-tight text-primary mb-1 xl:mb-2">
+                            {part.state === "output-available" ? (
+                              <CheckIcon className="size-3.5 xl:size-5 2xl:size-6" />
+                            ) : (
+                              <MailIcon className="size-3.5 xl:size-5 2xl:size-6 animate-bounce" />
+                            )}
+                            {part.state === "output-available"
+                              ? "CV Email Sent ✅"
+                              : "Sending CV Email..."}
+                          </div>
+                          {part.input?.email && (
+                            <div className="text-[11px] xl:text-sm 2xl:text-base font-medium">
+                              📩 To: {part.input.email}
+                            </div>
+                          )}
+                          {part.state === "output-available" && (
+                            <div className="text-[11px] xl:text-sm 2xl:text-base text-emerald-600 dark:text-emerald-400 font-medium">
+                              {part.output}
+                            </div>
+                          )}
+                        </div>
+                      );
+
+                    default:
+                      return null;
                   }
-                  return null;
                 })}
               </MessageContent>
             </Message>
@@ -292,29 +348,34 @@ const RAGChatBot = ({ isExpanded, onToggleExpand, onClose }: RAGChatBotProps) =>
         <ConversationScrollButton />
       </Conversation>
 
-      <div className="p-4 border-t bg-card/30 backdrop-blur-sm">
+      {/* INPUT SECTION */}
+      <div className="p-4 xl:p-6 2xl:p-8 border-t bg-card/30 backdrop-blur-sm">
         <PromptInput onSubmit={handleSubmit} globalDrop multiple>
           <PromptInputHeader>
             <PromptInputAttachmentsDisplay />
           </PromptInputHeader>
+
           <PromptInputBody>
             <PromptInputTextarea
               onChange={(e) => setText(e.target.value)}
               value={text}
               placeholder="Ask me anything..."
-              className="bg-transparent border-none focus-visible:ring-0 min-h-[60px]"
+              className="text-sm xl:text-xl 2xl:text-2xl xl:min-h-[60px] 2xl:min-h-[80px] bg-transparent border-none focus-visible:ring-0"
             />
           </PromptInputBody>
+
           <PromptInputFooter className="flex items-center justify-between pt-2">
-            <PromptInputTools className="flex gap-2">
-              <PromptInputButton
+            <PromptInputTools className="flex gap-2 xl:gap-4">
+              {/* Web Search Button commented out below */}
+              {/* <PromptInputButton
                 onClick={() => setUseWebSearch(!useWebSearch)}
                 variant={useWebSearch ? "default" : "outline"}
-                className="h-8 rounded-full text-[11px] font-bold uppercase tracking-wider"
+                className={cn("h-8 xl:h-12 2xl:h-14 rounded-full text-[11px] xl:text-base 2xl:text-lg font-bold uppercase tracking-wider transition-all xl:px-6", useWebSearch ? "shadow-sm" : "hover:bg-primary/5 text-muted-foreground")}
               >
-                <GlobeIcon size={14} className="mr-1.5" />
+                <GlobeIcon className="size-3.5 xl:size-5 2xl:size-6 mr-1.5 xl:mr-2" />
                 <span>Search</span>
-              </PromptInputButton>
+              </PromptInputButton> 
+              */}
 
               <ModelSelector
                 onOpenChange={setModelSelectorOpen}
@@ -323,12 +384,12 @@ const RAGChatBot = ({ isExpanded, onToggleExpand, onClose }: RAGChatBotProps) =>
                 <ModelSelectorTrigger asChild>
                   <PromptInputButton
                     variant="outline"
-                    className="h-8 rounded-full text-[11px] font-bold uppercase tracking-wider"
+                    className="h-8 xl:h-12 2xl:h-14 rounded-full text-[11px] xl:text-base 2xl:text-lg font-bold uppercase tracking-wider xl:px-6"
                   >
                     {selectedModelData?.chefSlug && (
                       <ModelSelectorLogo
                         provider={selectedModelData.chefSlug}
-                        className="mr-1.5 size-3.5"
+                        className="mr-1.5 xl:mr-2 size-3.5 xl:size-5 2xl:size-6"
                       />
                     )}
                     <ModelSelectorName>
@@ -336,7 +397,7 @@ const RAGChatBot = ({ isExpanded, onToggleExpand, onClose }: RAGChatBotProps) =>
                     </ModelSelectorName>
                   </PromptInputButton>
                 </ModelSelectorTrigger>
-                <ModelSelectorContent className="z-[100]">
+                <ModelSelectorContent className="z-[100] max-w-[320px]">
                   <ModelSelectorInput placeholder="Search models..." />
                   <ModelSelectorList>
                     <ModelSelectorEmpty>No models found.</ModelSelectorEmpty>
@@ -358,10 +419,11 @@ const RAGChatBot = ({ isExpanded, onToggleExpand, onClose }: RAGChatBotProps) =>
                 </ModelSelectorContent>
               </ModelSelector>
             </PromptInputTools>
+
             <PromptInputSubmit
               disabled={!text && status !== "ready"}
               status={status}
-              className="rounded-full size-9 shrink-0 shadow-lg shadow-primary/20"
+              className="rounded-full size-9 xl:size-14 2xl:size-16 shrink-0 shadow-lg shadow-primary/20"
             />
           </PromptInputFooter>
         </PromptInput>

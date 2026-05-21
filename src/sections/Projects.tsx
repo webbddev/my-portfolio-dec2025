@@ -1,4 +1,5 @@
 "use client";
+
 import { projectsData } from "@/data/projects-data";
 import { useLocale, useTranslations } from "next-intl";
 import { Link } from "../../i18n/navigation";

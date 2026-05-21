@@ -1,0 +1,5 @@
+How to Embed & Save Content to Your DB
+To process the text, generate vectors, clear the old project records, and insert the new ones, all you need to do is send a GET request to /api/embed-projects.
+1. Triggered this endpoint:
+
+curl -i http://localhost:3000/api/embed-projects

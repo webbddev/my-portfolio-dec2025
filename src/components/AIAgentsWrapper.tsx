@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import { VoiceAgent } from "./VoiceAgent";
 import RAGChatBot from "./RAGChatBot";
 import { motion, AnimatePresence } from "motion/react";
-import { X, Maximize2, Minimize2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export const AIAgentsWrapper = () => {
@@ -26,8 +25,8 @@ export const AIAgentsWrapper = () => {
             className={cn(
               "fixed bottom-6 right-6 z-[70] w-full shadow-2xl transition-all duration-300 ease-in-out",
               isExpanded 
-                ? "max-w-[90vw] h-[85vh] 2xl:max-w-[1000px] bottom-4 right-4" 
-                : "max-w-[450px] h-[700px] 2xl:max-w-[500px] 2xl:bottom-12 2xl:right-12"
+                ? "max-w-[90vw] h-[85vh] 2xl:max-w-[1300px] bottom-4 right-4" 
+                : "w-[90vw] max-w-[450px] h-[700px] 2xl:max-w-[500px] 2xl:bottom-12 2xl:right-12"
             )}
           >
             <RAGChatBot 

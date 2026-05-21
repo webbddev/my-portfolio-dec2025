@@ -241,7 +241,7 @@ const Hero = () => {
                 >
                   <Button
                     variant="primary"
-                    href="/Byhalova Natalia - CV.pdf"
+                    href="/Nikolay-Tetradov-CV.pdf"
                     className="text-[14px] hover:bg-green-700"
                     target="_blank"
                     rel="noopener noreferrer"
