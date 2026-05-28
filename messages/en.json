@@ -203,53 +203,92 @@
       "detailedOverview": "The AI Journalist is a high-efficiency production pipeline designed to replace hours of manual research with a 10-minute automated run. The system orchestrates a complex 'Two-Pass' scraping method: it first captures the broad event landscape before deep-diving into individual URLs to pull cast lists, plot summaries, and venue details. By leveraging Google Gemini's reasoning capabilities alongside a 'Gold Standard' reference sample, the workflow ensures every digest sounds like a professional cultural critic. The project showcases the power of Agentic workflows where one AI writes the story, another speaks it, and a third designs the envelope it arrives in.",
       "challengeAndSolutionDescription": "The primary challenge was the high 'noise-to-signal' ratio and the fragmented nature of local event data, which usually takes a human over 2 hours to curate. I solved this by engineering a unified aggregator that normalizes disparate date formats (e.g., '25 Martie' to ISO) and filters out irrelevant categories like cinema or sports. By implementing 'Human-Mimetic' interaction logic to bypass bot protections and adding a visual analysis layer for flyers, the solution transforms raw, messy web data into a polished, multi-modal cultural product delivered straight to the user's inbox with zero manual intervention."
     },
-    "event-automation-engine": {
-      "category": "AI Automation",
-      "title": "Cultural Intelligence Scraper",
-      "shortOverview": "An automated event aggregation system for local cultural events without manual search.",
-      "techStack": ["n8n", "Puppeteer", "Docker", "Cloudflare"],
-      "industry": "Media & Automation",
-      "roleDescription": "Automation Engineer",
+    "photographers-animated-portfolio": {
+      "category": "Full-Stack Web Development & Design",
+      "title": "Alivia Gordis:\nPremium Photography Portfolio",
+      "shortOverview": "A minimalist, visually striking portfolio designed for elite visual artists, combining elegant motion aesthetics with high-performance frontend engineering.",
+      "techStack": [
+        "Next.js (App Router)",
+        "React (Context API)",
+        "TypeScript",
+        "Tailwind CSS v4",
+        "Framer Motion",
+        "Yet Another React Lightbox",
+        "Swiper.js"
+      ],
+      "industry": "Creative Industries / Photography / Premium Web Experiences",
+      "roleDescription": "Full-Stack Developer & UI Engineer",
       "links": {
-        "live": null,
-        "github": "https://github.com/nicolai/n8n-scraper"
+        "live": "https://photography-portfolio-one-mu.vercel.app/",
+        "github": "https://github.com/webbddev/photography-portfolio"
       },
       "keyFeatures": [
         {
-          "featTitle": "Headless Automation",
-          "featDescription": "Automation via Docker containers."
+          "featTitle": "Framework Migration & Performance Lift",
+          "featDescription": "Refactored the application from a standard client-side React SPA to the Next.js App Router framework. This shift unlocked seamless pre-rendering, improved SEO indexing, and optimized Core Web Vitals using native Image components."
         },
         {
-          "featTitle": "Custom Logic Filters",
-          "featDescription": "Filtering and categorizing events by date and location."
+          "featTitle": "Interactive Global Cursor Pipeline",
+          "featDescription": "Engineered a centralized interaction layer via React Context to manage a custom cursor. The system tracks global mouse coordinates, triggers smooth Framer Motion variants, and applies high-contrast 'mix-blend-mode' styling over typography."
+        },
+        {
+          "featTitle": "Optimized Media & Image Lightbox",
+          "featDescription": "Integrated a premium viewing layer powered by 'yet-another-react-lightbox'. Designed a custom rendering pipeline that seamlessly delivers sharp, hardware-accelerated image presentation without impacting main-thread performance."
+        },
+        {
+          "featTitle": "Advanced Responsive Asset Swiping",
+          "featDescription": "Integrated Swiper.js to construct touch-optimized, multi-device carousels. Leveraged custom responsive breakpoints and smooth velocity physics to elegantly showcase high-resolution photography assets without blocking main-thread execution."
         }
       ],
-      "detailedOverview": "An automated digest system for journalists that aggregates local events without manual intervention.",
-      "challengeAndSolutionDescription": "Scraping dynamic sites often led to bot detection. By containerizing Puppeteer and using n8n logic, I created a detection-evading workflow."
+      "detailedOverview": "This project started as a deep dive into mastering advanced UI animations with Framer Motion in a standard React application. To elevate the project further, I migrated the entire codebase to the Next.js App Router framework. This transition was a massive learning experience that taught me how to blend complex motion design with strict web performance. By moving to Next.js, I successfully added native image optimization, cleaner routing, and vastly superior asset handling while keeping the fluid, interactive animations intact.",
+      "challengeAndSolutionDescription": "The main hurdle was showcasing high-resolution photography without slow loading times or layout shifts. I solved this by embedding native Next.js Image optimization directly into the custom lightbox pipeline. This approach cut image payload sizes by over 40%, ensuring heavy lookbooks load instantly and look razor-sharp on any device."
     },
-    "mcp-server-exploration": {
-      "category": "Technical Deep-Dive",
-      "title": "Agentic AI Infrastructure",
-      "shortOverview": "A deep-dive into the Model Context Protocol to understand how LLMs interact with local file systems and databases.",
-      "techStack": ["TypeScript", "MCP SDK", "Node.js"],
-      "industry": "AI & Research",
-      "roleDescription": "Systems Researcher",
+    "tbpro-shampoo": {
+      "category": "Full-Stack Web Development & Design",
+      "title": "TB Shampoo: Premium Amino Acid Hair Care",
+      "shortOverview": "A multilingual, high-performance website for Tatiana Braga's premium amino acid shampoo, featuring smooth animations, interactive map, and contact form with email integration.",
+      "techStack": [
+        "Next.js (App Router)",
+        "React",
+        "TypeScript-ready (JavaScript)",
+        "Tailwind CSS",
+        "Framer Motion",
+        "Leaflet / React-Leaflet",
+        "Next-Intl (i18n)",
+        "Resend",
+        "React-Email",
+        "Sharp (Image optimization)"
+      ],
+      "industry": "Beauty & Personal Care / E-commerce (Product Showcase)",
+      "roleDescription": "Full-Stack Developer & UI Engineer",
       "links": {
-        "live": null,
-        "github": "https://github.com/nicolai/mcp-testing"
+        "live": "",
+        "github": ""
       },
       "keyFeatures": [
         {
-          "featTitle": "MCP Protocol Analysis",
-          "featDescription": "Deep analysis of Claude's MCP implementation."
+          "featTitle": "Multilingual Internationalization",
+          "featDescription": "Implemented full i18n support with Next-Intl for three languages (English, Romanian, Russian) with smooth language switching and URL-based locale routing."
         },
         {
-          "featTitle": "Local DB Integration",
-          "featDescription": "Successful integration of local SQLite databases with AI agents."
+          "featTitle": "Fluid Framer Motion Animations",
+          "featDescription": "Created elegant scroll-triggered animations using Framer Motion with custom fade-in variants and staggered children transitions for a polished user experience."
+        },
+        {
+          "featTitle": "Interactive Leaflet Map",
+          "featDescription": "Integrated Leaflet with React-Leaflet to showcase the TB Beauty House location with custom markers and popup information, disabled SSR for map compatibility."
+        },
+        {
+          "featTitle": "Email Contact Form",
+          "featDescription": "Built a secure contact form with Resend and React-Email integration, featuring toast notifications, form validation, and loading states for smooth user feedback."
+        },
+        {
+          "featTitle": "Responsive Product Showcase",
+          "featDescription": "Designed a fully responsive layout showcasing the shampoo products, features, FAQs, testimonials, and contact information with Tailwind CSS breakpoints."
         }
       ],
-      "detailedOverview": "A deep-dive into the Model Context Protocol to understand how LLMs interact with local file systems and databases.",
-      "challengeAndSolutionDescription": "The project focused on the 'under the hood' mechanics of agentic workflows. By building a custom MCP server from scratch, I gained a granular understanding of tool-calling protocols and context-window management."
+      "detailedOverview": "This project is a complete migration and enhancement of a premium shampoo product website to Next.js 14 with the App Router. The site showcases Tatiana Braga's 20 years of expertise as a stylist and her unique amino acid shampoo formula. I implemented multilingual support, smooth animations, interactive map integration, and a robust email contact system while maintaining excellent performance with Next.js image optimization.",
+      "challengeAndSolutionDescription": "The main challenge was integrating Leaflet maps in a Next.js App Router environment, which was solved by using dynamic imports with SSR disabled. Another challenge was ensuring reliable email delivery from the contact form, addressed with Resend integration and proper form state management."
     },
     "residential-harmony": {
       "category": "Interior Design",

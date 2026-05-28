@@ -37,6 +37,21 @@ import aj_image3 from "../../public/projects/ai-journalist-1tv/aj-3.png";
 import aj_image4 from "../../public/projects/ai-journalist-1tv/aj-4.png";
 import aj_image5 from "../../public/projects/ai-journalist-1tv/aj-5.png";
 
+// Project images for Photographers Animated Portfolio
+import phot_image1 from "../../public/projects/photographers-animated-portfolio/phot-1.png";
+import phot_image2 from "../../public/projects/photographers-animated-portfolio/phot-2.png";
+import phot_image3 from "../../public/projects/photographers-animated-portfolio/phot-3.png";
+import phot_image4 from "../../public/projects/photographers-animated-portfolio/phot-4.png";
+
+// Project images for TBPro Shampoo
+import tbpro_image1 from "../../public/projects/tbpro-shampoo/tbpro-1.png";
+import tbpro_image2 from "../../public/projects/tbpro-shampoo/tbpro-2.png";
+import tbpro_image3 from "../../public/projects/tbpro-shampoo/tbpro-3.png";
+import tbpro_image4 from "../../public/projects/tbpro-shampoo/tbpro-4.png";
+import tbpro_image5 from "../../public/projects/tbpro-shampoo/tbpro-5.png";
+import tbpro_image6 from "../../public/projects/tbpro-shampoo/tbpro-6.png";
+import tbpro_image7 from "../../public/projects/tbpro-shampoo/tbpro-7.png";
+
 export type ProjectData = {
   id: number;
   name: string;
@@ -312,6 +327,103 @@ export const projectsData: ProjectData[] = [
           width: 1080,
           height: 720,
           alt: "Residential Harmony bedroom view 6",
+        },
+      ],
+    },
+  },
+  {
+    id: 4,
+    name: "Alivia Gordis: Premium Photography Portfolio",
+    slug: "photographers-animated-portfolio",
+    thumbnail: phot_image1,
+    gallery: {
+      images: [
+        {
+          src: phot_image1,
+          original: phot_image1,
+          width: 1920,
+          height: 1080,
+          alt: "Alivia Gordis: Premium Photography Portfolio - Home",
+        },
+        {
+          src: phot_image2,
+          original: phot_image2,
+          width: 1920,
+          height: 1080,
+          alt: "Alivia Gordis: Premium Photography Portfolio - Gallery",
+        },
+        {
+          src: phot_image3,
+          original: phot_image3,
+          width: 1920,
+          height: 1080,
+          alt: "Alivia Gordis: Premium Photography Portfolio - Details",
+        },
+        {
+          src: phot_image4,
+          original: phot_image4,
+          width: 1920,
+          height: 1080,
+          alt: "Alivia Gordis: Premium Photography Portfolio - Contact",
+        },
+      ],
+    },
+  },
+  {
+    id: 5,
+    name: "TB Shampoo: Premium Amino Acid Hair Care",
+    slug: "tbpro-shampoo",
+    thumbnail: tbpro_image1,
+    gallery: {
+      images: [
+        {
+          src: tbpro_image1,
+          original: tbpro_image1,
+          width: 1920,
+          height: 1080,
+          alt: "TB Shampoo: Premium Amino Acid Hair Care - Home",
+        },
+        {
+          src: tbpro_image2,
+          original: tbpro_image2,
+          width: 1920,
+          height: 1080,
+          alt: "TB Shampoo: Premium Amino Acid Hair Care - Products",
+        },
+        {
+          src: tbpro_image3,
+          original: tbpro_image3,
+          width: 1920,
+          height: 1080,
+          alt: "TB Shampoo: Premium Amino Acid Hair Care - Features",
+        },
+        {
+          src: tbpro_image4,
+          original: tbpro_image4,
+          width: 1920,
+          height: 1080,
+          alt: "TB Shampoo: Premium Amino Acid Hair Care - About",
+        },
+        {
+          src: tbpro_image5,
+          original: tbpro_image5,
+          width: 1920,
+          height: 1080,
+          alt: "TB Shampoo: Premium Amino Acid Hair Care - Testimonials",
+        },
+        {
+          src: tbpro_image6,
+          original: tbpro_image6,
+          width: 1920,
+          height: 1080,
+          alt: "TB Shampoo: Premium Amino Acid Hair Care - FAQ",
+        },
+        {
+          src: tbpro_image7,
+          original: tbpro_image7,
+          width: 1920,
+          height: 1080,
+          alt: "TB Shampoo: Premium Amino Acid Hair Care - Contact",
         },
       ],
     },

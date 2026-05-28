@@ -203,6 +203,93 @@
       "detailedOverview": "Jurnalistul AI este un pipeline de producție de înaltă eficiență, conceput pentru a înlocui orele de cercetare manuală cu o rulare automatizată de 10 minute. Sistemul orchestrează o metodă complexă de colectare 'în doi pași': mai întâi capturează peisajul general al evenimentelor, înainte de a analiza în profunzime URL-urile individuale pentru a extrage liste de distribuție, rezumate ale subiectelor și detalii despre locații. Utilizând capacitățile de raționament ale Google Gemini alături de o probă de referință 'Gold Standard', fluxul de lucru se asigură că fiecare rezumat sună ca un critic cultural profesionist. Proiectul demonstrează puterea fluxurilor de lucru agentice, unde un AI scrie povestea, altul o rostește și un al treilea proiectează plicul în care aceasta ajunge.",
       "challengeAndSolutionDescription": "Provocarea principală a fost raportul mare 'zgomot-semnal' și natura fragmentată a datelor locale despre evenimente, care de obicei necesită un om peste 2 ore pentru a le selecta. Am rezolvat acest lucru prin proiectarea unui agregator unificat care normalizează formate disparate de date (de exemplu, '25 Martie' în ISO) și filtrează categoriile irelevante precum cinema sau sport. Prin implementarea unei logici de interacțiune care imită comportamentul uman pentru a ocoli protecțiile anti-bot și adăugarea unui strat de analiză vizuală pentru afișe, soluția transformă datele web brute și dezordonate într-un produs cultural multi-modal rafinat, livrat direct în căsuța poștală a utilizatorului, fără nicio intervenție manuală."
     },
+    "photographers-animated-portfolio": {
+      "category": "Dezvoltare Web Full-Stack și Design",
+      "title": "Alivia Gordis:\nPortofoliu Premium de Fotografie",
+      "shortOverview": "Un portofoliu minimalist și de impact vizual, conceput pentru fotografi de top, ce îmbină animații elegante cu performanță frontend de nivel înalt.",
+      "techStack": [
+        "Next.js (App Router)",
+        "React (Context API)",
+        "TypeScript",
+        "Tailwind CSS v4",
+        "Framer Motion",
+        "Yet Another React Lightbox",
+        "Swiper.js"
+      ],
+      "industry": "Industrii Creative / Fotografie / Experiențe Web Premium",
+      "roleDescription": "Dezvoltator Full-Stack & UI Engineer",
+      "links": {
+        "live": "https://photography-portfolio-one-mu.vercel.app/",
+        "github": "https://github.com/webbddev/photography-portfolio"
+      },
+      "keyFeatures": [
+        {
+          "featTitle": "Migrare de Framework și Plus de Performanță",
+          "featDescription": "Am refăcut aplicația dintr-un React SPA standard într-un proiect bazat pe Next.js App Router. Această schimbare a adus pre-rendare fluidă, o indexare SEO superioară și optimizarea indicatorilor Core Web Vitals prin componentele native Image."
+        },
+        {
+          "featTitle": "Cursor Interactiv Global",
+          "featDescription": "Am dezvoltat un strat centralizat de interacțiune prin React Context pentru gestionarea unui cursor personalizat. Sistemul urmărește coordonatele mouse-ului, declanșează variante fluide de Framer Motion și aplică efectul de contrast 'mix-blend-mode' peste text."
+        },
+        {
+          "featTitle": "Lightbox Optimizat pentru Media și Imagini",
+          "featDescription": "Am integrat un modul premium de vizualizare bazat pe 'yet-another-react-lightbox'. Am conceput o structură personalizată de randare care livrează imagini clare, accelerate hardware, fără a încărca thread-ul principal."
+        },
+        {
+          "featTitle": "Sursă de Afișare Adaptivă și Fluidă",
+          "featDescription": "Am integrat Swiper.js pentru a crea caruseluri tactile optimizate multi-dispozitiv. Am folosit breakpoints adaptive și o fizică fluidă a mișcării pentru a prezenta fotografii de înaltă rezoluție fără a bloca interfața."
+        }
+      ],
+      "detailedOverview": "Acest proiect a început ca o explorare profundă în stăpânirea animațiilor avansate de UI folosind Framer Motion într-o aplicație React standard. Pentru a ridica proiectul la un alt nivel, am migrat întreaga bază de cod pe framework-ul Next.js App Router. Această tranziție a fost o experiență excelentă de învățare, arătându-mi cum să combin animațiile complexe cu performanța web strictă. Trecerea la Next.js mi-a permis să adaug optimizare nativă pentru imagini, un sistem de rute mai curat și o gestionare mult mai eficientă a fișierelor, păstrând în același timp animațiile fluide și interactive.",
+      "challengeAndSolutionDescription": "Principala provocare a fost afișarea fotografiilor de înaltă rezoluție fără timpi mari de încărcare sau deplasări de layout (layout shifts). Am rezolvat această problemă prin integrarea optimizării native Next.js Image direct în structura lightbox-ului. Această abordare a redus dimensiunea imaginilor cu peste 40%, asigurând încărcarea instantanee și redarea perfectă a portofoliilor pe orice dispozitiv."
+    },
+    "tbpro-shampoo": {
+      "category": "Dezvoltare Web Full-Stack și Design",
+      "title": "TB Shampoo: Șampon Premium cu Aminoacizi",
+      "shortOverview": "Un site web multilingual și de înaltă performanță pentru șamponul premium cu aminoacizi al Tatienei Braga, cu animații fluide, hartă interactivă și formular de contact cu integrare de email.",
+      "techStack": [
+        "Next.js (App Router)",
+        "React",
+        "TypeScript-ready (JavaScript)",
+        "Tailwind CSS",
+        "Framer Motion",
+        "Leaflet / React-Leaflet",
+        "Next-Intl (i18n)",
+        "Resend",
+        "React-Email",
+        "Sharp (Optimizare de imagini)"
+      ],
+      "industry": "Frumusețe și Îngrijire Personală / Prezentare de Produs E-commerce",
+      "roleDescription": "Dezvoltator Full-Stack & UI Engineer",
+      "links": {
+        "live": "",
+        "github": ""
+      },
+      "keyFeatures": [
+        {
+          "featTitle": "Internaționalizare Multilinguală",
+          "featDescription": "Am implementat suport complet i18n cu Next-Intl pentru trei limbi (Engleză, Română, Rusă) cu schimbare fluentă a limbii și rutare locală bazată pe URL."
+        },
+        {
+          "featTitle": "Animații Fluide Framer Motion",
+          "featDescription": "Am creat animații elegante declanșate de scroll folosind Framer Motion cu variante personalizate de fade-in și tranziții între elemente pentru o experiență de utilizator rafinată."
+        },
+        {
+          "featTitle": "Hartă Interactivă Leaflet",
+          "featDescription": "Am integrat Leaflet cu React-Leaflet pentru a prezenta locația Beauty House TB cu markeri personalizați și informații popup, dezactivând SSR pentru compatibilitatea cu harta."
+        },
+        {
+          "featTitle": "Formular de Contact cu Email",
+          "featDescription": "Am construit un formular de contact securizat cu integrare Resend și React-Email, cu notificări toast, validare a formularului și stări de încărcare pentru un feedback fluid pentru utilizator."
+        },
+        {
+          "featTitle": "Prezentare Adaptivă a Produsului",
+          "featDescription": "Am proiectat un layout complet adaptiv pentru prezentarea produselor de șampon, a caracteristicilor, întrebărilor frecvente, testimonialelor și informațiilor de contact folosind breakpoints Tailwind CSS."
+        }
+      ],
+      "detailedOverview": "Acest proiect este o migrare completă și o îmbunătățire a unui site web de prezentare a unui șampon premium pe Next.js 14 cu App Router. Site-ul prezintă cei 20 de ani de experiență a Tatienei Braga ca stilist și formula sa unică de șampon cu aminoacizi. Am implementat suport multilingual, animații fluide, integrare de hartă interactivă și un sistem robust de contact prin email, păstrând în același timp o performanță excelentă cu optimizarea imaginilor Next.js.",
+      "challengeAndSolutionDescription": "Principala provocare a fost integrarea hărților Leaflet într-un mediu Next.js App Router, care a fost rezolvată prin importuri dinamice cu SSR dezactivat. O altă provocare a fost asigurarea unei livrări fiabile a emailurilor din formularul de contact, rezolvată cu integrarea Resend și o gestionare adecvată a stării formularului."
+    },
     "event-automation-engine": {
       "category": "Automatizare AI",
       "title": "Cultural Intelligence Scraper",

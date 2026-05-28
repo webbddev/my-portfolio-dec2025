@@ -1,0 +1,27 @@
+### Re-introduction of AI Agent Discoverability Features
+"I want to re-implement the discoverability features for my AI assistant across the portfolio. Please follow these technical specifications for each file:
+
+1. Localization Updates ( messages/[locale].json )
+
+- In the hero section, add an aiBadge key (e.g., 'AI ASSISTANT READY').
+- In the voiceAgent section, add:
+  - A nudges array with short phrases (e.g., 'Ask about projects', 'Get my CV').
+  - A quickActions object containing projects , cv , and booking keys. Each should have a title , description , and a pre-written prompt .
+- Apply this to English, Russian, and Romanian files.
+2. VoiceAgent Nudges ( src/components/VoiceAgent.tsx )
+
+- Import useEffect and Sparkles (from lucide-react).
+- Implement a currentNudgeIndex state and a useEffect that cycles through the nudges from translations every 5 seconds.
+- Add an AnimatePresence wrapper for a "thought bubble" above the collapsed agent. The bubble should show the current nudge with a subtle entrance animation.
+3. RAGChatBot Welcome State ( src/components/RAGChatBot.tsx )
+
+- Crucial : Import AnimatePresence and motion from motion/react . Also import Layout , FileText , and CalendarCheck from lucide-react .
+- Update the useChat hook to include the append function.
+- Create a 'Welcome View' that displays when messages.length === 0 .
+- Inside the Welcome View, render three interactive cards using the quickActions data from translations.
+- When a card is clicked, use append({ role: 'user', content: action.prompt }) to trigger the AI response automatically.
+4. Hero Section Badge ( src/sections/Hero.tsx )
+
+- Import Sparkles from lucide-react .
+- Add a subtle floating badge with the aiBadge text right above the CTA buttons.
+- Use a backdrop-blur and a subtle pulse animation on the icon to make it feel 'alive' without being distracting."

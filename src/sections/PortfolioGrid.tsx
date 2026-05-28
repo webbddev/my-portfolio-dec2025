@@ -37,6 +37,14 @@ export default function PortfolioGrid() {
       ...projectsData.find((p) => p.slug === "residential-harmony")!,
       categories: ["landing"],
     },
+    {
+      ...projectsData.find((p) => p.slug === "photographers-animated-portfolio")!,
+      categories: ["landing"],
+    },
+    {
+      ...projectsData.find((p) => p.slug === "tbpro-shampoo")!,
+      categories: ["landing"],
+    },
   ];
 
   const filteredItems =
@@ -51,7 +59,7 @@ export default function PortfolioGrid() {
   };
 
   return (
-    <section className="section container mx-auto py-20 px-4 md:px-8 bg-background transition-colors duration-500" id="portfolio">
+    <section className="section container mx-auto py-20 px-4 md:px-8 bg-background transition-colors duration-500" id="projects">
       <h2 className="text-4xl md:text-7xl lg:text-8xl mb-16 text-foreground">{t("heading")}</h2>
       {/* --- FILTER TABS --- */}
       <div className="flex flex-wrap gap-x-6 sm:gap-x-10 gap-y-4 border-b border-border mb-16">

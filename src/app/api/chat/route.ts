@@ -116,7 +116,11 @@ const getChatTools = (reqLocale: string) => ({
     inputSchema: z.object({
       name: z.string().describe("Full name of the attendee"),
       email: z.string().email().describe("Email address of the attendee"),
-      title: z.string().describe("Job title or role of the attendee (e.g., Recruiter, Hiring Manager, Tech Lead)"),
+      title: z
+        .string()
+        .describe(
+          "Job title or role of the attendee (e.g., Recruiter, Hiring Manager, Tech Lead)",
+        ),
       dateTime: z
         .string()
         .describe(
@@ -159,7 +163,7 @@ const getChatTools = (reqLocale: string) => ({
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            "Authorization": `Bearer ${calApiKey}`,
+            Authorization: `Bearer ${calApiKey}`,
             "cal-api-version": "2024-08-13",
           },
           body: JSON.stringify({
