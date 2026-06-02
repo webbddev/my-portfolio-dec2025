@@ -52,6 +52,14 @@ import tbpro_image5 from "../../public/projects/tbpro-shampoo/tbpro-5.png";
 import tbpro_image6 from "../../public/projects/tbpro-shampoo/tbpro-6.png";
 import tbpro_image7 from "../../public/projects/tbpro-shampoo/tbpro-7.png";
 
+// Project images for Alevtina Gordienko Portfolio
+import ag_image1 from "../../public/projects/alevtina-gordienko-portfolio/alevtina-1.png";
+import ag_image2 from "../../public/projects/alevtina-gordienko-portfolio/alevtina-2.png";
+import ag_image3 from "../../public/projects/alevtina-gordienko-portfolio/alevtina-3.png";
+import ag_image4 from "../../public/projects/alevtina-gordienko-portfolio/alevtina-4.png";
+import ag_image5 from "../../public/projects/alevtina-gordienko-portfolio/alevtina-5.png";
+import ag_image6 from "../../public/projects/alevtina-gordienko-portfolio/alevtina-6.png";
+
 export type ProjectData = {
   id: number;
   name: string;
@@ -424,6 +432,58 @@ export const projectsData: ProjectData[] = [
           width: 1920,
           height: 1080,
           alt: "TB Shampoo: Premium Amino Acid Hair Care - Contact",
+        },
+      ],
+    },
+  },
+  {
+    id: 6,
+    name: "Alevtina Gordienko Portfolio",
+    slug: "alevtina-gordienko-portfolio",
+    thumbnail: ag_image1,
+    gallery: {
+      images: [
+        {
+          src: ag_image1,
+          original: ag_image1,
+          width: 1920,
+          height: 1080,
+          alt: "Alevtina Gordienko Portfolio - Home",
+        },
+        {
+          src: ag_image2,
+          original: ag_image2,
+          width: 1920,
+          height: 1080,
+          alt: "Alevtina Gordienko Portfolio - Gallery",
+        },
+        {
+          src: ag_image3,
+          original: ag_image3,
+          width: 1920,
+          height: 1080,
+          alt: "Alevtina Gordienko Portfolio - Details",
+        },
+        {
+          src: ag_image4,
+          original: ag_image4,
+          width: 1920,
+          height: 1080,
+          alt: "Alevtina Gordienko Portfolio - About",
+        },
+        {
+          src: ag_image5,
+          original: ag_image5,
+          width: 1920,
+          height: 1080,
+          alt: "Alevtina Gordienko Portfolio - Contact",
+        },
+        {
+          src: ag_image6,
+          original: ag_image6,
+          width: 1920,
+          height: 1080,
+          alt: "Alevtina Gordienko Portfolio - Contact",
         },
       ],
     },

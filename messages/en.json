@@ -262,8 +262,8 @@
       "industry": "Beauty & Personal Care / E-commerce (Product Showcase)",
       "roleDescription": "Full-Stack Developer & UI Engineer",
       "links": {
-        "live": "",
-        "github": ""
+        "live": "https://tbprofessional.pro/en",
+        "github": "https://github.com/webbddev/tb-shampoov"
       },
       "keyFeatures": [
         {
@@ -289,6 +289,75 @@
       ],
       "detailedOverview": "This project is a complete migration and enhancement of a premium shampoo product website to Next.js 14 with the App Router. The site showcases Tatiana Braga's 20 years of expertise as a stylist and her unique amino acid shampoo formula. I implemented multilingual support, smooth animations, interactive map integration, and a robust email contact system while maintaining excellent performance with Next.js image optimization.",
       "challengeAndSolutionDescription": "The main challenge was integrating Leaflet maps in a Next.js App Router environment, which was solved by using dynamic imports with SSR disabled. Another challenge was ensuring reliable email delivery from the contact form, addressed with Resend integration and proper form state management."
+    },
+    "alevtina-gordienko-portfolio": {
+      "category": "Full-Stack Web Development & Design",
+      "title": "Alevtina Gordienko Portfolio",
+      "shortOverview": "A modern, multilingual portfolio website for journalist and producer Alevtina Gordienko, featuring an AI chatbot with RAG, Calendly scheduling, smooth animations, and interactive project showcase.",
+      "techStack": [
+        "Next.js 16 (App Router)",
+        "React 19",
+        "TypeScript",
+        "Tailwind CSS 4",
+        "Framer Motion",
+        "next-intl (i18n)",
+        "react-calendly",
+        "@ai-sdk/react",
+        "@ai-sdk/google",
+        "@ai-sdk/openai",
+        "Drizzle ORM",
+        "Neon Database",
+        "Three.js",
+        "@react-three/fiber",
+        "@react-three/drei",
+        "Lucide React",
+        "Radix UI",
+        "Lenis (smooth scrolling)",
+        "PDF parsing",
+        "RAG (Retrieval-Augmented Generation)"
+      ],
+      "industry": "Portfolio / Personal Branding",
+      "roleDescription": "Full-Stack Developer & UI Engineer",
+      "links": {
+        "live": "https://alevtina-gordis.vercel.app/en",
+        "github": "https://github.com/webbddev/alevtina-gordis"
+      },
+      "keyFeatures": [
+        {
+          "featTitle": "Multilingual Internationalization",
+          "featDescription": "Full i18n support with next-intl for three languages (English, Romanian, Russian) with smooth language switching and URL-based locale routing."
+        },
+        {
+          "featTitle": "AI Chatbot with RAG",
+          "featDescription": "Built-in AI assistant trained on Alevtina's CV and projects, with model selection (GPT-4o mini, GPT-5 Nano, Gemini 2.5 Flash), reasoning display, and copy/retry functionality."
+        },
+        {
+          "featTitle": "Calendly Integration",
+          "featDescription": "Interactive Calendly scheduling widget with animated button featuring rotating phone icon, allowing users to book calls directly from the portfolio."
+        },
+        {
+          "featTitle": "Fluid Framer Motion Animations",
+          "featDescription": "Elegant scroll-triggered animations, text reveal effects, animated theme toggler, and interactive UI elements with custom Framer Motion variants."
+        },
+        {
+          "featTitle": "Interactive Project Gallery",
+          "featDescription": "Vertical marquee with three columns displaying projects at different speeds, with expandable side panels showing detailed project information, videos, and results."
+        },
+        {
+          "featTitle": "Dark/Light Theme Toggle",
+          "featDescription": "Smooth theme switching with animated theme toggler component, supporting both light and dark modes with proper color transitions."
+        },
+        {
+          "featTitle": "Voice Agent Integration",
+          "featDescription": "ElevenLabs voice agent integration for audio conversations with the AI assistant."
+        },
+        {
+          "featTitle": "Database-Powered Content",
+          "featDescription": "Drizzle ORM with Neon Postgres database for storing and retrieving embedded CV and project data for RAG functionality."
+        }
+      ],
+      "detailedOverview": "This is a sophisticated portfolio website for Alevtina Gordienko, a journalist, producer, and project manager. Built with Next.js 16 and modern React, the site showcases her professional journey through beautifully animated sections, an interactive project gallery, and an AI-powered chatbot that can answer questions about her career, CV, and projects. The website features full multilingual support, dark/light mode, smooth scrolling, and Calendly integration for seamless scheduling.",
+      "challengeAndSolutionDescription": "Key challenges included implementing RAG with PDF parsing for the AI chatbot, creating smooth multi-language support without performance issues, and designing the vertical marquee project gallery with expandable details. The solution leverages modern AI SDKs for intelligent conversations, next-intl for robust i18n, and Framer Motion for performant animations throughout the UI/UX experience."
     },
     "residential-harmony": {
       "category": "Interior Design",

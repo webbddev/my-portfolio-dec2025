@@ -8,13 +8,7 @@ import { Link, useRouter } from "../../i18n/navigation";
 import Image from "next/image";
 import { motion, AnimatePresence } from "motion/react";
 
-const CATEGORY_KEYS = [
-  "all",
-  "aiChatbot",
-  "voiceAi",
-  "automations",
-  "landing"
-];
+const CATEGORY_KEYS = ["all", "aiChatbot", "voiceAi", "automations", "landing"];
 
 export default function PortfolioGrid() {
   const [activeTab, setActiveTab] = useState("all");
@@ -38,12 +32,18 @@ export default function PortfolioGrid() {
       categories: ["landing"],
     },
     {
-      ...projectsData.find((p) => p.slug === "photographers-animated-portfolio")!,
+      ...projectsData.find(
+        (p) => p.slug === "photographers-animated-portfolio",
+      )!,
       categories: ["landing"],
     },
     {
       ...projectsData.find((p) => p.slug === "tbpro-shampoo")!,
       categories: ["landing"],
+    },
+    {
+      ...projectsData.find((p) => p.slug === "alevtina-gordienko-portfolio")!,
+      categories: ["aiChatbot", "landing"],
     },
   ];
 
@@ -59,8 +59,13 @@ export default function PortfolioGrid() {
   };
 
   return (
-    <section className="section container mx-auto py-20 px-4 md:px-8 bg-background transition-colors duration-500" id="projects">
-      <h2 className="text-4xl md:text-7xl lg:text-8xl mb-16 text-foreground">{t("heading")}</h2>
+    <section
+      className="section container mx-auto py-20 px-4 md:px-8 bg-background transition-colors duration-500"
+      id="projects"
+    >
+      <h2 className="text-4xl md:text-7xl lg:text-8xl mb-16 text-foreground">
+        {t("heading")}
+      </h2>
       {/* --- FILTER TABS --- */}
       <div className="flex flex-wrap gap-x-6 sm:gap-x-10 gap-y-4 border-b border-border mb-16">
         {CATEGORY_KEYS.map((catKey) => (
@@ -96,15 +101,11 @@ export default function PortfolioGrid() {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
             >
-              <h2
-                className="text-xl sm:text-3xl md:text-[32px] lg:text-6xl font-black leading-[0.85] tracking-tighter mb-8 whitespace-pre-line text-foreground break-words"
-              >
+              <h2 className="text-xl sm:text-3xl md:text-[32px] lg:text-6xl font-black leading-[0.85] tracking-tighter mb-8 whitespace-pre-line text-foreground break-words">
                 {currentInfo.title}
               </h2>
 
-              <div
-                className="flex items-center gap-4 text-[10px] md:text-[12px] lg:text-[14px] font-black tracking-[0.4em] uppercase text-muted-foreground mb-8"
-              >
+              <div className="flex items-center gap-4 text-[10px] md:text-[12px] lg:text-[14px] font-black tracking-[0.4em] uppercase text-muted-foreground mb-8">
                 <div className="flex gap-1">
                   <span className="w-1 h-4 bg-foreground animate-pulse"></span>
                   <span className="w-1 h-4 bg-muted"></span>

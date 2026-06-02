@@ -36,7 +36,6 @@ const Hero = () => {
   });
 
   // Image widens from 100% to 240% as user scrolls
-  //   const portraitWidth = useTransform(scrollYProgress, [0, 1], ["100%", "240%"]);
   const portraitWidth = useTransform(
     scrollYProgress,
     [0, 1],
@@ -46,10 +45,11 @@ const Hero = () => {
   // Image scales up slightly for dramatic effect
   const imageScale = useTransform(scrollYProgress, [0, 1], [1, 1.15]);
 
-  // Smoother, longer cross-fade between profile and front-facing image
-  // Extended the range for smoother transitions on mobile
-  const profileOpacity = useTransform(scrollYProgress, [0, 0.3], [1, 0]);
-  const frontOpacity = useTransform(scrollYProgress, [0.3, 0.7], [0, 1]);
+  // SMOOTH GRADUAL CROSS-FADE
+  // Profile fades out smoothly over a shorter scroll distance, earlier in the scroll
+  const profileOpacity = useTransform(scrollYProgress, [0, 0.10], [1, 0]);
+  // Front face begins to fade in elegantly, finishing much sooner
+  const frontOpacity = useTransform(scrollYProgress, [0.12, 0.20], [0, 1]);
 
   // Optional: Slight rotation to simulate head turning
   const imageRotate = useTransform(scrollYProgress, [0, 1], [0, -5]);
@@ -57,7 +57,7 @@ const Hero = () => {
   const currentTheme = mounted && resolvedTheme === "dark" ? "dark" : "light";
   const isDarkTheme = currentTheme === "dark";
 
-  const textColor = useMotionValue(isDarkTheme ? "#ffffff" : "#ffffff");
+  const textColor = useMotionValue(isDarkTheme ? "#ffffff" : "#000000");
 
   useEffect(() => {
     const updateTextColor = (pos: number) => {
@@ -70,10 +70,10 @@ const Hero = () => {
       const startG = isDarkTheme ? 255 : 0;
       const startB = isDarkTheme ? 255 : 0;
 
-      // End colors: White for Light Mode, Off-white (#ede8e8) for Dark Mode
-      const endR = isDarkTheme ? 237 : 255;
-      const endG = isDarkTheme ? 232 : 255;
-      const endB = isDarkTheme ? 232 : 255;
+      // End colors: Stay Black for Light Mode, Off-white (#ede8e8) for Dark Mode
+      const endR = isDarkTheme ? 237 : 0;
+      const endG = isDarkTheme ? 232 : 0;
+      const endB = isDarkTheme ? 232 : 0;
 
       const r = Math.round(startR + (endR - startR) * blend);
       const g = Math.round(startG + (endG - startG) * blend);

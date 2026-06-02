@@ -262,8 +262,8 @@
       "industry": "Frumusețe și Îngrijire Personală / Prezentare de Produs E-commerce",
       "roleDescription": "Dezvoltator Full-Stack & UI Engineer",
       "links": {
-        "live": "",
-        "github": ""
+        "live": "https://tbprofessional.pro/ro",
+        "github": "https://github.com/webbddev/tb-shampoo"
       },
       "keyFeatures": [
         {
@@ -289,6 +289,75 @@
       ],
       "detailedOverview": "Acest proiect este o migrare completă și o îmbunătățire a unui site web de prezentare a unui șampon premium pe Next.js 14 cu App Router. Site-ul prezintă cei 20 de ani de experiență a Tatienei Braga ca stilist și formula sa unică de șampon cu aminoacizi. Am implementat suport multilingual, animații fluide, integrare de hartă interactivă și un sistem robust de contact prin email, păstrând în același timp o performanță excelentă cu optimizarea imaginilor Next.js.",
       "challengeAndSolutionDescription": "Principala provocare a fost integrarea hărților Leaflet într-un mediu Next.js App Router, care a fost rezolvată prin importuri dinamice cu SSR dezactivat. O altă provocare a fost asigurarea unei livrări fiabile a emailurilor din formularul de contact, rezolvată cu integrarea Resend și o gestionare adecvată a stării formularului."
+    },
+    "alevtina-gordienko-portfolio": {
+      "category": "Dezvoltare Web Full-Stack și Design",
+      "title": "Portofoliu Alevtina Gordienko",
+      "shortOverview": "Un site web modern și multilingual de portofoliu pentru jurnalista și producătoarea Alevtina Gordienko, cu chatbot AI cu RAG, programare Calendly, animații fluide și prezentare interactivă a proiectelor.",
+      "techStack": [
+        "Next.js 16 (App Router)",
+        "React 19",
+        "TypeScript",
+        "Tailwind CSS 4",
+        "Framer Motion",
+        "next-intl (i18n)",
+        "react-calendly",
+        "@ai-sdk/react",
+        "@ai-sdk/google",
+        "@ai-sdk/openai",
+        "Drizzle ORM",
+        "Neon Database",
+        "Three.js",
+        "@react-three/fiber",
+        "@react-three/drei",
+        "Lucide React",
+        "Radix UI",
+        "Lenis (derulare lină)",
+        "Parsare PDF",
+        "RAG (Retrieval-Augmented Generation)"
+      ],
+      "industry": "Portofoliu / Personal Branding",
+      "roleDescription": "Dezvoltator Full-Stack și UI Engineer",
+      "links": {
+        "live": "https://alevtina-gordis.vercel.app/ro",
+        "github": "https://github.com/webbddev/alevtina-gordis"
+      },
+      "keyFeatures": [
+        {
+          "featTitle": "Internaționalizare Multilinguală",
+          "featDescription": "Suport complet i18n cu next-intl pentru trei limbi (Engleză, Română, Rusă) cu schimbare fluentă a limbii și rutare locală bazată pe URL."
+        },
+        {
+          "featTitle": "Chatbot AI cu RAG",
+          "featDescription": "Asistent AI încorporat, antrenat pe CV-ul și proiectele lui Alevtina, cu selecție a modelului (GPT-4o mini, GPT-5 Nano, Gemini 2.5 Flash), afișare raționament și funcționalitate de copiere/reîncercare."
+        },
+        {
+          "featTitle": "Integrare Calendly",
+          "featDescription": "Widget interactiv de programare Calendly cu buton animat care afișează o pictogramă de telefon rotativă, permițând utilizatorilor să rezerve apeluri direct din portofoliu."
+        },
+        {
+          "featTitle": "Animații Fluide Framer Motion",
+          "featDescription": "Animații elegante declanșate de scroll, efecte de revelare a textului, comutator de temă animat și elemente UI interactive cu variante personalizate Framer Motion."
+        },
+        {
+          "featTitle": "Galerie Interactivă de Proiecte",
+          "featDescription": "Marche verticală cu trei coloane care afișează proiecte la viteze diferite, cu panouri laterale expandabile care arată informații detaliate despre proiecte, videoclipuri și rezultate."
+        },
+        {
+          "featTitle": "Comutator Temă Întunecată/Lumină",
+          "featDescription": "Schimbare fluentă a temei cu componentă de comutare a temei animată, care suportă atât modul luminos, cât și cel întunecat, cu tranziții de culoare adecvate."
+        },
+        {
+          "featTitle": "Integrare Agent Vocal",
+          "featDescription": "Integrare agent vocal ElevenLabs pentru conversații audio cu asistentul AI."
+        },
+        {
+          "featTitle": "Conținut Alimentat de Bază de Date",
+          "featDescription": "Drizzle ORM cu bază de date Neon Postgres pentru stocarea și regăsirea datelor încorporate din CV și proiecte pentru funcționalitatea RAG."
+        }
+      ],
+      "detailedOverview": "Acesta este un site web de portofoliu sofisticat pentru Alevtina Gordienko, jurnalistă, producătoare și manager de proiecte. Construit cu Next.js 16 și React modern, site-ul prezintă parcursul ei profesional prin secțiuni animate frumos, o galerie interactivă de proiecte și un chatbot cu inteligență artificială care poate răspunde la întrebări despre cariera, CV și proiectele ei. Site-ul web oferă suport complet multilingual, modul întunecat/luminos, derulare lină și integrare Calendly pentru programare fără probleme.",
+      "challengeAndSolutionDescription": "Provocările cheie au inclus implementarea RAG cu parsare PDF pentru chatbot-ul AI, crearea unui suport fluent multilingv fără probleme de performanță și proiectarea galeriei verticale de proiecte cu detalii expandabile. Soluția utilizează SDK-uri AI moderne pentru conversații inteligente, next-intl pentru i18n robust și Framer Motion pentru animații performante pe parcursul experienței UI/UX."
     },
     "event-automation-engine": {
       "category": "Automatizare AI",
@@ -492,6 +561,6 @@
     "labelAssistant": "Nicolas"
   },
   "customIntro": {
-    "welcome": "Vă urez bun venit!"
+    "welcome": "Vă salut!"
   }
 }
