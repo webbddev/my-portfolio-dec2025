@@ -490,5 +490,8 @@
     "ariaClose": "Închide asistentul vocal",
     "labelUser": "Oaspetele meu de onoare",
     "labelAssistant": "Nicolas"
+  },
+  "customIntro": {
+    "welcome": "Vă urez bun venit!"
   }
 }

@@ -490,5 +490,8 @@
     "ariaClose": "Закрыть ИИ помощника",
     "labelUser": "Мой почтенный гость",
     "labelAssistant": "Николай"
+  },
+  "customIntro": {
+    "welcome": "Приветствую вас!"
   }
 }

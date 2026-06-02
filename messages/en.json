@@ -442,5 +442,8 @@
     "ariaClose": "Close voice agent",
     "labelUser": "My Honoured Guest",
     "labelAssistant": "Nicolas"
+  },
+  "customIntro": {
+    "welcome": "I welcome you!"
   }
 }
