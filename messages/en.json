@@ -39,7 +39,9 @@
       "aiChatbot": "AI Chatbot",
       "voiceAi": "Voice AI",
       "automations": "Automations",
-      "landing": "Landing"
+      "landing": "Landing",
+      "aiContent": "AI Content",
+      "e-commerce": "E-commerce"
     },
     "viewProject": "View Project",
     "content": {
@@ -86,6 +88,24 @@
           "High-conversion landing pages.",
           "Interactive 3D environments.",
           "Optimized web performance."
+        ]
+      },
+      "aiContent": {
+        "title": "AI-GENERATED\nCONTENT",
+        "subtitle": "AI CONTENT",
+        "features": [
+          "AI-powered content creation",
+          "Travel and exploration apps",
+          "Interactive map experiences"
+        ]
+      },
+      "e-commerce": {
+        "title": "ONLINE\nSTORES",
+        "subtitle": "E-COMMERCE",
+        "features": [
+          "Custom e-commerce platforms",
+          "Product catalogs & cart systems",
+          "Payment integration"
         ]
       }
     }
@@ -290,31 +310,59 @@
       "detailedOverview": "This project is a complete migration and enhancement of a premium shampoo product website to Next.js 14 with the App Router. The site showcases Tatiana Braga's 20 years of expertise as a stylist and her unique amino acid shampoo formula. I implemented multilingual support, smooth animations, interactive map integration, and a robust email contact system while maintaining excellent performance with Next.js image optimization.",
       "challengeAndSolutionDescription": "The main challenge was integrating Leaflet maps in a Next.js App Router environment, which was solved by using dynamic imports with SSR disabled. Another challenge was ensuring reliable email delivery from the contact form, addressed with Resend integration and proper form state management."
     },
+    "11labs-agent-n8n-webhook": {
+      "category": "Voice AI & Workflow Automation",
+      "title": "ElevenLabs Voice AI & n8n Bridge",
+      "shortOverview": "A real-time, multilingual conversational voice agent powered by ElevenLabs, seamlessly integrated via custom webhooks to an n8n workflow for live database querying.",
+      "techStack": [
+        "ElevenLabs Conversational AI",
+        "n8n Workflow Automation",
+        "PostgreSQL (NeonDB)",
+        "Webhooks & REST APIs"      ],
+      "industry": "Voice AI / Wealth Management / Automation",
+      "roleDescription": "Voice AI & Automation Engineer",
+      "links": {
+        "live": "#",
+        "github": "#"
+      },
+      "keyFeatures": [
+        {
+          "featTitle": "Multilingual Dynamic Speech Processing",
+          "featDescription": "Configured custom language detection and fallback triggers to fluently process natural spoken voice input across English, Russian, Bulgarian, Spanish, and Lithuanian."
+        },
+        {
+          "featTitle": "Low-Latency Webhook Synchronization",
+          "featDescription": "Engineered an n8n webhook bridge that captures ElevenLabs voice payloads (`question` & `session_id`) and returns structured plain-text responses via 'Respond to Webhook' without UI rendering delays."
+        },
+        {
+          "featTitle": "Secure User-Isolated PostgreSQL Filtering",
+          "featDescription": "Integrated strict user ID context filtering in the backend NeonDB PostgreSQL tool, protecting sensitive user portfolio holdings during multi-turn voice sessions."
+        },
+        {
+          "featTitle": "Proactive Maturity Alert Engine",
+          "featDescription": "Embedded date-calculation logic within the n8n AI agent to evaluate current dates against asset maturation schedules, automatically prepending urgent alerts to voice responses for assets expiring within 30 days."
+        }
+      ],
+      "detailedOverview": "This project bridges ElevenLabs' state-of-the-art Conversational AI with an autonomous n8n backend workflow to enable multi-turn voice interaction with live database records. When a user speaks to the ElevenLabs agent, a custom `fetch_portfolio_data` tool posts the payload to an n8n HTTP Webhook. An n8n AI Agent interprets the user's intent, queries a Neon PostgreSQL database filtered by unique user ID, checks maturity dates against the current date, and returns plain-text instructions to ElevenLabs for natural speech synthesis in the user's preferred language.",
+      "challengeAndSolutionDescription": "The primary challenge was achieving near-instantaneous voice responses without latency penalties, while preventing data leaks across multi-tenant portfolio records and supporting multilingual conversations. I solved this by opting for direct HTTP webhook responses rather than complex external API chains, enforcing strict SQL user-id scoping, and configuring ElevenLabs' optimized system prompts and language detection tools for immediate voice switching."
+    },
     "alevtina-gordienko-portfolio": {
       "category": "Full-Stack Web Development & Design",
       "title": "Alevtina Gordienko Portfolio",
       "shortOverview": "A modern, multilingual portfolio website for journalist and producer Alevtina Gordienko, featuring an AI chatbot with RAG, Calendly scheduling, smooth animations, and interactive project showcase.",
       "techStack": [
+        "RAG (Retrieval-Augmented Generation)",
+        "@ai-sdk/vercel",
         "Next.js 16 (App Router)",
-        "React 19",
-        "TypeScript",
-        "Tailwind CSS 4",
-        "Framer Motion",
-        "next-intl (i18n)",
-        "react-calendly",
-        "@ai-sdk/react",
-        "@ai-sdk/google",
-        "@ai-sdk/openai",
         "Drizzle ORM",
         "Neon Database",
-        "Three.js",
-        "@react-three/fiber",
-        "@react-three/drei",
-        "Lucide React",
-        "Radix UI",
+        "TypeScript",
+        "next-intl (i18n)",
+        "Tailwind CSS 4",
+        "Framer Motion",
+        "react-calendly",
         "Lenis (smooth scrolling)",
-        "PDF parsing",
-        "RAG (Retrieval-Augmented Generation)"
+        "PDF parsing"
       ],
       "industry": "Portfolio / Personal Branding",
       "roleDescription": "Full-Stack Developer & UI Engineer",
@@ -324,12 +372,16 @@
       },
       "keyFeatures": [
         {
-          "featTitle": "Multilingual Internationalization",
-          "featDescription": "Full i18n support with next-intl for three languages (English, Romanian, Russian) with smooth language switching and URL-based locale routing."
-        },
-        {
           "featTitle": "AI Chatbot with RAG",
           "featDescription": "Built-in AI assistant trained on Alevtina's CV and projects, with model selection (GPT-4o mini, GPT-5 Nano, Gemini 2.5 Flash), reasoning display, and copy/retry functionality."
+        },
+        {
+          "featTitle": "Voice Agent Integration",
+          "featDescription": "ElevenLabs voice agent integration for audio conversations with the AI assistant."
+        },
+        {
+          "featTitle": "Multilingual Internationalization",
+          "featDescription": "Full i18n support with next-intl for three languages (English, Romanian, Russian) with smooth language switching and URL-based locale routing."
         },
         {
           "featTitle": "Calendly Integration",
@@ -348,16 +400,111 @@
           "featDescription": "Smooth theme switching with animated theme toggler component, supporting both light and dark modes with proper color transitions."
         },
         {
-          "featTitle": "Voice Agent Integration",
-          "featDescription": "ElevenLabs voice agent integration for audio conversations with the AI assistant."
-        },
-        {
           "featTitle": "Database-Powered Content",
           "featDescription": "Drizzle ORM with Neon Postgres database for storing and retrieving embedded CV and project data for RAG functionality."
         }
       ],
       "detailedOverview": "This is a sophisticated portfolio website for Alevtina Gordienko, a journalist, producer, and project manager. Built with Next.js 16 and modern React, the site showcases her professional journey through beautifully animated sections, an interactive project gallery, and an AI-powered chatbot that can answer questions about her career, CV, and projects. The website features full multilingual support, dark/light mode, smooth scrolling, and Calendly integration for seamless scheduling.",
       "challengeAndSolutionDescription": "Key challenges included implementing RAG with PDF parsing for the AI chatbot, creating smooth multi-language support without performance issues, and designing the vertical marquee project gallery with expandable details. The solution leverages modern AI SDKs for intelligent conversations, next-intl for robust i18n, and Framer Motion for performant animations throughout the UI/UX experience."
+    },
+    "rome-explorer": {
+      "category": "Full-Stack Web Development & Design",
+      "title": "Rome Explorer",
+      "shortOverview": "A beautiful, interactive map-based travel companion built for exploring Rome, featuring landmark pins, walking route calculation, AI-generated fun facts, and shopping locations. Developed quickly as a challenge using AI-powered development tools.",
+      "techStack": [
+        "Next.js 16 (App Router)",
+        "MapLibre GL",
+        "TypeScript",
+        "Tailwind CSS",
+        "React",
+        "Vercel AI Gateway",
+        "OpenAI GPT-4o Mini",
+        "Lucide React",
+        "Shadcn UI"
+      ],
+      "industry": "Travel & Tourism",
+      "roleDescription": "Full-Stack Developer & UI Engineer",
+      "links": {
+        "live": "https://rome-explorer-rouge.vercel.app/",
+        "github": "https://github.com/webbddev/rome-explorer"
+      },
+      "keyFeatures": [
+        {
+          "featTitle": "Interactive Map with Landmark Pins",
+          "featDescription": "Map with visual pins for all major Roman landmarks, shopping locations, and custom home base, with custom-designed icons and animations."
+        },
+        {
+          "featTitle": "Walking Route Calculator",
+          "featDescription": "Set custom start and end points (or use GPS) to calculate and display walking routes with distance information on the map."
+        },
+        {
+          "featTitle": "AI-Powered Fun Facts",
+          "featDescription": "Streamed AI-generated fun facts about each Roman landmark in Russian, using Vercel AI Gateway and GPT-4o Mini for engaging travel insights."
+        },
+        {
+          "featTitle": "GPS Location Integration",
+          "featDescription": "Real-time geolocation to find user's position, set as starting point, and calculate distances to nearby landmarks."
+        },
+        {
+          "featTitle": "Responsive UI & Animations",
+          "featDescription": "Mobile-first design with smooth animations, bottom sheets for mobile, and responsive cards for desktop, with custom styling using Tailwind CSS."
+        },
+        {
+          "featTitle": "Interactive Location Cards",
+          "featDescription": "Detail cards for each location with images, TripAdvisor ratings, descriptions, and quick actions to start navigation."
+        }
+      ],
+      "detailedOverview": "Rome Explorer is an interactive travel companion application built for exploring Rome. It features a beautiful map interface with pins for major landmarks, shopping locations, and a custom home base. Users can set start/end points, calculate walking routes, use GPS for their current location, and discover AI-generated fun facts about each location in Russian. The app was developed as a quick challenge to explore AI-powered development workflows.",
+      "challengeAndSolutionDescription": "The main challenge was creating a fully functional product within an extremely tight timeframe - just 3 days before the trip to Rome. This project served as an excellent opportunity to master rapid prototyping methods using modern tools, integrate mapping libraries (MapLibre GL) with React, configure AI streaming APIs, and develop responsive, mobile-first interfaces with smooth animations."
+    },
+    "carnival-bambini": {
+      "category": "Full-Stack Web Development & E-Commerce",
+      "title": "Carnival Bambini",
+      "shortOverview": "A beautiful, modern e-commerce store for high-end children's fashion, featuring a fully functional shopping cart, Stripe payments, Sanity CMS integration, and dark/light mode toggle.",
+      "techStack": [
+        "Next.js 14 (App Router)",
+        "Sanity CMS",
+        "TypeScript",
+        "Tailwind CSS",
+        "React",
+        "Stripe Payments",
+        "use-shopping-cart",
+        "next-themes"
+      ],
+      "industry": "E-Commerce & Retail",
+      "roleDescription": "Full-Stack Developer",
+      "links": {
+        "live": "https://carnival-bambini.vercel.app/",
+        "github": "https://github.com/webbddev/carnival-bambini"
+      },
+      "keyFeatures": [
+        {
+          "featTitle": "Sanity CMS Integration",
+          "featDescription": "Dynamic product management using Sanity headless CMS, allowing easy addition, editing, and categorization of products with images, descriptions, and Stripe price IDs."
+        },
+        {
+          "featTitle": "Full Shopping Cart Experience",
+          "featDescription": "Interactive shopping cart with add/remove items, quantity adjustment, subtotal calculation, and smooth modal interface powered by use-shopping-cart."
+        },
+        {
+          "featTitle": "Stripe Payment Integration",
+          "featDescription": "Secure checkout flow with Stripe, including single-item checkout and full-cart checkout, with dedicated success/error pages."
+        },
+        {
+          "featTitle": "Product Gallery & Categories",
+          "featDescription": "Newest products showcase, category browsing, and individual product detail pages with image galleries."
+        },
+        {
+          "featTitle": "Dark/Light Mode Toggle",
+          "featDescription": "Responsive theme switching with next-themes, providing elegant dark and light UI options with smooth transitions."
+        },
+        {
+          "featTitle": "Responsive Design",
+          "featDescription": "Mobile-first responsive layout with custom animations, dropdown navigation, mobile menu, and optimized product cards for all screen sizes."
+        }
+      ],
+      "detailedOverview": "Carnival Bambini marked my initial contact with the e-commerce domain. I initiated this project out of a strong motivation to explore the inner workings of headless content management and secure financial transactions. Specifically, I wanted to see how Sanity CMS handles complex product schemas under the hood and how Stripe payment integration can be seamlessly woven into a Next.js application. The result is a fully dynamic platform where the product catalog is managed via Sanity, while secure Stripe processing ensures a professional and reliable purchasing experience for the user.",
+      "challengeAndSolutionDescription": "The primary challenge was bridging the gap between a headless CMS and a real-time checkout system—ensuring that product data (like Stripe Price IDs) remained synchronized between Sanity and the frontend. I solved this by implementing a structured schema in Sanity that directly maps to Stripe's product dashboard, ensuring data integrity during the checkout process. Additionally, managing the persistent state of a complex shopping cart across different sessions required a robust implementation of the use-shopping-cart hook, which I integrated with Next.js 14's App Router to maintain high performance and a smooth UI."
     },
     "residential-harmony": {
       "category": "Interior Design",

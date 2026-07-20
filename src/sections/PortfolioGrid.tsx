@@ -8,7 +8,15 @@ import { Link, useRouter } from "../../i18n/navigation";
 import Image from "next/image";
 import { motion, AnimatePresence } from "motion/react";
 
-const CATEGORY_KEYS = ["all", "aiChatbot", "voiceAi", "automations", "landing"];
+const CATEGORY_KEYS = [
+  "all",
+  "aiChatbot",
+  "voiceAi",
+  "automations",
+  "landing",
+  "aiContent",
+  "e-commerce",
+];
 
 export default function PortfolioGrid() {
   const [activeTab, setActiveTab] = useState("all");
@@ -43,7 +51,19 @@ export default function PortfolioGrid() {
     },
     {
       ...projectsData.find((p) => p.slug === "alevtina-gordienko-portfolio")!,
-      categories: ["aiChatbot", "landing"],
+      categories: ["aiChatbot", "landing", "voiceAi"],
+    },
+    {
+      ...projectsData.find((p) => p.slug === "rome-explorer")!,
+      categories: ["aiContent"],
+    },
+    {
+      ...projectsData.find((p) => p.slug === "carnival-bambini")!,
+      categories: ["e-commerce"],
+    },
+    {
+      ...projectsData.find((p) => p.slug === "11labs-agent-n8n-webhook")!,
+      categories: ["voiceAi", "automations"],
     },
   ];
 

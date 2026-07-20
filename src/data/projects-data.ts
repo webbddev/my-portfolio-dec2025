@@ -60,6 +60,29 @@ import ag_image4 from "../../public/projects/alevtina-gordienko-portfolio/alevti
 import ag_image5 from "../../public/projects/alevtina-gordienko-portfolio/alevtina-5.png";
 import ag_image6 from "../../public/projects/alevtina-gordienko-portfolio/alevtina-6.png";
 
+// Project images for Rome Explorer
+import rome_image1 from "../../public/projects/rome-emplorer/rome-explorer-1.png";
+import rome_image2 from "../../public/projects/rome-emplorer/rome-explorer-2.png";
+import rome_image3 from "../../public/projects/rome-emplorer/rome-explorer-3.png";
+import rome_image4 from "../../public/projects/rome-emplorer/rome-explorer-4.png";
+import rome_image5 from "../../public/projects/rome-emplorer/rome-explorer-5.png";
+import rome_image6 from "../../public/projects/rome-emplorer/rome-explorer-6.png";
+import rome_image7 from "../../public/projects/rome-emplorer/rome-explorer-7.png";
+
+// Project images for Carnival Bambini
+import carnival_image1 from "../../public/projects/ecom-carnival-bambini/carnival-bambini-1.png";
+import carnival_image2 from "../../public/projects/ecom-carnival-bambini/carnival-bambini-2.png";
+import carnival_image3 from "../../public/projects/ecom-carnival-bambini/carnival-bambini-3.png";
+import carnival_image4 from "../../public/projects/ecom-carnival-bambini/carnival-bambini-4.png";
+import carnival_image5 from "../../public/projects/ecom-carnival-bambini/carnival-bambini-5.png";
+import carnival_image6 from "../../public/projects/ecom-carnival-bambini/carnival-bambini-6.png";
+
+// Project images for 11labs-agent-n8n-webhook
+import elevenlabs_image1 from "../../public/projects/11labs-agent-n8n-webhook/11labs-agent-1.png";
+import elevenlabs_image2 from "../../public/projects/11labs-agent-n8n-webhook/11labs-agent-2.png";
+import elevenlabs_image3 from "../../public/projects/11labs-agent-n8n-webhook/11labs-agent-3.png";
+import elevenlabs_image4 from "../../public/projects/11labs-agent-n8n-webhook/11labs-agent-4.png";
+
 export type ProjectData = {
   id: number;
   name: string;
@@ -484,6 +507,155 @@ export const projectsData: ProjectData[] = [
           width: 1920,
           height: 1080,
           alt: "Alevtina Gordienko Portfolio - Contact",
+        },
+      ],
+    },
+  },
+  {
+    id: 7,
+    name: "Rome Explorer",
+    slug: "rome-explorer",
+    thumbnail: rome_image1,
+    gallery: {
+      images: [
+        {
+          src: rome_image1,
+          original: rome_image1,
+          width: 1920,
+          height: 1080,
+          alt: "Rome Explorer - Home",
+        },
+        {
+          src: rome_image2,
+          original: rome_image2,
+          width: 1920,
+          height: 1080,
+          alt: "Rome Explorer - Map",
+        },
+        {
+          src: rome_image3,
+          original: rome_image3,
+          width: 1920,
+          height: 1080,
+          alt: "Rome Explorer - Landmark",
+        },
+        {
+          src: rome_image4,
+          original: rome_image4,
+          width: 1920,
+          height: 1080,
+          alt: "Rome Explorer - Route",
+        },
+        {
+          src: rome_image5,
+          original: rome_image5,
+          width: 1920,
+          height: 1080,
+          alt: "Rome Explorer - AI Facts",
+        },
+        {
+          src: rome_image6,
+          original: rome_image6,
+          width: 1920,
+          height: 1080,
+          alt: "Rome Explorer - Mobile",
+        },
+        {
+          src: rome_image7,
+          original: rome_image7,
+          width: 1920,
+          height: 1080,
+          alt: "Rome Explorer - Post Route",
+        },
+      ],
+    },
+  },
+  {
+    id: 8,
+    name: "Carnival Bambini",
+    slug: "carnival-bambini",
+    thumbnail: carnival_image1,
+    gallery: {
+      images: [
+        {
+          src: carnival_image1,
+          original: carnival_image1,
+          width: 1920,
+          height: 1080,
+          alt: "Carnival Bambini - Home",
+        },
+        {
+          src: carnival_image2,
+          original: carnival_image2,
+          width: 1920,
+          height: 1080,
+          alt: "Carnival Bambini - Products",
+        },
+        {
+          src: carnival_image3,
+          original: carnival_image3,
+          width: 1920,
+          height: 1080,
+          alt: "Carnival Bambini - Collections",
+        },
+        {
+          src: carnival_image4,
+          original: carnival_image4,
+          width: 1920,
+          height: 1080,
+          alt: "Carnival Bambini - Cart",
+        },
+        {
+          src: carnival_image5,
+          original: carnival_image5,
+          width: 1920,
+          height: 1080,
+          alt: "Carnival Bambini - Checkout",
+        },
+        {
+          src: carnival_image6,
+          original: carnival_image6,
+          width: 1920,
+          height: 1080,
+          alt: "Carnival Bambini - About",
+        },
+      ],
+    },
+  },
+  {
+    id: 9,
+    name: "ElevenLabs Voice AI & n8n Bridge",
+    slug: "11labs-agent-n8n-webhook",
+    thumbnail: elevenlabs_image4,
+    gallery: {
+      images: [
+        {
+          src: elevenlabs_image1,
+          original: elevenlabs_image1,
+          width: 1920,
+          height: 1080,
+          alt: "ElevenLabs Voice AI & n8n Bridge - Home",
+        },
+        {
+          src: elevenlabs_image2,
+          original: elevenlabs_image2,
+          width: 1920,
+          height: 1080,
+          alt: "ElevenLabs Voice AI & n8n Bridge - Dashboard",
+        },
+        {
+          src: elevenlabs_image3,
+          original: elevenlabs_image3,
+          width: 1920,
+          height: 1080,
+          alt: "ElevenLabs Voice AI & n8n Bridge - Workflow",
+        },
+        {
+          src: elevenlabs_image4,
+          original: elevenlabs_image4,
+          width: 1920,
+          height: 1080,
+          alt: "ElevenLabs Voice AI & n8n Bridge - Details",
         },
       ],
     },

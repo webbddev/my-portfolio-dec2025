@@ -39,7 +39,9 @@
       "aiChatbot": "Chatbot AI",
       "voiceAi": "AI Vocal",
       "automations": "Automatizări",
-      "landing": "Landing"
+      "landing": "Landing",
+      "aiContent": "Conținut AI",
+      "e-commerce": "E-commerce"
     },
     "viewProject": "Vezi Proiectul",
     "content": {
@@ -86,6 +88,24 @@
           "Pagini de destinație cu conversie ridicată.",
           "Medii interactive 3D.",
           "Performanță web optimizată."
+        ]
+      },
+      "aiContent": {
+        "title": "CONȚINUT\nGENERAT DE AI",
+        "subtitle": "CONȚINUT AI",
+        "features": [
+          "Creare de conținut cu AI",
+          "Aplicații pentru călătorii și explorări",
+          "Experiențe interactive cu hărți"
+        ]
+      },
+      "e-commerce": {
+        "title": "MAGAZINE\nONLINE",
+        "subtitle": "E-COMMERCE",
+        "features": [
+          "Platforme e-commerce personalizate",
+          "Cataloage de produse și sisteme de coșuri",
+          "Integrare plăți"
         ]
       }
     }
@@ -295,26 +315,18 @@
       "title": "Portofoliu Alevtina Gordienko",
       "shortOverview": "Un site web modern și multilingual de portofoliu pentru jurnalista și producătoarea Alevtina Gordienko, cu chatbot AI cu RAG, programare Calendly, animații fluide și prezentare interactivă a proiectelor.",
       "techStack": [
+        "RAG (Retrieval-Augmented Generation)",
+        "@ai-sdk/vercel",
         "Next.js 16 (App Router)",
-        "React 19",
-        "TypeScript",
-        "Tailwind CSS 4",
-        "Framer Motion",
-        "next-intl (i18n)",
-        "react-calendly",
-        "@ai-sdk/react",
-        "@ai-sdk/google",
-        "@ai-sdk/openai",
         "Drizzle ORM",
         "Neon Database",
-        "Three.js",
-        "@react-three/fiber",
-        "@react-three/drei",
-        "Lucide React",
-        "Radix UI",
+        "TypeScript",
+        "next-intl (i18n)",
+        "Tailwind CSS 4",
+        "Framer Motion",
+        "react-calendly",
         "Lenis (derulare lină)",
-        "Parsare PDF",
-        "RAG (Retrieval-Augmented Generation)"
+        "PDF parsing"
       ],
       "industry": "Portofoliu / Personal Branding",
       "roleDescription": "Dezvoltator Full-Stack și UI Engineer",
@@ -324,12 +336,16 @@
       },
       "keyFeatures": [
         {
-          "featTitle": "Internaționalizare Multilinguală",
-          "featDescription": "Suport complet i18n cu next-intl pentru trei limbi (Engleză, Română, Rusă) cu schimbare fluentă a limbii și rutare locală bazată pe URL."
-        },
-        {
           "featTitle": "Chatbot AI cu RAG",
           "featDescription": "Asistent AI încorporat, antrenat pe CV-ul și proiectele lui Alevtina, cu selecție a modelului (GPT-4o mini, GPT-5 Nano, Gemini 2.5 Flash), afișare raționament și funcționalitate de copiere/reîncercare."
+        },
+        {
+          "featTitle": "Integrare Agent Vocal",
+          "featDescription": "Integrare agent vocal ElevenLabs pentru conversații audio cu asistentul AI."
+        },
+        {
+          "featTitle": "Internaționalizare Multilinguală",
+          "featDescription": "Suport complet i18n cu next-intl pentru trei limbi (Engleză, Română, Rusă) cu schimbare fluentă a limbii și rutare locală bazată pe URL."
         },
         {
           "featTitle": "Integrare Calendly",
@@ -348,16 +364,148 @@
           "featDescription": "Schimbare fluentă a temei cu componentă de comutare a temei animată, care suportă atât modul luminos, cât și cel întunecat, cu tranziții de culoare adecvate."
         },
         {
-          "featTitle": "Integrare Agent Vocal",
-          "featDescription": "Integrare agent vocal ElevenLabs pentru conversații audio cu asistentul AI."
-        },
-        {
           "featTitle": "Conținut Alimentat de Bază de Date",
           "featDescription": "Drizzle ORM cu bază de date Neon Postgres pentru stocarea și regăsirea datelor încorporate din CV și proiecte pentru funcționalitatea RAG."
         }
       ],
       "detailedOverview": "Acesta este un site web de portofoliu sofisticat pentru Alevtina Gordienko, jurnalistă, producătoare și manager de proiecte. Construit cu Next.js 16 și React modern, site-ul prezintă parcursul ei profesional prin secțiuni animate frumos, o galerie interactivă de proiecte și un chatbot cu inteligență artificială care poate răspunde la întrebări despre cariera, CV și proiectele ei. Site-ul web oferă suport complet multilingual, modul întunecat/luminos, derulare lină și integrare Calendly pentru programare fără probleme.",
       "challengeAndSolutionDescription": "Provocările cheie au inclus implementarea RAG cu parsare PDF pentru chatbot-ul AI, crearea unui suport fluent multilingv fără probleme de performanță și proiectarea galeriei verticale de proiecte cu detalii expandabile. Soluția utilizează SDK-uri AI moderne pentru conversații inteligente, next-intl pentru i18n robust și Framer Motion pentru animații performante pe parcursul experienței UI/UX."
+    },
+    "rome-explorer": {
+      "category": "Full-Stack Web Development & Design",
+      "title": "Rome Explorer",
+      "shortOverview": "Un ghid turistic interactiv și estetic bazat pe hartă, creat pentru explorarea Romei. Include marcaje pentru atracții, calcularea rutelor pietonale, curiozități generate de IA și locații pentru cumpărături. Dezvoltat rapid ca o provocare, utilizând instrumente de dezvoltare bazate pe inteligență artificială.",
+      "techStack": [
+        "Next.js 16 (App Router)",
+        "MapLibre GL",
+        "TypeScript",
+        "Tailwind CSS",
+        "React",
+        "Vercel AI Gateway",
+        "OpenAI GPT-4o Mini",
+        "Lucide React",
+        "Shadcn UI"
+      ],
+      "industry": "Turism & Călătorii",
+      "roleDescription": "Full-Stack Developer & UI Engineer",
+      "links": {
+        "live": "https://rome-explorer-rouge.vercel.app/",
+        "github": "https://github.com/webbddev/rome-explorer"
+      },
+      "keyFeatures": [
+        {
+          "featTitle": "Hartă interactivă cu marcaje pentru atracții",
+          "featDescription": "Hartă cu pini vizuali pentru toate obiectivele majore din Roma, locații de shopping și un punct de pornire personalizat, având pictograme și animații create pe comandă."
+        },
+        {
+          "featTitle": "Calculator de rute pietonale",
+          "featDescription": "Configurarea unor puncte personalizate de pornire și sosire (sau utilizarea GPS-ului) pentru a calcula și afișa rutele de mers pe jos direct pe hartă, împreună cu distanța aferentă."
+        },
+        {
+          "featTitle": "Curiozități generate de IA",
+          "featDescription": "Streaming de informații interesante generate de IA despre fiecare obiectiv istoric în limba rusă, folosind Vercel AI Gateway și GPT-4o Mini pentru o experiență captivantă."
+        },
+        {
+          "featTitle": "Integrare cu locația GPS",
+          "featDescription": "Geolocalizare în timp real pentru a identifica poziția utilizatorului, a o seta ca punct de plecare și a calcula distanțele până la cele mai apropiate atracții."
+        },
+        {
+          "featTitle": "Interfață adaptivă și animații",
+          "featDescription": "Design de tip mobile-first cu animații fluide, panouri glisante (bottom sheets) pentru mobil și carduri adaptive pentru desktop, stilizate personalizat prin Tailwind CSS."
+        },
+        {
+          "featTitle": "Carduri interactive pentru locații",
+          "featDescription": "Carduri detalitate pentru fiecare locație, conținând imagini, recenzii TripAdvisor, descrieri și acțiuni rapide pentru a iniția navigarea."
+        }
+      ],
+      "detailedOverview": "Rome Explorer este o aplicație interactivă de asistență turistică concepută pentru explorarea Romei. Dispune de o interfață grafică superbă cu hartă și marcaje pentru principalele monumente istorice, zone comerciale și o bază de pornire fixată de utilizator. Utilizatorii pot stabili trasee, pot folosi funcția GPS pentru coordonatele curente și pot descoperi curiozități inedite generate de IA în limba rusă. Aplicația a fost creată ca un test rapid de evaluare a fluxurilor de lucru asistate de inteligența artificială.",
+      "challengeAndSolutionDescription": "Principala provocare a constat în crearea unui produs complet funcțional într-un interval de timp extrem de strâns — cu doar 3 zile înainte de călătorie la Roma. Acest proiect a permis perfecționarea metodelor de prototipare rapidă utilizând instrumente moderne, integrarea librăriilor de cartografiere (MapLibre GL) cu React, configurarea API-urilor pentru streaming-ul răspunsurilor generate de IA, precum și dezvoltarea unor interfețe adaptive mobile-first cu animații fluide."
+    },
+    "carnival-bambini": {
+      "category": "Full-Stack Web Development & E-Commerce",
+      "title": "Carnival Bambini",
+      "shortOverview": "Un magazin online modern și elegant pentru modă infantilă de lux, dotat cu un coș de cumpărături complet funcțional, plăți Stripe, integrare Sanity CMS și mod dark/light.",
+      "techStack": [
+        "Next.js 14 (App Router)",
+        "Sanity CMS",
+        "TypeScript",
+        "Tailwind CSS",
+        "React",
+        "Stripe Payments",
+        "use-shopping-cart",
+        "next-themes"
+      ],
+      "industry": "E-Commerce & Retail",
+      "roleDescription": "Dezvoltator Full-Stack",
+      "links": {
+        "live": "https://carnival-bambini.vercel.app/",
+        "github": "https://github.com/webbddev/carnival-bambini"
+      },
+      "keyFeatures": [
+        {
+          "featTitle": "Integrare Sanity CMS",
+          "featDescription": "Gestionarea dinamică a produselor folosind Sanity Headless CMS, permițând adăugarea, editarea și categorisirea ușoară a produselor cu imagini, descrieri și ID-uri de preț Stripe."
+        },
+        {
+          "featTitle": "Experiență Completă a Coșului",
+          "featDescription": "Coș de cumpărături interactiv cu posibilitatea de adăugare/eliminare a produselor, ajustarea cantității, calcularea subtotalului și o interfață modală fluidă susținută de use-shopping-cart."
+        },
+        {
+          "featTitle": "Integrare Plăți Stripe",
+          "featDescription": "Flux de plată securizat prin Stripe, incluzând plata pentru un singur produs sau pentru întregul coș, cu pagini dedicate pentru succes sau eroare."
+        },
+        {
+          "featTitle": "Galerie de Produse și Categorii",
+          "featDescription": "Prezentarea celor mai noi produse, navigare pe categorii și pagini individuale de produs cu galerii de imagini."
+        },
+        {
+          "featTitle": "Comutator Dark/Light Mode",
+          "featDescription": "Schimbarea adaptivă a temei cu next-themes, oferind opțiuni de design elegante pentru modurile dark și light cu tranziții fluide."
+        },
+        {
+          "featTitle": "Design Responsiv",
+          "featDescription": "Layout responsiv de tip mobile-first cu animații personalizate, navigație dropdown, meniu mobil și carduri de produs optimizate pentru toate dimensiunile de ecran."
+        }
+      ],
+      "detailedOverview": "Carnival Bambini a reprezentat primul meu contact cu domeniul e-commerce. Am inițiat acest proiect din dorința de a explora mecanismele interne ale gestionării de conținut headless și ale tranzacțiilor financiare securizate. Mai exact, am vrut să înțeleg cum gestionează Sanity CMS schemele complexe de produse și cum integrarea plăților Stripe poate fi implementată armonios într-o aplicație Next.js. Rezultatul este o platformă complet dinamică în care catalogul de produse este gestionat prin Sanity, în timp ce procesarea securizată prin Stripe asigură o experiență profesională și de încredere pentru utilizator.",
+      "challengeAndSolutionDescription": "Principala provocare a fost corelarea dintre un Headless CMS și un sistem de plată în timp real — asigurând sincronizarea datelor despre produse (precum ID-urile de preț Stripe) între Sanity și frontend. Am rezolvat acest lucru prin implementarea unei scheme structurate în Sanity care se mapează direct pe dashboard-ul Stripe, garantând integritatea datelor în timpul plății. În plus, gestionarea stării persistente a unui coș de cumpărături complex între diferite sesiuni a necesitat o implementare robustă a hook-ului use-shopping-cart, pe care l-am integrat cu Next.js 14 App Router pentru a menține o performanță ridicată și o interfață fluidă."
+    },
+    "11labs-agent-n8n-webhook": {
+      "category": "AI Vocal și Automatizare Fluxuri de Lucru",
+      "title": "ElevenLabs Voice AI & n8n Bridge",
+      "shortOverview": "Un agent vocal conversațional multilingual în timp real, alimentat de ElevenLabs, integrat fără probleme prin webhook-uri personalizate într-un flux de lucru n8n pentru interogarea bazei de date în timp real.",
+      "techStack": [
+        "ElevenLabs Conversational AI",
+        "n8n Workflow Automation",
+        "PostgreSQL (NeonDB)",
+        "Webhook-uri și API-uri REST"
+      ],
+      "industry": "AI Vocal / Gestiune de Bani / Automatizare",
+      "roleDescription": "Inginer AI Vocal și Automatizare",
+      "links": {
+        "live": "#",
+        "github": "#"
+      },
+      "keyFeatures": [
+        {
+          "featTitle": "Procesare Vocală Dinamică Multilinguală",
+          "featDescription": "Am configurat detectarea limbii personalizată și declanșările de rezervă pentru a procesa fluent intrarea vocală în limbaj natural în engleză, rusă, bulgară, spaniolă și lituaniană."
+        },
+        {
+          "featTitle": "Sincronizare Webhook cu Latere Scăzută",
+          "featDescription": "Am proiectat un pod webhook n8n care preia sarcinile vocale ElevenLabs („întrebare” și „session_id”) și returnează răspunsuri structurate în text simplu prin „Răspunde la Webhook” fără întârzieri la randarea interfeței."
+        },
+        {
+          "featTitle": "Filtrare Securizată a Bazei de Date Izolată de Utilizator",
+          "featDescription": "Am integrat filtrarea strictă a contextului ID-ului utilizatorului în instrumentul PostgreSQL NeonDB backend, protejând informațiile sensibile ale portofoliului utilizatorului în timpul sesiunilor vocale cu mai mulți pași."
+        },
+        {
+          "featTitle": "Motor Proactiv de Alerte de Scadență",
+          "featDescription": "Am încorporat logica de calcul a datelor în cadrul agentului AI n8n pentru a evalua datele curente în raport cu programele de scadență ale activelor, adăugând automat alerte urgente la răspunsurile vocale pentru activele care expiră în termen de 30 de zile."
+        }
+      ],
+      "detailedOverview": "Acest proiect leagă Inteligența Artificială Conversațională de ultimă generație a ElevenLabs de un flux de lucru n8n autonom pentru a permite interacțiunea vocală în mai mulți pași cu înregistrările bazei de date în timp real. Când un utilizator vorbește cu agentul ElevenLabs, un instrument personalizat „fetch_portfolio_data” trimite sarcina la un Webhook HTTP n8n. Un agent AI n8n interpretează intenția utilizatorului, interoghează o bază de date Neon PostgreSQL filtrată după ID-ul unic al utilizatorului, verifică datele de scadență în raport cu data curentă și returnează instrucțiuni în text simplu către ElevenLabs pentru sinteză vocală naturală în limba preferată a utilizatorului.",
+      "challengeAndSolutionDescription": "Principala provocare a fost obținerea unor răspunsuri vocale aproape instantanee fără penalizări de latență, prevenind în același timp scurgerile de date între înregistrările de portofoliu cu mai mulți chiriași și acceptând conversații multilingve. Am rezolvat acest lucru optând pentru răspunsuri directe ale webhook-ului HTTP în loc de lanțuri complexe de API-uri externe, impunând o delimitare strictă a ID-ului utilizatorului în SQL și configurând prompt-urile optimizate și instrumentele de detectare a limbii ale ElevenLabs pentru schimbarea rapidă a limbii."
     },
     "event-automation-engine": {
       "category": "Automatizare AI",
